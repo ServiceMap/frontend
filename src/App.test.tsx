@@ -5,6 +5,6 @@ import App from './App'
 describe('App', () => {
     it('renders ServiceMap Admin Portal heading', () => {
         render(<App />)
-        expect(screen.getByText('ServiceMap Admin Portal')).toBeInTheDocument()
+        expect(screen.getByText('ServiceMap Admin Portal1')).toBeInTheDocument()
     })
 })
