@@ -20,7 +20,7 @@ const AuthContext = createContext<AuthContextProps | null>(null);
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (context) return context;
-  s;
+
   throw new Error("useAuth must be used within a AuthProvider");
 };
 
