@@ -1,4 +1,4 @@
-import { stringToBoolean } from "./utils/Type.utils.ts";
+import { stringToBoolean } from "../utils/type.utils.ts";
 
 type WindowEnvType = {
   readonly API_SERVER_URL: string;
@@ -12,6 +12,8 @@ declare global {
 }
 
 type AppConfigType = WindowEnvType & {
+  readonly IS_DEVELOPMENT: boolean;
+  readonly IS_PRODUCTION: boolean;
   readonly HIDE_UNIMPLEMENTED_FEATURES: boolean;
   readonly KEYCLOAK_CLIENT_ID: string;
   readonly KEYCLOAK_DEFAULT_REALM: string;
@@ -19,6 +21,8 @@ type AppConfigType = WindowEnvType & {
 
 export const AppConfig: AppConfigType = (() => {
   return {
+    IS_DEVELOPMENT: import.meta.env.DEV,
+    IS_PRODUCTION: import.meta.env.PROD,
     HIDE_UNIMPLEMENTED_FEATURES: stringToBoolean(
       import.meta.env.VITE_HIDE_UNIMPLEMENTED_FEATURES,
     ),
