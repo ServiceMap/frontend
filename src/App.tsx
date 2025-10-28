@@ -1,16 +1,12 @@
-import { useState } from 'react'
-import './App.css'
+import { lazy, Suspense } from "react";
+import Loader from "@/components/ui/Loader.tsx";
 
-function App() {
-    const [count, setCount] = useState(0);
+const AppRouter = lazy(() => import("@/routing/AppRouter"));
 
-    return (
-        <div className="p-6 text-center">
-            <h1>ServiceMap Admin Portal</h1>
-            <p>Environment: DEV</p>
-            <button onClick={() => setCount(count + 1)}>Clicked {count} times</button>
-        </div>
-    );
-}
+export const App = () => (
+  <Suspense fallback={<Loader fullscreen={true} />}>
+    <AppRouter />
+  </Suspense>
+);
 
 export default App;

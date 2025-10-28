@@ -1,20 +1,5 @@
 {
   "files": [],
-  "paths": {
-    "@/*": ["./src/*"],
-    "@/assets": ["./src/assets/*"],
-    "@/components/*": ["./src/components/*"],
-    "@/config/*": ["./src/config/*"],
-    "@/constants/*": ["./src/constants/*"],
-    "@/hooks/*": ["./src/hooks/*"],
-    "@/pages/*": ["./src/pages/*"],
-    "@/providers/*": ["./src/providers/*"],
-    "@/services/*": ["./src/services/*"],
-    "@/store/*": ["./src/store/*"],
-    "@/tests/*": ["./src/tests/*"],
-    "@/types/*": ["./src/types/*"],
-    "@/utils/*": ["./src/utils/*"]
-  },
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
