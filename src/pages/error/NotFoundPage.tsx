@@ -6,7 +6,9 @@ const NotFoundPage = () => {
   return (
     <div className="p-6 text-center">
       <h1>NOT FOUND</h1>
-      <button onClick={() => navigate(ROUTES.HOME)}>Go back to Home</button>
+      <button onClick={() => void navigate(ROUTES.HOME)}>
+        Go back to Home
+      </button>
     </div>
   );
 };

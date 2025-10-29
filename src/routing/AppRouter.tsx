@@ -5,14 +5,14 @@ import {
   RouterProvider,
   useRouteError,
 } from "react-router-dom";
-import { ErrorPage } from "@/pages/error/ErrorPage.tsx";
-import { ProtectedRoute, RoleBasedRoute } from "@/routing/RouteGuards.tsx";
 import { Roles } from "@/constants/roles.ts";
+import { ROUTES } from "@/constants/routes.ts";
 import { DashboardPage } from "@/pages/dashboard/DashboardPage.tsx";
-import { SettingsPage } from "@/pages/settings/SettingsPage.tsx";
+import { ErrorPage } from "@/pages/error/ErrorPage.tsx";
 import NotFoundPage from "@/pages/error/NotFoundPage.tsx";
 import { HomePage } from "@/pages/home/HomePage.tsx";
-import { ROUTES } from "@/constants/routes.ts";
+import { SettingsPage } from "@/pages/settings/SettingsPage.tsx";
+import { ProtectedRoute, RoleBasedRoute } from "@/routing/RouteGuards.tsx";
 
 const appRouter = createBrowserRouter([
   {

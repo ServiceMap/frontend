@@ -1,4 +1,4 @@
-import { useAuth } from "@/providers/AuthProvider";
+import { useAuth } from "@/hooks/useAuth";
 
 export const HomePage = () => {
   const { authenticated, user, login, logout } = useAuth();
@@ -7,11 +7,11 @@ export const HomePage = () => {
     <div className="p-6">
       <h1>Welcome to ServiceMap</h1>
       {!authenticated ? (
-        <button onClick={login}>Login</button>
+        <button onClick={void login}>Login</button>
       ) : (
         <>
           <p>Hello, {user?.username}</p>
-          <button onClick={logout}>Logout</button>
+          <button onClick={void logout}>Logout</button>
         </>
       )}
     </div>

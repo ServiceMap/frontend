@@ -6,9 +6,17 @@ import reactHooks from "eslint-plugin-react-hooks";
 import reactRefresh from "eslint-plugin-react-refresh";
 import { defineConfig, globalIgnores } from "eslint/config";
 import prettierPlugin from "eslint-plugin-prettier";
+import importPlugin from "eslint-plugin-import";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
 
 export default defineConfig([
-  globalIgnores(["dist", "node_modules", "build"]),
+  globalIgnores([
+    "dist",
+    "node_modules",
+    "build",
+    "public",
+    "eslint.config.js",
+  ]),
 
   // Base configurations (each one spread into the array)
   js.configs.recommended,
@@ -20,6 +28,12 @@ export default defineConfig([
 
     settings: {
       react: { version: "detect" },
+      "import/resolver": {
+        typescript: {
+          alwaysTryTypes: true,
+          project: "./tsconfig.json",
+        },
+      },
     },
 
     languageOptions: {
@@ -27,8 +41,10 @@ export default defineConfig([
       sourceType: "module",
       parser: tseslint.parser,
       parserOptions: {
-        project: true,
+        project: "./tsconfig.json",
+        projectService: true,
         tsconfigRootDir: import.meta.dirname,
+        sourceType: "module",
       },
       globals: {
         ...globals.browser,
@@ -42,6 +58,8 @@ export default defineConfig([
       "react-refresh": reactRefresh,
       "@typescript-eslint": tseslint.plugin,
       prettier: prettierPlugin,
+      import: importPlugin,
+      "simple-import-sort": simpleImportSort,
     },
 
     rules: {
@@ -51,14 +69,17 @@ export default defineConfig([
         { allowConstantExport: true },
       ],
       "react-hooks/exhaustive-deps": "error",
+      "@typescript-eslint/no-floating-promises": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
         { argsIgnorePattern: "^_" },
       ],
       "react/react-in-jsx-scope": "off",
-      "react/prop-types": "off",
+      "react/prop-types": "error",
       "no-console": "warn",
+      "import/order": "error",
+      "import/no-unresolved": "error",
     },
   },
 ]);

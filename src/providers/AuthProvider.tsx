@@ -1,28 +1,12 @@
-import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
 import Keycloak from "keycloak-js";
-import { getTenantFromHost } from "@/utils/getTenant";
-import Loader from "@/components/ui/Loader";
-import { Roles } from "@/constants/roles";
-import { AppConfig } from "@/config/env.ts";
+import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Loader from "@/components/ui/Loader";
+import { AppConfig } from "@/config/env.ts";
+import { Roles } from "@/constants/roles";
 import { ROUTES } from "@/constants/routes.ts";
-
-interface AuthContextProps {
-  initialized: boolean;
-  authenticated: boolean;
-  user?: { username: string; roles: Roles[] };
-  login: () => void;
-  logout: () => void;
-}
-
-const AuthContext = createContext<AuthContextProps | null>(null);
-
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (context) return context;
-
-  throw new Error("useAuth must be used within a AuthProvider");
-};
+import { getTenantFromHost } from "@/utils/getTenant";
+import { AuthContext } from "@/contexts/AuthContext";
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
@@ -58,7 +42,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
           const parsed = keycloakInstance.tokenParsed;
           const roles = parsed.realm_access?.roles || [];
           setUser({
-            username: parsed.preferred_username,
+            username: parsed.preferred_username as string,
             roles: roles as Roles[],
           });
 
@@ -72,7 +56,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       .catch((err) => {
         console.error("Keycloak init error", err);
         const navigate = useNavigate();
-        navigate(ROUTES.ERROR);
+        void navigate(ROUTES.ERROR);
       });
   }, []);
 
