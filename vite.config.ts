@@ -1,6 +1,6 @@
 import react from "@vitejs/plugin-react";
 import path from "path";
-import { defineConfig } from "vitest/config";
+import { configDefaults, defineConfig } from "vitest/config";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -18,8 +18,20 @@ export default defineConfig({
         transformAssets: true,
       },
     },
+    coverage: {
+      provider: "v8",
+      reporter: ["lcov"],
+      reportsDirectory: "./coverage",
+    },
+    reporters: [
+      "default",
+      ["vitest-sonar-reporter", { outputFile: "sonar-report.xml" }],
+      ["junit", { outputFile: "test-report.xml" }],
+    ],
+    testTimeout: 60000,
     environment: "jsdom",
     setupFiles: "./src/tests/setup.ts",
+    exclude: [...configDefaults.exclude],
   },
   server: {
     headers: {

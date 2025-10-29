@@ -13,7 +13,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,
 }) => {
   const [keycloak, setKeycloak] = useState<Keycloak | null>(null);
-  const [initialized, setInitialized] = useState(false);
   const [authenticated, setAuthenticated] = useState(false);
   const [user, setUser] = useState<{ username: string; roles: Roles[] }>();
 
@@ -37,7 +36,6 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
       .then((auth) => {
         setKeycloak(keycloakInstance);
         setAuthenticated(auth);
-        setInitialized(true);
 
         if (auth && keycloakInstance.tokenParsed) {
           const parsed = keycloakInstance.tokenParsed;
@@ -69,12 +67,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     return keycloak?.logout({ redirectUri: window.location.origin });
   }, [keycloak]);
 
-  if (!initialized) return <Loader />;
+  if (!keycloak) return <Loader />;
 
   return (
-    <AuthContext.Provider
-      value={{ initialized, authenticated, user, login, logout }}
-    >
+    <AuthContext.Provider value={{ authenticated, user, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

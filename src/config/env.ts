@@ -12,6 +12,7 @@ declare global {
 }
 
 type AppConfigType = WindowEnvType & {
+  readonly IS_TEST: boolean;
   readonly IS_DEVELOPMENT: boolean;
   readonly IS_PRODUCTION: boolean;
   readonly HIDE_UNIMPLEMENTED_FEATURES: boolean;
@@ -21,6 +22,7 @@ type AppConfigType = WindowEnvType & {
 
 export const AppConfig: AppConfigType = (() => {
   return {
+    IS_TEST: import.meta.env.MODE === "test",
     IS_DEVELOPMENT: import.meta.env.DEV,
     IS_PRODUCTION: import.meta.env.PROD,
     HIDE_UNIMPLEMENTED_FEATURES: stringToBoolean(
