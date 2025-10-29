@@ -1,12 +1,13 @@
-import Keycloak from "keycloak-js";
 import React, { useCallback, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Keycloak from "keycloak-js";
+
 import Loader from "@/components/ui/Loader";
 import { AppConfig } from "@/config/env.ts";
 import { Roles } from "@/constants/roles";
 import { ROUTES } from "@/constants/routes.ts";
-import { getTenantFromHost } from "@/utils/getTenant";
 import { AuthContext } from "@/contexts/AuthContext";
+import { getTenantFromHost } from "@/utils/getTenant";
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

@@ -33,6 +33,7 @@
       "@/routing/*": ["./routing/*"],
       "@/services/*": ["./services/*"],
       "@/store/*": ["./store/*"],
+      "@/styles/*": ["./styles/*"],
       "@/tests/*": ["./tests/*"],
       "@/types/*": ["./types/*"],
       "@/utils/*": ["./utils/*"]

@@ -18,7 +18,6 @@ export default defineConfig([
     "eslint.config.js",
   ]),
 
-  // Base configurations (each one spread into the array)
   js.configs.recommended,
   ...tseslint.configs.recommended,
   ...tseslint.configs.recommendedTypeChecked,
@@ -44,7 +43,6 @@ export default defineConfig([
         project: "./tsconfig.json",
         projectService: true,
         tsconfigRootDir: import.meta.dirname,
-        sourceType: "module",
       },
       globals: {
         ...globals.browser,
@@ -63,23 +61,42 @@ export default defineConfig([
     },
 
     rules: {
+      // Formatting & style
       "prettier/prettier": "error",
+      "no-console": "warn",
+
+      // React
       "react-refresh/only-export-components": [
         "warn",
         { allowConstantExport: true },
       ],
       "react-hooks/exhaustive-deps": "error",
+      "react/react-in-jsx-scope": "off",
+      "react/prop-types": "off",
+
+      // TypeScript
       "@typescript-eslint/no-floating-promises": "off",
       "@typescript-eslint/no-non-null-assertion": "off",
       "@typescript-eslint/no-unused-vars": [
         "error",
         { argsIgnorePattern: "^_" },
       ],
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": "error",
-      "no-console": "warn",
-      "import/order": "error",
+
+      // Imports
       "import/no-unresolved": "error",
+      "import/order": "off",
+      "simple-import-sort/imports": [
+        "error",
+        {
+          groups: [
+            ["^react", "^@?\\w"],
+            ["^@/"],
+            ["^\\u0000", "^\\./", "^\\.\\./"],
+            ["\\.s?css$"],
+          ],
+        },
+      ],
+      "simple-import-sort/exports": "error",
     },
   },
 ]);

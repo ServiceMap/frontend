@@ -1,4 +1,5 @@
 import { lazy, Suspense } from "react";
+
 import Loader from "@/components/ui/Loader.tsx";
 
 const AppRouter = lazy(() => import("@/routing/AppRouter"));
