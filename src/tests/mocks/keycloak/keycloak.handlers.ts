@@ -1,4 +1,4 @@
-import { HTTP_METHODS } from "@/constants/axios.ts";
+import { HTTP_METHODS } from "@/constants/api.ts";
 import { API_ROUTES } from "@/constants/routes.ts";
 import { TEST_KEYCLOAK_URL } from "@/tests/constants.ts";
 import { mockRequest } from "@/tests/mocks/mock.utils.ts";

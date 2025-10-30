@@ -1,13 +1,13 @@
 import { lazy } from "react";
+import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
 import {
   createBrowserRouter,
   Navigate,
   Outlet,
   RouterProvider,
-  useRouteError,
 } from "react-router-dom";
 
-import { Roles } from "@/constants/roles.ts";
+import { ROLES } from "@/constants/roles.ts";
 import { ROUTES } from "@/constants/routes.ts";
 import { ProtectedRoute, RoleBasedRoute } from "@/routing/RouteGuards.tsx";
 
@@ -21,9 +21,19 @@ const appRouter = createBrowserRouter([
   {
     path: ROUTES.ROOT,
     element: (
-      <>
+      <ErrorBoundary
+        fallbackRender={fallbackRender}
+        onReset={() =>
+          window.history.length > 2
+            ? window.history.back()
+            : window.location.replace(ROUTES.ROOT)
+        }
+        onError={(error, info) => {
+          console.error(error, info);
+        }}
+      >
         <Outlet />
-      </>
+      </ErrorBoundary>
     ),
     children: [
       {
@@ -33,25 +43,22 @@ const appRouter = createBrowserRouter([
       {
         path: ROUTES.HOME,
         element: <HomePage />,
-        errorElement: <ErrorBoundary />,
       },
       {
         path: ROUTES.ERROR,
         element: <ErrorPage />,
-        errorElement: <ErrorBoundary />,
       },
       {
         path: ROUTES.DASHBOARD,
         element: (
           <ProtectedRoute>
             <RoleBasedRoute
-              roles={[Roles.SUPER_ADMIN, Roles.COMPANY_ADMIN, Roles.MASTER]}
+              roles={[ROLES.SUPER_ADMIN, ROLES.COMPANY_ADMIN, ROLES.MASTER]}
             >
               <DashboardPage />
             </RoleBasedRoute>
           </ProtectedRoute>
         ),
-        errorElement: <ErrorBoundary />,
       },
       {
         path: ROUTES.SETTINGS,
@@ -60,23 +67,25 @@ const appRouter = createBrowserRouter([
             <SettingsPage />
           </ProtectedRoute>
         ),
-        errorElement: <ErrorBoundary />,
       },
       {
         path: "*",
         element: <NotFoundPage />,
-        errorElement: <ErrorBoundary />,
       },
     ],
   },
 ]);
 
-function ErrorBoundary() {
-  const error = useRouteError() as { message: string };
-  if (error) {
-    return <div>Error: {error.message}</div>;
-  }
-  return null;
+function fallbackRender({ error, resetErrorBoundary }: FallbackProps) {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{ color: "red" }}>
+        {(error as { message: string }).message}
+      </pre>
+      <button onClick={resetErrorBoundary}>Go back</button>
+    </div>
+  );
 }
 
 const AppRouter = () => {

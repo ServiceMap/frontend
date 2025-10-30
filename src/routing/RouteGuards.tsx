@@ -1,7 +1,7 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-import { Roles } from "@/constants/roles";
+import { ROLES } from "@/constants/roles.ts";
 import { ROUTES } from "@/constants/routes";
 import authService from "@/services/AuthService.ts";
 
@@ -18,7 +18,7 @@ export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
 
 export const RoleBasedRoute: React.FC<{
   children: React.ReactNode;
-  roles: Roles[];
+  roles: ROLES[];
 }> = ({ children, roles }) => {
   const hasAccess = authService.hasRole(roles);
   return hasAccess ? <>{children}</> : <Navigate to={ROUTES.ERROR} />;

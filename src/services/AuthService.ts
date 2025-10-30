@@ -1,16 +1,18 @@
 import { useNavigate } from "react-router-dom";
 import Keycloak from "keycloak-js";
 
+import { keycloakClient } from "@/config/axios.ts";
 import { AppConfig } from "@/config/env.ts";
-import { Roles } from "@/constants/roles.ts";
+import {
+  KEYCLOAK_TOKEN_MIN_VALIDITY_SECONDS,
+  KEYCLOAK_UPDATE_TOKEN_INTERVAL_SECONDS,
+} from "@/constants/api.ts";
+import { ROLES } from "@/constants/roles.ts";
 import { API_ROUTES, ROUTES } from "@/constants/routes.ts";
 import type { User } from "@/types/User.ts";
 import { getRealmFromHost, isRealmValid } from "@/utils/realm.utils.ts";
 
 export const AUTH_EVENT_NAME = "auth_event";
-
-const UPDATE_TOKEN_INTERVAL_SECONDS = 30;
-const TOKEN_MIN_VALIDITY_SECONDS = 60;
 
 class AuthService extends EventTarget {
   private static _instance: AuthService;
@@ -42,13 +44,13 @@ class AuthService extends EventTarget {
       this.emitAuthEvent();
 
       setInterval(() => {
-        this.keycloak!.updateToken(TOKEN_MIN_VALIDITY_SECONDS).catch(
+        this.keycloak!.updateToken(KEYCLOAK_TOKEN_MIN_VALIDITY_SECONDS).catch(
           (error) => {
             console.error("Keycloak update token error", error);
             this.logout();
           },
         );
-      }, UPDATE_TOKEN_INTERVAL_SECONDS * 1000);
+      }, KEYCLOAK_UPDATE_TOKEN_INTERVAL_SECONDS * 1000);
     };
     this.keycloak.onAuthLogout = () => this.emitAuthEvent();
     this.keycloak.onAuthRefreshSuccess = () => this.emitAuthEvent();
@@ -91,8 +93,8 @@ class AuthService extends EventTarget {
 
     let response;
     try {
-      response = await fetch(
-        `${AppConfig.KEYCLOAK_URL}${API_ROUTES.AUTH.REALMS}/${encodeURIComponent(realm)}`,
+      response = await keycloakClient.get(
+        `${API_ROUTES.AUTH.REALMS}/${encodeURIComponent(realm)}`,
       );
     } catch (error) {
       console.error("Keycloak validate realm error", error);
@@ -131,7 +133,7 @@ class AuthService extends EventTarget {
       username: tokenParsed.name as string,
       preferredName: tokenParsed.preferred_username as string,
       email: tokenParsed.email as string,
-      roles: roles as Roles[],
+      roles: roles as ROLES[],
     };
   }
 
@@ -147,14 +149,14 @@ class AuthService extends EventTarget {
       },
     );
 
-  hasRole = (roles: Roles[]): boolean =>
+  hasRole = (roles: ROLES[]): boolean =>
     !roles.length || roles.some((role) => this.keycloak!.hasRealmRole(role));
 
-  isSuperAdmin = () => this.hasRole([Roles.SUPER_ADMIN]);
+  isSuperAdmin = () => this.hasRole([ROLES.SUPER_ADMIN]);
 
-  isCompanyAdmin = () => this.hasRole([Roles.COMPANY_ADMIN]);
+  isCompanyAdmin = () => this.hasRole([ROLES.COMPANY_ADMIN]);
 
-  isMaster = () => this.hasRole([Roles.MASTER]);
+  isMaster = () => this.hasRole([ROLES.MASTER]);
 }
 
 const authService = new AuthService();
