@@ -1,11 +1,13 @@
 import { http, HttpHandler, HttpResponse, type JsonBodyType } from "msw";
 
+import { HTTP_METHODS } from "@/constants/axios.ts";
+
 export type HttpResolver = Parameters<typeof http.get>[1];
 
 interface MockRequestOptions {
   baseURL: string;
   url: string;
-  method: "GET" | "POST" | "PUT" | "DELETE";
+  method: HTTP_METHODS;
   mockData?: JsonBodyType;
   isError?: boolean;
   mockResolver?: HttpResolver;
@@ -31,17 +33,17 @@ export const mockRequest = ({
   const resolver = mockResolver ?? defaultResolver;
 
   switch (method) {
-    case "GET":
+    case HTTP_METHODS.GET:
       return http.get(matchUrl, resolver);
-    case "POST":
+    case HTTP_METHODS.POST:
       return http.post(matchUrl, () => {
         if (isError) return HttpResponse.error();
 
         return HttpResponse.json(mockData);
       });
-    case "PUT":
+    case HTTP_METHODS.PUT:
       return http.put(matchUrl, resolver);
-    case "DELETE":
+    case HTTP_METHODS.DELETE:
       return http.delete(matchUrl, resolver);
   }
 };

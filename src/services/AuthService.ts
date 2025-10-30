@@ -3,11 +3,12 @@ import Keycloak from "keycloak-js";
 
 import { AppConfig } from "@/config/env.ts";
 import { Roles } from "@/constants/roles.ts";
-import { ROUTES } from "@/constants/routes.ts";
+import { API_ROUTES, ROUTES } from "@/constants/routes.ts";
 import type { User } from "@/types/User.ts";
 import { getRealmFromHost, isRealmValid } from "@/utils/realm.utils.ts";
 
 export const AUTH_EVENT_NAME = "auth_event";
+
 const UPDATE_TOKEN_INTERVAL_SECONDS = 30;
 const TOKEN_MIN_VALIDITY_SECONDS = 60;
 
@@ -30,7 +31,7 @@ class AuthService extends EventTarget {
     this.currentRealm = realm;
 
     this.keycloak = new Keycloak({
-      url: `${AppConfig.KEYCLOAK_URL}/auth`,
+      url: `${AppConfig.KEYCLOAK_URL}${API_ROUTES.AUTH.BASE}`,
       realm: this.currentRealm,
       clientId: AppConfig.KEYCLOAK_CLIENT_ID,
     });
@@ -86,11 +87,13 @@ class AuthService extends EventTarget {
   }
 
   async validateRealm(realm?: string) {
-    if (!isRealmValid(realm)) return false;
+    if (!realm || !isRealmValid(realm)) return false;
 
     let response;
     try {
-      response = await fetch(`${AppConfig.KEYCLOAK_URL}/auth/realms/${realm}`);
+      response = await fetch(
+        `${AppConfig.KEYCLOAK_URL}${API_ROUTES.AUTH.REALMS}/${encodeURIComponent(realm)}`,
+      );
     } catch (error) {
       console.error("Keycloak validate realm error", error);
       return false;

@@ -1,3 +1,4 @@
+import { lazy } from "react";
 import {
   createBrowserRouter,
   Navigate,
@@ -8,12 +9,13 @@ import {
 
 import { Roles } from "@/constants/roles.ts";
 import { ROUTES } from "@/constants/routes.ts";
-import { DashboardPage } from "@/pages/dashboard/DashboardPage.tsx";
-import { ErrorPage } from "@/pages/error/ErrorPage.tsx";
-import NotFoundPage from "@/pages/error/NotFoundPage.tsx";
-import { HomePage } from "@/pages/home/HomePage.tsx";
-import { SettingsPage } from "@/pages/settings/SettingsPage.tsx";
 import { ProtectedRoute, RoleBasedRoute } from "@/routing/RouteGuards.tsx";
+
+const DashboardPage = lazy(() => import("@/pages/dashboard/DashboardPage"));
+const ErrorPage = lazy(() => import("@/pages/error/ErrorPage"));
+const NotFoundPage = lazy(() => import("@/pages/error/NotFoundPage"));
+const HomePage = lazy(() => import("@/pages/home/HomePage"));
+const SettingsPage = lazy(() => import("@/pages/settings/SettingsPage"));
 
 const appRouter = createBrowserRouter([
   {

@@ -1,28 +1,11 @@
+import type { AppConfigType } from "@/types/env.types.ts";
 import { stringToBoolean } from "@/utils/type.utils.ts";
 
-type WindowEnvType = {
-  readonly API_SERVER_URL: string;
-  readonly KEYCLOAK_URL: string;
-};
-
-declare global {
-  interface Window {
-    env: WindowEnvType;
-  }
-}
-
-type AppConfigType = WindowEnvType & {
-  readonly IS_TEST: boolean;
-  readonly IS_DEVELOPMENT: boolean;
-  readonly IS_PRODUCTION: boolean;
-  readonly HIDE_UNIMPLEMENTED_FEATURES: boolean;
-  readonly KEYCLOAK_CLIENT_ID: string;
-  readonly KEYCLOAK_DEFAULT_REALM: string;
-};
+const VITE_TEST_MODE_NAME = "test";
 
 export const AppConfig: AppConfigType = (() => {
   return {
-    IS_TEST: import.meta.env.MODE === "test",
+    IS_TEST: import.meta.env.MODE === VITE_TEST_MODE_NAME,
     IS_DEVELOPMENT: import.meta.env.DEV,
     IS_PRODUCTION: import.meta.env.PROD,
     HIDE_UNIMPLEMENTED_FEATURES: stringToBoolean(

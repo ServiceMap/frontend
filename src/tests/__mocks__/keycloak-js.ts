@@ -4,7 +4,11 @@ import type {
   KeycloakTokenParsed,
 } from "keycloak-js";
 
-import { Roles } from "@/constants/roles.ts";
+import {
+  TEST_PREFERRED_USERNAME,
+  TEST_USER_ROLES,
+  TEST_USERNAME,
+} from "@/tests/constants.ts";
 
 export default class Keycloak {
   public authenticated = false;
@@ -49,9 +53,9 @@ export default class Keycloak {
   login(): Promise<void> {
     this.token = "mock-token";
     this.tokenParsed = {
-      name: "mockuser",
-      preferred_username: "mockuser_name",
-      realm_access: { roles: [Roles.USER] },
+      name: TEST_USERNAME,
+      preferred_username: TEST_PREFERRED_USERNAME,
+      realm_access: { roles: TEST_USER_ROLES },
     };
     this.authenticated = true;
 

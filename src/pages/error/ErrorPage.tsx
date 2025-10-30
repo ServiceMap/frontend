@@ -2,7 +2,7 @@ import { useNavigate } from "react-router-dom";
 
 import { ROUTES } from "@/constants/routes.ts";
 
-export const ErrorPage = () => {
+const ErrorPage = () => {
   const navigate = useNavigate();
   return (
     <div className="p-6 text-center">
@@ -17,3 +17,5 @@ export const ErrorPage = () => {
     </div>
   );
 };
+
+export default ErrorPage;

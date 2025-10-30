@@ -5,6 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import App from "@/App";
 import { AuthProvider } from "@/providers/AuthProvider.tsx";
 import authService from "@/services/AuthService.ts";
+import { TEST_USERNAME } from "@/tests/constants.ts";
 
 describe("App", () => {
   beforeEach(() => {
@@ -46,7 +47,7 @@ describe("App", () => {
 
     await waitFor(() => {
       expect(screen.getByTestId("hello-message")).toHaveTextContent(
-        "Hello, mockuser",
+        `Hello, ${TEST_USERNAME}`,
       );
       expect(screen.getByTestId("logout-btn")).toBeInTheDocument();
     });

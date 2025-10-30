@@ -1,3 +1,5 @@
+import { Roles } from "@/constants/roles.ts";
+
 export const TEST_TIMEOUT = 5000;
 
 export const TEST_HIDE_UNIMPLEMENTED_FEATURES = false;
@@ -7,3 +9,7 @@ export const TEST_KEYCLOAK_CLIENT_ID = "test-client";
 export const TEST_KEYCLOAK_DEFAULT_REALM = "test_realm_for_unit_tests";
 
 export const TEST_NOT_EXISTED_URL = "http://localhost:0";
+
+export const TEST_USERNAME = "test_user";
+export const TEST_USER_ROLES = [Roles.USER];
+export const TEST_PREFERRED_USERNAME = "test_preferred_user";

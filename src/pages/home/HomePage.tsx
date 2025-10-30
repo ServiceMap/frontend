@@ -1,6 +1,6 @@
 import { useAuth } from "@/hooks/useAuth";
 
-export const HomePage = () => {
+const HomePage = () => {
   const { isLoggedIn, user, login, logout } = useAuth();
 
   return (
@@ -23,3 +23,5 @@ export const HomePage = () => {
     </div>
   );
 };
+
+export default HomePage;

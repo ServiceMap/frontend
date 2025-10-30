@@ -1,8 +1,9 @@
-import React, { useEffect, useReducer } from "react";
+import React, { lazy, useEffect, useReducer } from "react";
 
-import Loader from "@/components/ui/Loader";
 import { AuthContext } from "@/contexts/AuthContext";
 import authService, { AUTH_EVENT_NAME } from "@/services/AuthService.ts";
+
+const Loader = lazy(() => import("@/components/ui/Loader"));
 
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
   children,

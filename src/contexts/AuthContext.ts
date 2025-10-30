@@ -5,8 +5,8 @@ import type { User } from "@/types/User.ts";
 interface AuthContextProps {
   isLoggedIn: boolean;
   user?: User;
-  login: () => Promise<void> | undefined;
-  logout: () => Promise<void> | undefined;
+  login: () => Promise<void>;
+  logout: () => Promise<void>;
 }
 
 export const AuthContext = createContext<AuthContextProps | null>(null);

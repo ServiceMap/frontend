@@ -1,5 +1,3 @@
-import type { ValueOf } from "@/utils/type.utils.ts";
-
 export const ROUTES = {
   ROOT: "/",
   HOME: "/home",
@@ -12,4 +10,9 @@ export const ROUTES = {
   NOT_FOUND: "/404",
 } as const;
 
-export type ROUTES = ValueOf<typeof ROUTES>;
+export const API_ROUTES = {
+  AUTH: {
+    BASE: "/auth",
+    REALMS: "/auth/realms",
+  },
+} as const;
