@@ -4,6 +4,8 @@ import { vi } from "vitest";
 import "../../public/config.js";
 import "@testing-library/jest-dom";
 
+vi.mock("keycloak-js", () => import("@/tests/__mocks__/keycloak-js.ts"));
+
 configure({
   asyncUtilTimeout: 5000,
 });

@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
-import { Roles } from "@/constants/roles.ts";
+import type { User } from "@/types/User.ts";
 
 interface AuthContextProps {
-  authenticated: boolean;
-  user?: { username: string; roles: Roles[] };
+  isLoggedIn: boolean;
+  user?: User;
   login: () => Promise<void> | undefined;
   logout: () => Promise<void> | undefined;
 }

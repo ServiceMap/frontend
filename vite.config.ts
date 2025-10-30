@@ -31,6 +31,7 @@ export default defineConfig({
     testTimeout: 60000,
     environment: "jsdom",
     setupFiles: "./src/tests/setup.ts",
+    mockReset: true,
     exclude: [...configDefaults.exclude],
   },
   server: {

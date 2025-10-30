@@ -6,7 +6,7 @@ export const ErrorPage = () => {
   const navigate = useNavigate();
   return (
     <div className="p-6 text-center">
-      <h1>Invalid tenant or access denied</h1>
+      <h1>Invalid realm or access denied</h1>
       <button
         onClick={() => {
           navigate(ROUTES.HOME);
