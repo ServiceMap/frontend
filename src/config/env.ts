@@ -1,4 +1,4 @@
-import { stringToBoolean } from "../utils/type.utils.ts";
+import { stringToBoolean } from "@/utils/type.utils.ts";
 
 type WindowEnvType = {
   readonly API_SERVER_URL: string;

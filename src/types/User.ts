@@ -1,4 +1,4 @@
-import type { Roles } from "../constants/roles.ts";
+import type { Roles } from "@/constants/roles.ts";
 
 export interface User {
   id: string;

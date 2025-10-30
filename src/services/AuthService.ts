@@ -91,7 +91,8 @@ class AuthService extends EventTarget {
     let response;
     try {
       response = await fetch(`${AppConfig.KEYCLOAK_URL}/auth/realms/${realm}`);
-    } catch {
+    } catch (error) {
+      console.error("Keycloak validate realm error", error);
       return false;
     }
 

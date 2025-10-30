@@ -1,14 +1,23 @@
 import { configure } from "@testing-library/react";
-import { vi } from "vitest";
+import { http, HttpResponse } from "msw";
+import { setupServer } from "msw/node";
+import { afterAll, afterEach, beforeAll, vi } from "vitest";
+
+import {
+  TEST_API_SERVER_URL,
+  TEST_HIDE_UNIMPLEMENTED_FEATURES,
+  TEST_KEYCLOAK_CLIENT_ID,
+  TEST_KEYCLOAK_DEFAULT_REALM,
+  TEST_KEYCLOAK_URL,
+  TEST_NOT_EXISTED_URL,
+  TEST_TIMEOUT,
+} from "@/tests/constants.ts";
+import { keycloakHandlers } from "@/tests/mocks/keycloak/keycloak.handlers.ts";
 
 import "../../public/config.js";
 import "@testing-library/jest-dom";
 
 vi.mock("keycloak-js", () => import("@/tests/__mocks__/keycloak-js.ts"));
-
-configure({
-  asyncUtilTimeout: 5000,
-});
 
 vi.mock("@/config/env.ts", async () => {
   const actual =
@@ -18,7 +27,40 @@ vi.mock("@/config/env.ts", async () => {
     ...actual,
     AppConfig: {
       ...actual.AppConfig,
-      HIDE_UNIMPLEMENTED_FEATURES: false,
+      HIDE_UNIMPLEMENTED_FEATURES: TEST_HIDE_UNIMPLEMENTED_FEATURES,
+      API_SERVER_URL: TEST_API_SERVER_URL,
+      KEYCLOAK_URL: TEST_KEYCLOAK_URL,
+      KEYCLOAK_CLIENT_ID: TEST_KEYCLOAK_CLIENT_ID,
+      KEYCLOAK_DEFAULT_REALM: TEST_KEYCLOAK_DEFAULT_REALM,
     },
   };
 });
+
+configure({
+  asyncUtilTimeout: TEST_TIMEOUT,
+});
+
+const mockServer = setupServer(
+  http.options("*", () => {
+    return new HttpResponse(null, { status: 200 });
+  }),
+  http.all(TEST_NOT_EXISTED_URL, () => {
+    return new HttpResponse(null, { status: 404 });
+  }),
+  ...keycloakHandlers,
+);
+
+afterEach(() => {
+  mockServer.restoreHandlers();
+});
+
+beforeAll(() => {
+  mockServer.listen({
+    onUnhandledRequest: (req) => {
+      console.log("❌ Unhandled request:", req.method, req.url);
+      throw new Error(`Unhandled ${req.method} request to ${req.url}`);
+    },
+  });
+});
+
+afterAll(() => mockServer.close());
