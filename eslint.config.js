@@ -16,6 +16,7 @@ export default defineConfig([
     "build",
     "public",
     "eslint.config.js",
+    "stripe-server-test.js",
   ]),
 
   js.configs.recommended,
