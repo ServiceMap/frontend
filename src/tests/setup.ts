@@ -12,6 +12,7 @@ import {
   TEST_NOT_EXISTED_URL,
   TEST_TIMEOUT,
 } from "@/tests/constants.ts";
+import { i18nextHandlers } from "@/tests/mocks/i18next/i18next.handlers.ts";
 import { keycloakHandlers } from "@/tests/mocks/keycloak/keycloak.handlers.ts";
 
 import "../../public/config.js";
@@ -48,6 +49,7 @@ const mockServer = setupServer(
     return new HttpResponse(null, { status: 404 });
   }),
   ...keycloakHandlers,
+  ...i18nextHandlers,
 );
 
 afterEach(() => {
