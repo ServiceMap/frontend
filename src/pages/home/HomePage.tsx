@@ -20,7 +20,7 @@ const HomePage = () => {
 
       <button
         onClick={() => {
-          throw new Error("This is your first error!");
+          throw new Error("Test SENTRY button clicked!");
         }}
       >
         TEST SENTRY
