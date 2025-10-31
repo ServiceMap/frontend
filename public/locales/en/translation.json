@@ -1,0 +1,11 @@
+{
+  "welcome_message": "Welcome to ServiceMap",
+  "not_found_message": "NOT FOUND",
+  "go_back_to_home_btn": "Go back to Home",
+  "login_btn": "Login",
+  "logout_btn": "Logout",
+  "hello_user_message": "Hello, <strong>{{username}}</strong>!",
+  "selected_language": "Selected language: <strong>{{language}}</strong>",
+  "loading_message": "Loading...",
+  "invalid_realm_or_access_denied": "Invalid realm or access denied"
+}

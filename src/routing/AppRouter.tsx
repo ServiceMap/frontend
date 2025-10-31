@@ -38,7 +38,7 @@ const appRouter = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Navigate to={ROUTES.HOME} />,
+        element: <Navigate to={ROUTES.HOME} replace />,
       },
       {
         path: ROUTES.HOME,
