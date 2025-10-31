@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { ROUTES } from "@/constants/routes.ts";
+import { ROUTES } from "@/constants/routes.constants.ts";
 
 const ErrorPage = () => {
   const { t } = useTranslation();

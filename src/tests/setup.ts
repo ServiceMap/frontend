@@ -20,9 +20,10 @@ import "@testing-library/jest-dom";
 
 vi.mock("keycloak-js", () => import("@/tests/__mocks__/keycloak-js.ts"));
 
-vi.mock("@/config/env.ts", async () => {
-  const actual =
-    await vi.importActual<typeof import("@/config/env.ts")>("@/config/env.ts");
+vi.mock("@/config/env.config.ts", async () => {
+  const actual = await vi.importActual<typeof import("@/config/env.config.ts")>(
+    "@/config/env.config.ts",
+  );
 
   return {
     ...actual,

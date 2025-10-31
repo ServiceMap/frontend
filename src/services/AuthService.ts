@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import Keycloak from "keycloak-js";
 
-import { keycloakClient } from "@/config/axios.ts";
-import { AppConfig } from "@/config/env.ts";
-import { ROLES } from "@/constants/roles.ts";
-import { API_ROUTES, ROUTES } from "@/constants/routes.ts";
-import type { User } from "@/types/User.ts";
+import { keycloakClient } from "@/config/axios.config.ts";
+import { AppConfig } from "@/config/env.config.ts";
+import { ROLES } from "@/constants/roles.constants.ts";
+import { API_ROUTES, ROUTES } from "@/constants/routes.constants.ts";
+import type { User } from "@/types/user.types.ts";
 import { getRealmFromHost, isRealmValid } from "@/utils/realm.utils.ts";
 
 export const AUTH_EVENT_NAME = "auth_event";

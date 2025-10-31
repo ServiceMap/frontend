@@ -7,8 +7,8 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
-import { ROLES } from "@/constants/roles.ts";
-import { ROUTES } from "@/constants/routes.ts";
+import { ROLES } from "@/constants/roles.constants.ts";
+import { ROUTES } from "@/constants/routes.constants.ts";
 import { ProtectedRoute, RoleBasedRoute } from "@/routing/RouteGuards.tsx";
 
 const DashboardPage = lazy(() => import("@/pages/dashboard/DashboardPage"));

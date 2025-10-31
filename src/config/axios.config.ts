@@ -5,12 +5,12 @@ import axios, {
   type InternalAxiosRequestConfig,
 } from "axios";
 
-import { AppConfig } from "@/config/env.ts";
+import { AppConfig } from "@/config/env.config.ts";
 import {
   ACCEPT_HEADER_NAME,
   CONTENT_TYPE_HEADER_NAME,
   JSON_CONTENT_TYPE,
-} from "@/constants/api.ts";
+} from "@/constants/api.constants.ts";
 import AuthService from "@/services/AuthService.ts";
 
 const AXIOS_REQUEST_TIMEOUT_SECONDS = 30;

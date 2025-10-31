@@ -4,8 +4,8 @@ import { createRoot } from "react-dom/client";
 import App from "@/App";
 import { AuthProvider } from "@/providers/AuthProvider.tsx";
 
-import "@/config/i18n.ts";
-import "@/config/dayjs.ts";
+import "@/config/i18n.config.ts";
+import "@/config/dayjs.config.ts";
 
 import "@/styles/index.css";
 
