@@ -12,6 +12,8 @@ const HomePage = () => {
     <>
       <h1>{t("welcome_message")}</h1>
 
+      <p>{import.meta.env.MODE}</p>
+
       <p>
         <LanguageSelector />
       </p>
