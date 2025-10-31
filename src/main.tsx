@@ -4,6 +4,7 @@ import { createRoot } from "react-dom/client";
 import App from "@/App";
 import { initSentry } from "@/external/sentry.ts";
 import { AuthProvider } from "@/providers/AuthProvider.tsx";
+import { StripeProvider } from "@/providers/StripeProvider.tsx";
 
 import "@/config/i18n.config.ts";
 import "@/config/dayjs.config.ts";
@@ -15,7 +16,9 @@ initSentry();
 createRoot(document.getElementById("root")!).render(
   <AuthProvider>
     <StrictMode>
-      <App />
+      <StripeProvider>
+        <App />
+      </StripeProvider>
     </StrictMode>
   </AuthProvider>,
 );

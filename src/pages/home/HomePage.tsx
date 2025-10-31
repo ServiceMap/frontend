@@ -2,6 +2,7 @@ import { Trans, useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 
 import { LanguageSelector } from "@/components/elements/LanguageSelector.tsx";
+import { StripeSandboxButton } from "@/components/elements/StripeSandboxButton.tsx";
 import { useAuth } from "@/hooks/useAuth";
 
 const HomePage = () => {
@@ -17,14 +18,6 @@ const HomePage = () => {
       <p>
         <LanguageSelector />
       </p>
-
-      <button
-        onClick={() => {
-          throw new Error("Test SENTRY button clicked!");
-        }}
-      >
-        TEST SENTRY
-      </button>
 
       <p>{dayjs().format()}</p>
       <p>{dayjs().format("LLLL")}</p>
@@ -48,6 +41,16 @@ const HomePage = () => {
           </button>
         </>
       )}
+
+      <button
+        onClick={() => {
+          throw new Error("Test SENTRY button clicked!");
+        }}
+      >
+        TEST SENTRY
+      </button>
+
+      <StripeSandboxButton />
     </>
   );
 };

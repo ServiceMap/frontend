@@ -2,6 +2,7 @@
 
 window.env = {
   SENTRY_DSN: "",
+  STRIPE_PUBLIC_KEY: "",
   API_SERVER_URL: "http://api.localhost",
   KEYCLOAK_URL: "http://keycloak.localhost",
   KEYCLOAK_CLIENT_ID: "",

@@ -16,6 +16,7 @@ const ErrorPage = lazy(() => import("@/pages/error/ErrorPage"));
 const NotFoundPage = lazy(() => import("@/pages/error/NotFoundPage"));
 const HomePage = lazy(() => import("@/pages/home/HomePage"));
 const SettingsPage = lazy(() => import("@/pages/settings/SettingsPage"));
+const StripeTestPage = lazy(() => import("@/pages/payment/StripeTestPage"));
 
 const fallbackRender = ({ error, resetErrorBoundary }: FallbackProps) => {
   return (
@@ -79,6 +80,10 @@ const appRouter = createBrowserRouter([
             <SettingsPage />
           </ProtectedRoute>
         ),
+      },
+      {
+        path: "/stripe-test",
+        element: <StripeTestPage />,
       },
       {
         path: "*",

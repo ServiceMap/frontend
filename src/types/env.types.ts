@@ -1,5 +1,6 @@
 export type WindowEnvType = {
   readonly SENTRY_DSN: string;
+  readonly STRIPE_PUBLIC_KEY: string;
   readonly API_SERVER_URL: string;
   readonly KEYCLOAK_URL: string;
   readonly KEYCLOAK_CLIENT_ID: string;

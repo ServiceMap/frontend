@@ -13,6 +13,8 @@ export const AppConfig: AppConfigType = (() => {
       import.meta.env.VITE_SHOW_UNIMPLEMENTED_FEATURES,
     ),
     SENTRY_DSN: import.meta.env.VITE_SENTRY_DSN || window.env.SENTRY_DSN,
+    STRIPE_PUBLIC_KEY:
+      import.meta.env.VITE_STRIPE_PUBLIC_KEY || window.env.STRIPE_PUBLIC_KEY,
     API_SERVER_URL:
       import.meta.env.VITE_API_SERVER_URL || window.env.API_SERVER_URL,
     KEYCLOAK_URL: import.meta.env.VITE_KEYCLOAK_URL || window.env.KEYCLOAK_URL,

@@ -27,3 +27,4 @@ dist-ssr
 .env.local
 sonar-report.xml
 test-report.xml
+stripe-server-test.js
