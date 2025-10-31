@@ -4,4 +4,6 @@ window.env = {
   SENTRY_DSN: "",
   API_SERVER_URL: "http://api.localhost",
   KEYCLOAK_URL: "http://keycloak.localhost",
+  KEYCLOAK_CLIENT_ID: "",
+  KEYCLOAK_DEFAULT_REALM: "",
 };

@@ -16,7 +16,10 @@ export const AppConfig: AppConfigType = (() => {
     API_SERVER_URL:
       import.meta.env.VITE_API_SERVER_URL || window.env.API_SERVER_URL,
     KEYCLOAK_URL: import.meta.env.VITE_KEYCLOAK_URL || window.env.KEYCLOAK_URL,
-    KEYCLOAK_CLIENT_ID: import.meta.env.VITE_KEYCLOAK_CLIENT_ID,
-    KEYCLOAK_DEFAULT_REALM: import.meta.env.VITE_KEYCLOAK_DEFAULT_REALM,
+    KEYCLOAK_CLIENT_ID:
+      import.meta.env.VITE_KEYCLOAK_CLIENT_ID || window.env.KEYCLOAK_CLIENT_ID,
+    KEYCLOAK_DEFAULT_REALM:
+      import.meta.env.VITE_KEYCLOAK_DEFAULT_REALM ||
+      window.env.KEYCLOAK_DEFAULT_REALM,
   };
 })();
