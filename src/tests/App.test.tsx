@@ -4,6 +4,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 import App from "@/App";
 import { AuthProvider } from "@/providers/AuthProvider.tsx";
+import { StripeProvider } from "@/providers/StripeProvider.tsx";
 import authService from "@/services/AuthService.ts";
 import { TEST_USERNAME } from "@/tests/constants.ts";
 
@@ -23,7 +24,9 @@ describe("App", () => {
   const renderComponent = () => {
     render(
       <AuthProvider>
-        <App />
+        <StripeProvider>
+          <App />
+        </StripeProvider>
       </AuthProvider>,
     );
   };
