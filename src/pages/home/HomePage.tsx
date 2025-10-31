@@ -18,6 +18,14 @@ const HomePage = () => {
         <LanguageSelector />
       </p>
 
+      <button
+        onClick={() => {
+          throw new Error("This is your first error!");
+        }}
+      >
+        TEST SENTRY
+      </button>
+
       <p>{dayjs().format()}</p>
       <p>{dayjs().format("LLLL")}</p>
 
