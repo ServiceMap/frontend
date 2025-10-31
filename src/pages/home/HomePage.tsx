@@ -1,7 +1,7 @@
 import { Trans, useTranslation } from "react-i18next";
+import dayjs from "dayjs";
 
 import { LanguageSelector } from "@/components/elements/LanguageSelector.tsx";
-import { dayjs } from "@/config/dayjs.config.ts";
 import { useAuth } from "@/hooks/useAuth";
 
 const HomePage = () => {
