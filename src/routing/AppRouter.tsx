@@ -17,6 +17,18 @@ const NotFoundPage = lazy(() => import("@/pages/error/NotFoundPage"));
 const HomePage = lazy(() => import("@/pages/home/HomePage"));
 const SettingsPage = lazy(() => import("@/pages/settings/SettingsPage"));
 
+const fallbackRender = ({ error, resetErrorBoundary }: FallbackProps) => {
+  return (
+    <div role="alert">
+      <p>Something went wrong:</p>
+      <pre style={{ color: "red" }}>
+        {(error as { message: string }).message}
+      </pre>
+      <button onClick={resetErrorBoundary}>Go back</button>
+    </div>
+  );
+};
+
 const appRouter = createBrowserRouter([
   {
     path: ROUTES.ROOT,
@@ -75,18 +87,6 @@ const appRouter = createBrowserRouter([
     ],
   },
 ]);
-
-function fallbackRender({ error, resetErrorBoundary }: FallbackProps) {
-  return (
-    <div role="alert">
-      <p>Something went wrong:</p>
-      <pre style={{ color: "red" }}>
-        {(error as { message: string }).message}
-      </pre>
-      <button onClick={resetErrorBoundary}>Go back</button>
-    </div>
-  );
-}
 
 const AppRouter = () => {
   return <RouterProvider router={appRouter} />;
