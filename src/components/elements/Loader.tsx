@@ -1,4 +1,4 @@
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 interface LoadingComponentProps {
   fullscreen?: boolean;
@@ -6,6 +6,8 @@ interface LoadingComponentProps {
 }
 
 const Loader = ({ fullscreen, isLoading = true }: LoadingComponentProps) => {
+  const { t } = useTranslation();
+
   return (
     isLoading && (
       <div className={`loading-screen ${fullscreen ? "fullscreen" : ""}`}>

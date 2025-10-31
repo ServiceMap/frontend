@@ -1,7 +1,7 @@
 import { lazy, Suspense } from "react";
 
 const AppRouter = lazy(() => import("@/routing/AppRouter"));
-const Loader = lazy(() => import("@/components/ui/Loader"));
+const Loader = lazy(() => import("@/components/elements/Loader"));
 
 export const App = () => (
   <Suspense fallback={<Loader fullscreen={true} />}>

@@ -5,7 +5,6 @@
   "login_btn": "Login",
   "logout_btn": "Logout",
   "hello_user_message": "Hello, <strong>{{username}}</strong>!",
-  "selected_language": "Selected language: <strong>{{language}}</strong>",
   "loading_message": "Loading...",
   "invalid_realm_or_access_denied": "Invalid realm or access denied"
 }

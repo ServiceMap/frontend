@@ -1,12 +1,14 @@
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
-import { t } from "i18next";
 
 import { ROUTES } from "@/constants/routes.ts";
 
 const ErrorPage = () => {
+  const { t } = useTranslation();
   const navigate = useNavigate();
+
   return (
-    <div className="p-6 text-center">
+    <>
       <h1>{t("invalid_realm_or_access_denied")}</h1>
       <button
         onClick={() => {
@@ -15,7 +17,7 @@ const ErrorPage = () => {
       >
         {t("go_back_to_home_btn")}
       </button>
-    </div>
+    </>
   );
 };
 
