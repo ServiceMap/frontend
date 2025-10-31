@@ -26,7 +26,10 @@ const createAxiosInstance = (baseUrl: string): AxiosInstance => {
 
   instance.interceptors.request.use(
     (config: InternalAxiosRequestConfig) => {
-      config.headers.Authorization = `Bearer ${AuthService.token}`;
+      const token = AuthService.token;
+      if (token) {
+        config.headers.Authorization = `Bearer ${token}`;
+      }
 
       return config;
     },

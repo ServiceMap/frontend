@@ -39,9 +39,11 @@ class AuthService extends EventTarget {
     });
 
     this.keycloak.onAuthSuccess = () => this.emitAuthEvent();
-    this.keycloak.onReady = () => {
+    this.keycloak.onReady = (authenticated) => {
       this._isInitiated = true;
       this.emitAuthEvent();
+
+      if (!authenticated) return;
 
       setInterval(() => {
         this.keycloak!.updateToken(KEYCLOAK_TOKEN_MIN_VALIDITY_SECONDS).catch(
@@ -53,7 +55,7 @@ class AuthService extends EventTarget {
       }, KEYCLOAK_UPDATE_TOKEN_INTERVAL_SECONDS * 1000);
     };
     this.keycloak.onAuthLogout = () => this.emitAuthEvent();
-    this.keycloak.onAuthRefreshSuccess = () => this.emitAuthEvent();
+    this.keycloak.onAuthRefreshError = () => this.emitAuthEvent();
     this.keycloak.onTokenExpired = () => {
       this.logout();
       this.emitAuthEvent();
