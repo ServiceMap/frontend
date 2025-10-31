@@ -34,5 +34,8 @@ export default defineConfig({
       "Referrer-Policy": "no-referrer",
     },
     port: 5173,
+    host: true,
+    strictPort: true,
+    origin: "http://0.0.0.0:5173",
   },
 });

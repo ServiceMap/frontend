@@ -2,7 +2,7 @@ import { ROLES } from "@/constants/roles.ts";
 
 export const TEST_TIMEOUT = 5000;
 
-export const TEST_HIDE_UNIMPLEMENTED_FEATURES = false;
+export const TEST_SHOW_UNIMPLEMENTED_FEATURES = true;
 export const TEST_UI_URL = "http://localhost:3000";
 export const TEST_API_SERVER_URL = "http://localhost:2345";
 export const TEST_KEYCLOAK_URL = "http://localhost:3456";

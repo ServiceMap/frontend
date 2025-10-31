@@ -8,8 +8,8 @@ export const AppConfig: AppConfigType = (() => {
     IS_TEST: import.meta.env.MODE === VITE_TEST_MODE_NAME,
     IS_DEVELOPMENT: import.meta.env.DEV,
     IS_PRODUCTION: import.meta.env.PROD,
-    HIDE_UNIMPLEMENTED_FEATURES: stringToBoolean(
-      import.meta.env.VITE_HIDE_UNIMPLEMENTED_FEATURES,
+    SHOW_UNIMPLEMENTED_FEATURES: stringToBoolean(
+      import.meta.env.VITE_SHOW_UNIMPLEMENTED_FEATURES,
     ),
     API_SERVER_URL:
       import.meta.env.VITE_API_SERVER_URL || window.env.API_SERVER_URL,

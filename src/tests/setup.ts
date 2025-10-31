@@ -5,11 +5,11 @@ import { afterAll, afterEach, beforeAll, vi } from "vitest";
 
 import {
   TEST_API_SERVER_URL,
-  TEST_HIDE_UNIMPLEMENTED_FEATURES,
   TEST_KEYCLOAK_CLIENT_ID,
   TEST_KEYCLOAK_DEFAULT_REALM,
   TEST_KEYCLOAK_URL,
   TEST_NOT_EXISTED_URL,
+  TEST_SHOW_UNIMPLEMENTED_FEATURES,
   TEST_TIMEOUT,
 } from "@/tests/constants.ts";
 import { i18nextHandlers } from "@/tests/mocks/i18next/i18next.handlers.ts";
@@ -28,7 +28,7 @@ vi.mock("@/config/env.ts", async () => {
     ...actual,
     AppConfig: {
       ...actual.AppConfig,
-      HIDE_UNIMPLEMENTED_FEATURES: TEST_HIDE_UNIMPLEMENTED_FEATURES,
+      SHOW_UNIMPLEMENTED_FEATURES: TEST_SHOW_UNIMPLEMENTED_FEATURES,
       API_SERVER_URL: TEST_API_SERVER_URL,
       KEYCLOAK_URL: TEST_KEYCLOAK_URL,
       KEYCLOAK_CLIENT_ID: TEST_KEYCLOAK_CLIENT_ID,
