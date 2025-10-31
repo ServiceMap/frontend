@@ -5,7 +5,6 @@ build
 .github
 .idea
 .vite
-docker
 .env
 .env.local
 .DS_Store

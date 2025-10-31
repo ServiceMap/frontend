@@ -16,8 +16,3 @@ export const JSON_CONTENT_TYPE = "application/json";
 export const PLAIN_TEXT_CONTENT_TYPE = "text/plain";
 export const MULTIPART_FORM_DATA_CONTENT_TYPE = "multipart/form-data";
 export const OCTET_STREAM_CONTENT_TYPE = "application/octet-stream";
-
-export const AXIOS_REQUEST_TIMEOUT_SECONDS = 30;
-
-export const KEYCLOAK_UPDATE_TOKEN_INTERVAL_SECONDS = 30;
-export const KEYCLOAK_TOKEN_MIN_VALIDITY_SECONDS = 60;

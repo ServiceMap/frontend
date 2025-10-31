@@ -3,16 +3,15 @@ import Keycloak from "keycloak-js";
 
 import { keycloakClient } from "@/config/axios.ts";
 import { AppConfig } from "@/config/env.ts";
-import {
-  KEYCLOAK_TOKEN_MIN_VALIDITY_SECONDS,
-  KEYCLOAK_UPDATE_TOKEN_INTERVAL_SECONDS,
-} from "@/constants/api.ts";
 import { ROLES } from "@/constants/roles.ts";
 import { API_ROUTES, ROUTES } from "@/constants/routes.ts";
 import type { User } from "@/types/User.ts";
 import { getRealmFromHost, isRealmValid } from "@/utils/realm.utils.ts";
 
 export const AUTH_EVENT_NAME = "auth_event";
+
+const KEYCLOAK_UPDATE_TOKEN_INTERVAL_SECONDS = 30;
+const KEYCLOAK_TOKEN_MIN_VALIDITY_SECONDS = 60;
 
 class AuthService extends EventTarget {
   private static _instance: AuthService;

@@ -8,11 +8,12 @@ import axios, {
 import { AppConfig } from "@/config/env.ts";
 import {
   ACCEPT_HEADER_NAME,
-  AXIOS_REQUEST_TIMEOUT_SECONDS,
   CONTENT_TYPE_HEADER_NAME,
   JSON_CONTENT_TYPE,
 } from "@/constants/api.ts";
 import AuthService from "@/services/AuthService.ts";
+
+const AXIOS_REQUEST_TIMEOUT_SECONDS = 30;
 
 const createAxiosInstance = (baseUrl: string): AxiosInstance => {
   const instance: AxiosInstance = axios.create({
