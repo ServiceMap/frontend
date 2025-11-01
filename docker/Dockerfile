@@ -1,19 +1,17 @@
-FROM --platform=linux/arm64 node:20-alpine
+FROM node:20-alpine
 
-# Create app directory
-WORKDIR /usr/src/app
+WORKDIR /app
 
-# Install dependencies separately to leverage Docker caching
-COPY package*.json ./
+COPY package.json .
 
-# Install dependencies
-RUN npm ci
+RUN npm install
 
-# Copy all source files
 COPY . .
 
-# Expose Vite dev server port
+RUN chmod +x /app/docker/entrypoint.sh
+
+RUN npm run build
+
 EXPOSE 5173
 
-# Run in dev mode with hot reload
-CMD ["npm", "run", "dev", "--", "--host"]
+ENTRYPOINT ["/app/docker/entrypoint.sh"]

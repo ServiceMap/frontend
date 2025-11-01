@@ -3,6 +3,8 @@ dist
 build
 .git
 .github
+.idea
+.vite
 .env
 .env.local
 .DS_Store
@@ -10,3 +12,6 @@ npm-debug.log
 yarn-error.log
 .next
 coverage
+sonar-report.xml
+test-report.xml
+stripe-server-test.js
