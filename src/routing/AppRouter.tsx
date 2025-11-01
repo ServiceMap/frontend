@@ -6,6 +6,7 @@ import {
   Outlet,
   RouterProvider,
 } from "react-router-dom";
+import { t } from "i18next";
 
 import { ROLES } from "@/constants/roles.constants.ts";
 import { ROUTES } from "@/constants/routes.constants.ts";
@@ -21,11 +22,11 @@ const StripeTestPage = lazy(() => import("@/pages/payment/StripeTestPage"));
 const fallbackRender = ({ error, resetErrorBoundary }: FallbackProps) => {
   return (
     <div role="alert">
-      <p>Something went wrong:</p>
+      <p>{t("something_went_wrong")}</p>
       <pre style={{ color: "red" }}>
         {(error as { message: string }).message}
       </pre>
-      <button onClick={resetErrorBoundary}>Go back</button>
+      <button onClick={resetErrorBoundary}>{t("go_back_btn")}</button>
     </div>
   );
 };
