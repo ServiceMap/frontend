@@ -2,13 +2,13 @@ import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import App from "@/App";
+import HomePage from "@/pages/home/HomePage.tsx";
 import { AuthProvider } from "@/providers/AuthProvider.tsx";
 import { StripeProvider } from "@/providers/StripeProvider.tsx";
 import authService from "@/services/AuthService.ts";
 import { TEST_USERNAME } from "@/tests/constants.ts";
 
-describe("App", () => {
+describe("HomePage", () => {
   beforeEach(() => {
     Object.defineProperty(authService, "_isInitiated", {
       value: false,
@@ -25,13 +25,13 @@ describe("App", () => {
     render(
       <AuthProvider>
         <StripeProvider>
-          <App />
+          <HomePage />
         </StripeProvider>
       </AuthProvider>,
     );
   };
 
-  it("renders HomePage with the login button", async () => {
+  it("renders with the login button", async () => {
     renderComponent();
 
     await waitFor(() => {

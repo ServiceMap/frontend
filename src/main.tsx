@@ -1,7 +1,6 @@
-import { StrictMode } from "react";
+import { lazy, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
-import App from "@/App";
 import { initSentry } from "@/external/sentry.ts";
 import { AuthProvider } from "@/providers/AuthProvider.tsx";
 import { StripeProvider } from "@/providers/StripeProvider.tsx";
@@ -11,13 +10,15 @@ import "@/config/dayjs.config.ts";
 
 import "@/styles/index.css";
 
+const AppRouter = lazy(() => import("@/routing/AppRouter"));
+
 initSentry();
 
 createRoot(document.getElementById("root")!).render(
   <AuthProvider>
     <StrictMode>
       <StripeProvider>
-        <App />
+        <AppRouter />
       </StripeProvider>
     </StrictMode>
   </AuthProvider>,
