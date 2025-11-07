@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import { ROLES } from "@/constants/roles.constants.ts";
 import { ROUTES } from "@/constants/routes.constants.ts";
-import authService from "@/services/AuthService.ts";
+import authService from "@/services/auth.service.ts";
 
 export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
   children,

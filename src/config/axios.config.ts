@@ -11,7 +11,7 @@ import {
   CONTENT_TYPE_HEADER_NAME,
   JSON_CONTENT_TYPE,
 } from "@/constants/api.constants.ts";
-import AuthService from "@/services/AuthService.ts";
+import authService from "@/services/auth.service.ts";
 
 const AXIOS_REQUEST_TIMEOUT_SECONDS = 30;
 
@@ -27,7 +27,7 @@ const createAxiosInstance = (baseUrl: string): AxiosInstance => {
 
   instance.interceptors.request.use(
     (config: InternalAxiosRequestConfig) => {
-      const token = AuthService.token;
+      const token = authService.token;
       if (token) {
         config.headers.Authorization = `Bearer ${token}`;
       }
