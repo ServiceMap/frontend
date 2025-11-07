@@ -19,8 +19,9 @@ export default defineConfig({
       reportsDirectory: "./coverage",
       include: ["src/**/*.{ts,tsx,js,jsx}"],
       exclude: [
-        "src/**/*.test.{ts,tsx,js,jsx}",
+        "src/*.{ts,tsx,js,jsx}",
         "src/**/index.{ts,tsx,js,jsx}",
+        "src/tests",
       ],
       thresholds: {
         perFile: true,
