@@ -26,7 +26,7 @@ i18n
   .init({
     fallbackLng: i18Config.defaultLocale,
     keySeparator: false,
-    debug: AppConfig.IS_DEVELOPMENT,
+    debug: AppConfig.IS_DEVELOPMENT && !AppConfig.IS_TEST,
     interpolation: {
       escapeValue: false,
     },

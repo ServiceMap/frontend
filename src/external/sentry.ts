@@ -8,7 +8,7 @@ export const initSentry = () => {
   Sentry.init({
     dsn: AppConfig.SENTRY_DSN,
     tracesSampleRate: 1.0,
-    debug: AppConfig.IS_DEVELOPMENT,
+    debug: AppConfig.IS_DEVELOPMENT && !AppConfig.IS_TEST,
     environment: AppConfig.CURRENT_ENV,
     integrations: [
       Sentry.replayIntegration({
