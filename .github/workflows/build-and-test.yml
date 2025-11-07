@@ -42,3 +42,6 @@ jobs:
 
       - name: Run tests
         run: npm run test --if-present -- --watch=false
+
+      #- name: Run test coverage
+      #  run: npm run test:report

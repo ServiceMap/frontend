@@ -15,8 +15,22 @@ export default defineConfig({
     },
     coverage: {
       provider: "v8",
-      reporter: ["lcov"],
+      reporter: ["text", "html", "lcov"],
       reportsDirectory: "./coverage",
+      include: ["src/**/*.{ts,tsx,js,jsx}"],
+      exclude: [
+        "src/**/*.test.{ts,tsx,js,jsx}",
+        "src/**/index.{ts,tsx,js,jsx}",
+      ],
+      thresholds: {
+        perFile: true,
+        lines: 80,
+        functions: 80,
+        branches: 80,
+        statements: 80,
+      },
+      clean: true,
+      reportOnFailure: true,
     },
     reporters: [
       "default",
