@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [22.x]
+        node-version: [ 22.x ]
 
     steps:
       - name: Checkout repository
@@ -23,7 +23,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: ${{ matrix.node-version }}
-          cache: 'npm'
+          cache: "npm"
 
       - name: Install dependencies
         run: npm ci
@@ -31,8 +31,17 @@ jobs:
       - name: Type check
         run: npm run type-check --if-present
 
+      - name: Format check
+        run: npm run format:check
+
+      - name: Lint check
+        run: npm run lint
+
       - name: Build UI
         run: npm run build
 
       - name: Run tests
         run: npm run test --if-present -- --watch=false
+
+      #- name: Run test coverage
+      #  run: npm run test:report

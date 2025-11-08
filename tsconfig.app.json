@@ -11,18 +11,41 @@
     /* Bundler mode */
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
     "verbatimModuleSyntax": true,
     "moduleDetection": "force",
     "noEmit": true,
     "jsx": "react-jsx",
 
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./*"],
+      "@/assets": ["./assets/*"],
+      "@/components/*": ["./components/*"],
+      "@/config/*": ["./config/*"],
+      "@/constants/*": ["./constants/*"],
+      "@/contexts/*": ["./contexts/*"],
+      "@/hooks/*": ["./hooks/*"],
+      "@/pages/*": ["./pages/*"],
+      "@/providers/*": ["./providers/*"],
+      "@/routing/*": ["./routing/*"],
+      "@/services/*": ["./services/*"],
+      "@/store/*": ["./store/*"],
+      "@/styles/*": ["./styles/*"],
+      "@/tests/*": ["./tests/*"],
+      "@/types/*": ["./types/*"],
+      "@/utils/*": ["./utils/*"]
+    },
+
     /* Linting */
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "allowSyntheticDefaultImports": true
   },
   "include": ["src"]
 }
