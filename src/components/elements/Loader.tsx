@@ -1,5 +1,8 @@
 import { useTranslation } from "react-i18next";
 
+import Spinner from "@/components/ui/Spinner.tsx";
+import { cn } from "@/utils/cn.ts";
+
 interface LoadingComponentProps {
   fullscreen?: boolean;
   isLoading?: boolean;
@@ -10,9 +13,13 @@ const Loader = ({ fullscreen, isLoading = true }: LoadingComponentProps) => {
 
   return (
     isLoading && (
-      <div className={`loading-screen ${fullscreen ? "fullscreen" : ""}`}>
-        <div className="spinner-border"></div>
-        <div className="loading-text">{t("loading_message")}</div>
+      <div
+        className={cn("flex justify-center items-center gap-2", {
+          "w-dvw h-dvh": fullscreen,
+        })}
+      >
+        <Spinner className="size-8" />
+        <span>{t("loading_message")}</span>
       </div>
     )
   );

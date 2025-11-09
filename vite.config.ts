@@ -1,10 +1,33 @@
+import tailwindcss from "@tailwindcss/vite";
 import react from "@vitejs/plugin-react";
+import path from "path";
 import tsconfigPaths from "vite-tsconfig-paths";
 import { configDefaults, defineConfig } from "vitest/config";
 
-// https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tsconfigPaths()],
+  plugins: [react(), tsconfigPaths(), tailwindcss()],
+  resolve: {
+    alias: {
+      "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  server: {
+    headers: {
+      "Referrer-Policy": "no-referrer",
+    },
+    port: 5173,
+    host: true,
+    strictPort: true,
+    origin: "http://0.0.0.0:5173",
+  },
+  preview: {
+    headers: {
+      "Referrer-Policy": "no-referrer",
+    },
+    port: 5173,
+    host: true,
+    strictPort: true,
+  },
   test: {
     globals: true,
     deps: {
@@ -43,22 +66,5 @@ export default defineConfig({
     setupFiles: "./src/tests/setup.ts",
     mockReset: true,
     exclude: [...configDefaults.exclude],
-  },
-  server: {
-    headers: {
-      "Referrer-Policy": "no-referrer",
-    },
-    port: 5173,
-    host: true,
-    strictPort: true,
-    origin: "http://0.0.0.0:5173",
-  },
-  preview: {
-    headers: {
-      "Referrer-Policy": "no-referrer",
-    },
-    port: 5173,
-    host: true,
-    strictPort: true,
   },
 });

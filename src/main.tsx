@@ -8,7 +8,7 @@ import { StripeProvider } from "@/providers/StripeProvider.tsx";
 import "@/config/i18n.config.ts";
 import "@/config/dayjs.config.ts";
 
-import "@/styles/index.css";
+import "@/styles/global.css";
 
 const AppRouter = lazy(() => import("@/routing/AppRouter"));
 

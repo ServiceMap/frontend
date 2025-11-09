@@ -25,7 +25,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({
     };
   }, []);
 
-  if (!authService.isInitiated) return <Loader />;
+  if (!authService.isInitiated) return <Loader fullscreen />;
 
   return (
     <AuthContext.Provider
