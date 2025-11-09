@@ -3,6 +3,8 @@ import dayjs from "dayjs";
 
 import { LanguageSelector } from "@/components/elements/LanguageSelector.tsx";
 import { StripeSandboxButton } from "@/components/elements/StripeSandboxButton.tsx";
+import { ThemeSwitcher } from "@/components/elements/ThemeSwitcher.tsx";
+import { Button } from "@/components/ui/shadcn/button.tsx";
 import { useAuth } from "@/hooks/useAuth";
 
 const HomePage = () => {
@@ -17,6 +19,11 @@ const HomePage = () => {
 
       <p>
         <LanguageSelector />
+      </p>
+
+      <p>
+        <ThemeSwitcher />
+        <Button>Click</Button>
       </p>
 
       <p>{dayjs().format()}</p>

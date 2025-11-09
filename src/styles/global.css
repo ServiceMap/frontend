@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import "tailwindcss" prefix(tw);
 @import "tw-animate-css";
 
 @plugin "tailwindcss-animate";
@@ -119,11 +119,47 @@
   --sidebar-ring: oklch(0.551 0.027 264.364);
 }
 
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
-  }
+.orange {
+  --background: oklch(0.98 0.02 75);
+  --foreground: oklch(0.22 0.04 60);
+  --card: oklch(0.99 0.015 75);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.99 0.015 75);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(0.72 0.21 65);
+  --primary-foreground: oklch(0.99 0.005 90);
+  --secondary: oklch(0.93 0.04 70);
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.94 0.03 70);
+  --muted-foreground: oklch(0.47 0.05 50);
+  --accent: oklch(0.88 0.09 70);
+  --accent-foreground: oklch(0.23 0.05 60);
+  --destructive: oklch(0.62 0.21 25);
+  --destructive-foreground: oklch(0.99 0.005 90);
+  --border: oklch(0.9 0.02 75);
+  --input: oklch(0.9 0.02 75);
+  --ring: oklch(0.72 0.21 65);
+  --chart-1: oklch(0.66 0.22 65);
+  --chart-2: oklch(0.7 0.16 100);
+  --chart-3: oklch(0.56 0.19 30);
+  --chart-4: oklch(0.8 0.18 85);
+  --chart-5: oklch(0.75 0.21 55);
+  --sidebar: oklch(0.96 0.02 75);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: oklch(0.92 0.04 70);
+  --sidebar-accent-foreground: var(--foreground);
+  --sidebar-border: oklch(0.9 0.02 75);
+  --sidebar-ring: var(--ring);
+}
+
+* {
+  border-color: var(--border);
+  outline-color: color-mix(in oklch, var(--ring) 50%, transparent);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
 }

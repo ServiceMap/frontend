@@ -8,13 +8,13 @@
     "css": "src/styles/global.css",
     "baseColor": "slate",
     "cssVariables": true,
-    "prefix": ""
+    "prefix": "tw"
   },
   "iconLibrary": "lucide",
   "aliases": {
     "components": "@/components",
     "utils": "@/utils/cn",
-    "ui": "@/components/ui",
+    "ui": "@/components/ui/shadcn",
     "lib": "@/lib",
     "hooks": "@/hooks"
   },
