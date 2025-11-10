@@ -7,11 +7,11 @@ import {
 } from "react-router-dom";
 import { t } from "i18next";
 
-import { Layout } from "@/components/layout/Layout.tsx";
 import { ROLES } from "@/constants/roles.constants.ts";
 import { ROUTES } from "@/constants/routes.constants.ts";
 import { ProtectedRoute, RoleBasedRoute } from "@/routing/RouteGuards.tsx";
 
+const Layout = lazy(() => import("@/components/layout/Layout"));
 const DashboardPage = lazy(() => import("@/pages/dashboard/DashboardPage"));
 const ErrorPage = lazy(() => import("@/pages/error/ErrorPage"));
 const NotFoundPage = lazy(() => import("@/pages/error/NotFoundPage"));
