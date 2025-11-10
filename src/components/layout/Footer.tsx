@@ -1,3 +1,5 @@
+import { useTranslation } from "react-i18next";
+
 const socialMedia = [
   {
     name: "Twitter",
@@ -17,17 +19,18 @@ const socialMedia = [
 ];
 
 export function Footer() {
+  const { t } = useTranslation();
   return (
     <footer className="tw:mt-auto tw:flex tw:min-w-dvw tw:flex-col tw:justify-between tw:gap-2 tw:border-t tw:px-6 tw:py-4 tw:text-center tw:text-sm tw:md:flex-row">
       <div className="tw:flex tw:justify-center tw:gap-4 tw:md:order-2">
         {socialMedia.map((data) => (
-          <a href={data.link} target="_blank" rel="noreferrer">
+          <a key={data.link} href={data.link} target="_blank" rel="noreferrer">
             <span className="tw:max-md:hidden">{data.name}</span> {data.icon}
           </a>
         ))}
       </div>
       <p className="tw:text-primary">
-        &copy; {new Date().getFullYear()} ServiceMap. All rights reserved.
+        &copy; {new Date().getFullYear()} ServiceMap. {t("all_rights_reserved")}
       </p>
     </footer>
   );

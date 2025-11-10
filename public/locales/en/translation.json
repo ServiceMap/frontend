@@ -1,12 +1,13 @@
 {
-  "welcome_message": "Welcome to ServiceMap",
-  "not_found_message": "NOT FOUND",
-  "go_back_btn": "Go back",
-  "go_back_to_home_btn": "Go back to Home",
-  "login_btn": "Login",
-  "logout_btn": "Logout",
-  "hello_user_message": "Hello, <strong>{{username}}</strong>!",
   "loading_message": "Loading...",
+  "all_rights_reserved": "All rights reserved",
   "invalid_realm_or_access_denied": "Invalid realm or access denied",
-  "something_went_wrong": "Something went wrong!"
+  "go_back_to_home_btn": "Go back to Home",
+  "not_found_message": "NOT FOUND",
+  "welcome_message": "Welcome to ServiceMap",
+  "login_btn": "Login",
+  "hello_user_message": "Hello, <strong>{{username}}</strong>!",
+  "logout_btn": "Logout",
+  "something_went_wrong": "Something went wrong!",
+  "go_back_btn": "Go back"
 }

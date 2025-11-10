@@ -1,13 +1,14 @@
 import js from "@eslint/js";
 import globals from "globals";
 import tseslint from "typescript-eslint";
-import react from "eslint-plugin-react";
-import reactHooks from "eslint-plugin-react-hooks";
-import reactRefresh from "eslint-plugin-react-refresh";
+import reactPlugin from "eslint-plugin-react";
+import reactHooksPlugin from "eslint-plugin-react-hooks";
+import reactRefreshPlugin from "eslint-plugin-react-refresh";
 import { defineConfig, globalIgnores } from "eslint/config";
 import prettierPlugin from "eslint-plugin-prettier";
 import importPlugin from "eslint-plugin-import";
-import simpleImportSort from "eslint-plugin-simple-import-sort";
+import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
+import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
 
 export default defineConfig([
   globalIgnores([
@@ -17,6 +18,8 @@ export default defineConfig([
     "build",
     "public",
     "eslint.config.js",
+    "i18next-parser.config.js",
+    ".stylelintrc.cjs",
     "stripe-server-test.js",
   ]),
 
@@ -53,16 +56,25 @@ export default defineConfig([
     },
 
     plugins: {
-      react,
-      "react-hooks": reactHooks,
-      "react-refresh": reactRefresh,
+      react: reactPlugin,
+      "react-hooks": reactHooksPlugin,
+      "react-refresh": reactRefreshPlugin,
       "@typescript-eslint": tseslint.plugin,
-      prettier: prettierPlugin,
       import: importPlugin,
-      "simple-import-sort": simpleImportSort,
+      "simple-import-sort": simpleImportSortPlugin,
+      "jsx-a11y": jsxA11yPlugin,
+      prettier: prettierPlugin,
     },
 
     rules: {
+      ...reactPlugin.configs.flat.recommended.rules,
+      ...reactHooksPlugin.configs.flat.recommended.rules,
+      ...reactRefreshPlugin.configs.recommended.rules,
+      ...tseslint.plugin.configs.recommended.rules,
+      ...importPlugin.flatConfigs.recommended.rules,
+      ...jsxA11yPlugin.flatConfigs.recommended.rules,
+      ...prettierPlugin.configs.recommended.rules,
+
       // Formatting & style
       "prettier/prettier": "error",
       "no-console": "warn",
