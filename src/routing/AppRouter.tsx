@@ -3,11 +3,11 @@ import { ErrorBoundary, type FallbackProps } from "react-error-boundary";
 import {
   createBrowserRouter,
   Navigate,
-  Outlet,
   RouterProvider,
 } from "react-router-dom";
 import { t } from "i18next";
 
+import { Layout } from "@/components/layout/Layout.tsx";
 import { ROLES } from "@/constants/roles.constants.ts";
 import { ROUTES } from "@/constants/routes.constants.ts";
 import { ProtectedRoute, RoleBasedRoute } from "@/routing/RouteGuards.tsx";
@@ -46,7 +46,7 @@ const appRouter = createBrowserRouter([
           console.error(error, info);
         }}
       >
-        <Outlet />
+        <Layout />
       </ErrorBoundary>
     ),
     children: [
