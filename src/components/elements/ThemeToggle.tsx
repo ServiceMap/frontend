@@ -61,13 +61,17 @@ function ThemeToggle() {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button variant="ghost" size="icon">
+        <Button className="tw:cursor-pointer" variant="ghost" size="icon">
           <Palette size={18} />
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         {items.map((i) => (
-          <DropdownMenuItem key={i.value} onClick={() => setTheme(i.value)}>
+          <DropdownMenuItem
+            className="tw:cursor-pointer"
+            key={i.value}
+            onClick={() => setTheme(i.value)}
+          >
             {i.getIcon(theme === i.value)}
             <span className="tw:ml-2">{i.name}</span>
           </DropdownMenuItem>

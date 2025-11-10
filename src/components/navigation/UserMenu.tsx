@@ -2,14 +2,14 @@ import {
   Avatar,
   AvatarFallback,
   AvatarImage,
-} from "@/components/ui/shadcn/avatar";
-import { Button } from "@/components/ui/shadcn/button";
+} from "@/components/ui/shadcn/avatar.tsx";
+import { Button } from "@/components/ui/shadcn/button.tsx";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/shadcn/dropdown-menu";
+} from "@/components/ui/shadcn/dropdown-menu.tsx";
 import authService from "@/services/auth.service.ts";
 
 export function UserMenu() {
@@ -30,13 +30,22 @@ export function UserMenu() {
         </Avatar>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
-        <DropdownMenuItem onClick={() => alert("Profile clicked")}>
+        <DropdownMenuItem
+          className="tw:cursor-pointer"
+          onClick={() => alert("Profile clicked")}
+        >
           Profile
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => alert("Settings clicked")}>
+        <DropdownMenuItem
+          className="tw:cursor-pointer"
+          onClick={() => alert("Settings clicked")}
+        >
           Settings
         </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => void authService.logout()}>
+        <DropdownMenuItem
+          className="tw:cursor-pointer"
+          onClick={() => void authService.logout()}
+        >
           Logout
         </DropdownMenuItem>
       </DropdownMenuContent>
