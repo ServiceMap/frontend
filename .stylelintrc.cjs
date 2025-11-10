@@ -12,6 +12,7 @@ module.exports = {
     "block-no-empty": true,
     "color-no-invalid-hex": true,
     "declaration-block-no-duplicate-properties": true,
+    "selector-class-pattern": null,
 
     // SCSS rules
     "scss/dollar-variable-pattern": "^[_a-z]+[a-z0-9-]*$",
@@ -44,24 +45,14 @@ module.exports = {
     "hue-degree-notation": "number",
     "color-named": "never",
     "max-nesting-depth": 5,
+
+    "order/order": [
+      "custom-properties",
+      "dollar-variables",
+      "declarations",
+      "rules",
+      "at-rules",
+    ],
+    "order/properties-alphabetical-order": true,
   },
-  overrides: [
-    {
-      files: ["**/*.css", "**/*.scss"],
-      rules: {
-        "selector-class-pattern": null,
-      },
-    },
-    {
-      files: ["**/*.tsx", "**/*.jsx"],
-      rules: {
-        "selector-class-pattern": [
-          "^tw:",
-          {
-            message: "Class selectors should start with Tailwind prefix `tw:`.",
-          },
-        ],
-      },
-    },
-  ],
 };

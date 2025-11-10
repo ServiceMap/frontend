@@ -2,5 +2,6 @@
   "endOfLine": "auto",
   "plugins": ["prettier-plugin-css-order", "prettier-plugin-tailwindcss"],
   "tailwindStylesheet": "./src/styles/global.css",
-  "tailwindFunctions": ["clsx", "cva", "cn", "tw"]
+  "tailwindFunctions": ["clsx", "cva", "cn", "tw"],
+  "cssDeclarationSorterOrder": "alphabetical"
 }
