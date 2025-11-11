@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 
-import { type Locale, LocaleNames } from "@/config/i18n.config.ts";
+import { type Locale, LocaleNames } from "@/shared/configs/i18n.config.ts";
 
 export const LanguageSelector: React.FC = () => {
   const { i18n } = useTranslation();

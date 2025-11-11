@@ -1,6 +1,6 @@
 import { loadStripe, type Stripe } from "@stripe/stripe-js";
 
-import { AppConfig } from "@/config/env.config.ts";
+import { AppConfig } from "@/shared/configs/env.config.ts";
 
 let stripePromise: Promise<Stripe | null> | undefined;
 

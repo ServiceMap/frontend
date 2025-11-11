@@ -1,6 +1,6 @@
 import * as Sentry from "@sentry/react";
 
-import { AppConfig } from "@/config/env.config.ts";
+import { AppConfig } from "@/shared/configs/env.config.ts";
 
 export const initSentry = () => {
   if (!AppConfig.IS_PRODUCTION || !AppConfig.SENTRY_DSN) return;

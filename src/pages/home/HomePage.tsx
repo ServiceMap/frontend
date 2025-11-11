@@ -5,7 +5,7 @@ import { LanguageSelector } from "@/components/elements/LanguageSelector.tsx";
 import { StripeSandboxButton } from "@/components/elements/StripeSandboxButton.tsx";
 import { ThemeSwitcher } from "@/components/elements/ThemeSwitcher.tsx";
 import { Button } from "@/components/ui/shadcn/button.tsx";
-import { useAuth } from "@/hooks/useAuth";
+import { useAuth } from "@/shared/auth";
 
 const HomePage = () => {
   const { t } = useTranslation();

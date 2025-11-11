@@ -1,25 +1,13 @@
-import { lazy, StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
+import App from "@/app/App.tsx";
 import { initSentry } from "@/external/sentry.ts";
-import { AuthProvider } from "@/providers/AuthProvider.tsx";
-import { StripeProvider } from "@/providers/StripeProvider.tsx";
 
-import "@/config/i18n.config.ts";
-import "@/config/dayjs.config.ts";
+import "@/shared/configs/i18n.config.ts";
+import "@/shared/configs/dayjs.config.ts";
 
-import "@/styles/global.css";
-
-const AppRouter = lazy(() => import("@/routing/AppRouter"));
+import "@/app/styles/global.css";
 
 initSentry();
 
-createRoot(document.getElementById("root")!).render(
-  <AuthProvider>
-    <StrictMode>
-      <StripeProvider>
-        <AppRouter />
-      </StripeProvider>
-    </StrictMode>
-  </AuthProvider>,
-);
+createRoot(document.getElementById("root")!).render(<App />);

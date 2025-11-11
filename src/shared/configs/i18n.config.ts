@@ -4,7 +4,7 @@ import i18n from "i18next";
 import detector from "i18next-browser-languagedetector";
 import backend from "i18next-http-backend";
 
-import { AppConfig } from "@/config/env.config.ts";
+import { AppConfig } from "@/shared/configs/env.config.ts";
 
 export const i18Config = {
   defaultLocale: "en",

@@ -10,7 +10,7 @@ import {
   TEST_KEYCLOAK_URL,
   TEST_NOT_EXISTED_URL,
   TEST_SHOW_UNIMPLEMENTED_FEATURES,
-  TEST_TIMEOUT,
+  TEST_TIMEOUT
 } from "@/tests/constants.ts";
 import { i18nextHandlers } from "@/tests/mocks/i18next/i18next.handlers.ts";
 import { keycloakHandlers } from "@/tests/mocks/keycloak/keycloak.handlers.ts";
@@ -20,10 +20,10 @@ import "@testing-library/jest-dom";
 
 vi.mock("keycloak-js", () => import("@/tests/__mocks__/keycloak-js.ts"));
 
-vi.mock("@/config/env.config.ts", async () => {
-  const actual = await vi.importActual<typeof import("@/config/env.config.ts")>(
-    "@/config/env.config.ts",
-  );
+vi.mock("@/shared/configs/env.config.ts", async () => {
+  const actual = await vi.importActual<
+    typeof import("@/shared/configs/env.config.ts")
+  >("@/shared/configs/env.config.ts");
 
   return {
     ...actual,

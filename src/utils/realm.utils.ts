@@ -1,4 +1,4 @@
-import { AppConfig } from "@/config/env.config.ts";
+import { AppConfig } from "@/shared/configs/env.config.ts";
 
 export const getRealmFromHost = (
   host: string = window.location.hostname,
