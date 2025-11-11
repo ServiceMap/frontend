@@ -6,7 +6,7 @@ export function Footer() {
   const { t } = useTranslation();
 
   return (
-    <footer className="tw:mt-10 tw:border-t">
+    <footer className="tw:border-t">
       <div className="tw:mx-auto tw:grid tw:max-w-7xl tw:grid-cols-1 tw:gap-8 tw:px-6 tw:py-10 tw:sm:grid-cols-2 tw:md:grid-cols-3">
         <div>
           <Link

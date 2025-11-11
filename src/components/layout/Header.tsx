@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 
-import { MobileMenu } from "@/components/navigation/MobileMenu.tsx";
 import { ThemeToggle } from "@/components/elements/ThemeToggle";
+import { MobileMenu } from "@/components/navigation/MobileMenu.tsx";
 import { UserMenu } from "@/components/navigation/UserMenu.tsx";
 import { Button } from "@/components/ui/shadcn/button.tsx";
 import {

@@ -9,6 +9,7 @@ import prettierPlugin from "eslint-plugin-prettier";
 import importPlugin from "eslint-plugin-import";
 import simpleImportSortPlugin from "eslint-plugin-simple-import-sort";
 import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
+import boundariesPlugin from "eslint-plugin-boundaries";
 
 export default defineConfig([
   globalIgnores([
@@ -38,6 +39,14 @@ export default defineConfig([
           project: "./tsconfig.json",
         },
       },
+      "boundaries/elements": [
+        { type: "app", pattern: "src/app" },
+        { type: "pages", pattern: "src/pages" },
+        { type: "widgets", pattern: "src/widgets" },
+        { type: "features", pattern: "src/features" },
+        { type: "entities", pattern: "src/entities" },
+        { type: "shared", pattern: "src/shared" },
+      ],
     },
 
     languageOptions: {
@@ -59,6 +68,7 @@ export default defineConfig([
       "react-hooks": reactHooksPlugin,
       "react-refresh": reactRefreshPlugin,
       "@typescript-eslint": tseslint.plugin,
+      boundaries: boundariesPlugin,
       import: importPlugin,
       "simple-import-sort": simpleImportSortPlugin,
       "jsx-a11y": jsxA11yPlugin,
@@ -70,6 +80,7 @@ export default defineConfig([
       ...reactHooksPlugin.configs.flat.recommended.rules,
       ...reactRefreshPlugin.configs.recommended.rules,
       ...tseslint.plugin.configs.recommended.rules,
+      ...boundariesPlugin.configs.recommended.rules,
       ...importPlugin.flatConfigs.recommended.rules,
       ...jsxA11yPlugin.flatConfigs.recommended.rules,
       ...prettierPlugin.configs.recommended.rules,
@@ -83,6 +94,7 @@ export default defineConfig([
         "warn",
         { allowConstantExport: true },
       ],
+      "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "error",
       "react/react-in-jsx-scope": "off",
       "react/prop-types": "off",
@@ -110,6 +122,28 @@ export default defineConfig([
         },
       ],
       "simple-import-sort/exports": "error",
+
+      // Dependency boundaries
+      "boundaries/element-types": [
+        2,
+        {
+          default: "disallow",
+          rules: [
+            {
+              from: "app",
+              allow: ["pages", "widgets", "features", "entities", "shared"],
+            },
+            {
+              from: "pages",
+              allow: ["widgets", "features", "entities", "shared"],
+            },
+            { from: "widgets", allow: ["features", "entities", "shared"] },
+            { from: "features", allow: ["entities", "shared"] },
+            { from: "entities", allow: ["shared"] },
+            { from: "shared", allow: ["shared"] },
+          ],
+        },
+      ],
     },
   },
 ]);
