@@ -81,7 +81,7 @@ class AuthService extends EventTarget {
       onLoad: "check-sso",
       pkceMethod: "S256",
       checkLoginIframe: true,
-      silentCheckSsoRedirectUri: `${window.location.origin}/silent-check-sso.html`,
+      silentCheckSsoRedirectUri: `${window.location.origin}/auth/silent-check-sso.html`,
     }).catch((err) => {
       console.error("Keycloak init error", err);
       const navigate = useNavigate();
