@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { ROUTES } from "@/constants/routes.constants.ts";
+import { ROUTES } from "@/shared/constants/routes.constants.ts";
 
-const NotFoundPage = () => {
+export const NotFoundPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 

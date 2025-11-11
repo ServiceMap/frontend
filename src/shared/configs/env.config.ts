@@ -1,5 +1,5 @@
-import type { AppConfigType } from "@/types/env.types.ts";
-import { stringToBoolean } from "@/utils/type.utils.ts";
+import type { AppConfigType } from "@/shared/types";
+import { stringToBoolean } from "@/shared/utils";
 
 const VITE_TEST_MODE_NAME = "test";
 

@@ -10,7 +10,7 @@ import {
   TEST_KEYCLOAK_URL,
   TEST_NOT_EXISTED_URL,
   TEST_SHOW_UNIMPLEMENTED_FEATURES,
-  TEST_TIMEOUT
+  TEST_TIMEOUT,
 } from "@/tests/constants.ts";
 import { i18nextHandlers } from "@/tests/mocks/i18next/i18next.handlers.ts";
 import { keycloakHandlers } from "@/tests/mocks/keycloak/keycloak.handlers.ts";

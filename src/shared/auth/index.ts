@@ -1,3 +1,3 @@
-export { AuthContext } from "@/shared/auth/AuthContext";
-export { useAuth } from "@/shared/auth/useAuth";
-export { authService, AUTH_EVENT_NAME } from "@/shared/auth/auth.service";
+export { AUTH_EVENT_NAME, authService } from "@/shared/auth/auth.service.ts";
+export { AuthContext } from "@/shared/auth/AuthContext.ts";
+export { useAuth } from "@/shared/auth/useAuth.ts";

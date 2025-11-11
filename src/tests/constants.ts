@@ -1,4 +1,4 @@
-import { ROLES } from "@/constants/roles.constants.ts";
+import { ROLES } from "@/shared/constants/roles.constants.ts";
 
 export const TEST_TIMEOUT = 5000;
 

@@ -144,6 +144,36 @@ export default defineConfig([
           ],
         },
       ],
+
+      /*
+      "import/no-restricted-paths": [
+        "error",
+        {
+          zones: [
+            {
+              target: "./src",
+              from: "./src/*",
+              except: [
+                "./src/app",
+                "./src/pages",
+                "./src/widgets",
+                "./src/features",
+                "./src/entities",
+                "./src/shared",
+              ],
+              message:
+                "❌ Creating new top-level folders in src/ is forbidden. Use one of: app, pages, widgets, features, entities, shared.",
+            },
+          ],
+        },
+      ],
+       */
+    },
+  },
+  {
+    files: ["**/*.test.{ts,tsx,js,jsx}"],
+    rules: {
+      "boundaries/element-types": "off",
     },
   },
 ]);

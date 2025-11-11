@@ -1,13 +1,12 @@
 import { Trans, useTranslation } from "react-i18next";
 import dayjs from "dayjs";
 
-import { LanguageSelector } from "@/components/elements/LanguageSelector.tsx";
-import { StripeSandboxButton } from "@/components/elements/StripeSandboxButton.tsx";
-import { ThemeSwitcher } from "@/components/elements/ThemeSwitcher.tsx";
-import { Button } from "@/components/ui/shadcn/button.tsx";
+import { LanguageSelector } from "@/features/language-switcher";
+import { StripeSandboxButton } from "@/features/payments";
 import { useAuth } from "@/shared/auth";
+import { Button } from "@/shared/ui/shadcn";
 
-const HomePage = () => {
+export const HomePage = () => {
   const { t } = useTranslation();
   const { isLoggedIn, user, login, logout } = useAuth();
 
@@ -22,7 +21,6 @@ const HomePage = () => {
       </p>
 
       <p>
-        <ThemeSwitcher />
         <Button>Click</Button>
       </p>
 

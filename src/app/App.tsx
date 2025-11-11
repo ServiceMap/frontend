@@ -1,16 +1,16 @@
-import { lazy, StrictMode } from "react";
+import { StrictMode } from "react";
 
-import { AuthProvider } from "@/app/providers/AuthProvider.tsx";
-import { StripeProvider } from "@/app/providers/StripeProvider.tsx";
+import { AuthProvider, StripeProvider, ThemeProvider } from "@/app/providers";
+import { AppRouter } from "@/app/routes";
 
-const AppRouter = lazy(() => import("@/routing/AppRouter.tsx"));
-
-const App = () => {
+export const App = () => {
   return (
     <AuthProvider>
       <StrictMode>
         <StripeProvider>
-          <AppRouter />
+          <ThemeProvider>
+            <AppRouter />
+          </ThemeProvider>
         </StripeProvider>
       </StrictMode>
     </AuthProvider>

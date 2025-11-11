@@ -5,7 +5,7 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.mock.tss",
-    "css": "src/styles/global.css",
+    "css": "src/app/styles/global.css",
     "baseColor": "slate",
     "cssVariables": true,
     "prefix": "tw"
@@ -13,10 +13,10 @@
   "iconLibrary": "lucide",
   "aliases": {
     "components": "@/components",
-    "utils": "@/utils/cn",
+    "utils": "@/shared/utils/cn.utils",
     "ui": "@/components/ui/shadcn",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
+    "lib": "@/shared/lib",
+    "hooks": "@/shared/hooks"
   },
   "registries": {}
 }

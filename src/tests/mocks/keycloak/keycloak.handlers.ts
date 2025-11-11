@@ -1,5 +1,5 @@
-import { HTTP_METHODS } from "@/constants/api.constants.ts";
-import { API_ROUTES } from "@/constants/routes.constants.ts";
+import { HTTP_METHODS } from "@/shared/constants/api.constants.ts";
+import { API_ROUTES } from "@/shared/constants/routes.constants.ts";
 import { TEST_KEYCLOAK_URL } from "@/tests/constants.ts";
 import { mockRequest } from "@/tests/mocks/mock.utils.ts";
 

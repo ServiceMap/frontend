@@ -1,6 +1,6 @@
 import { createRoot } from "react-dom/client";
 
-import App from "@/app/App.tsx";
+import { App } from "@/app";
 import { initSentry } from "@/shared/configs/external/sentry.ts";
 
 import "@/shared/configs/i18n.config.ts";

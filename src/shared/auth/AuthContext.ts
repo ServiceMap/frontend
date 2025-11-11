@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-import type { User } from "@/types/user.types.ts";
+import type { User } from "@/shared/types";
 
 interface AuthContextProps {
   isLoggedIn: boolean;
