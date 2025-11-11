@@ -161,4 +161,4 @@ class AuthService extends EventTarget {
 }
 
 const authService = new AuthService();
-export default authService;
+export { authService };

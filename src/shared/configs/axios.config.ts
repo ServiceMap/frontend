@@ -1,16 +1,7 @@
-import axios, {
-  type AxiosError,
-  type AxiosInstance,
-  type AxiosResponse,
-  type InternalAxiosRequestConfig,
-} from "axios";
+import axios, { type AxiosError, type AxiosInstance, type AxiosResponse, type InternalAxiosRequestConfig } from "axios";
 
-import {
-  ACCEPT_HEADER_NAME,
-  CONTENT_TYPE_HEADER_NAME,
-  JSON_CONTENT_TYPE,
-} from "@/constants/api.constants.ts";
-import authService from "@/services/auth.service.ts";
+import { ACCEPT_HEADER_NAME, CONTENT_TYPE_HEADER_NAME, JSON_CONTENT_TYPE } from "@/constants/api.constants.ts";
+import { authService } from "@/shared/auth";
 import { AppConfig } from "@/shared/configs/env.config.ts";
 
 const AXIOS_REQUEST_TIMEOUT_SECONDS = 30;

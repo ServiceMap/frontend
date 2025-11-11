@@ -1,16 +1,12 @@
-import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-} from "@/components/ui/shadcn/avatar.tsx";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/shadcn/avatar.tsx";
 import { Button } from "@/components/ui/shadcn/button.tsx";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuTrigger,
+  DropdownMenuTrigger
 } from "@/components/ui/shadcn/dropdown-menu.tsx";
-import authService from "@/services/auth.service.ts";
+import { authService } from "@/shared/auth";
 
 export function UserMenu() {
   if (!authService.isLoggedIn) {

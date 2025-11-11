@@ -1,7 +1,7 @@
 import React from "react";
 import { Elements } from "@stripe/react-stripe-js";
 
-import { getStripe } from "@/external/stripe.ts";
+import { getStripe } from "@/shared/configs/external/stripe.ts";
 
 interface StripeProviderProps {
   children: React.ReactNode;

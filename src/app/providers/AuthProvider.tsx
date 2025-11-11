@@ -1,7 +1,6 @@
 import React, { lazy, useEffect, useReducer } from "react";
 
-import authService, { AUTH_EVENT_NAME } from "@/services/auth.service.ts";
-import { AuthContext } from "@/shared/auth";
+import { AUTH_EVENT_NAME, AuthContext, authService } from "@/shared/auth";
 
 const Loader = lazy(() => import("@/components/elements/Loader.tsx"));
 

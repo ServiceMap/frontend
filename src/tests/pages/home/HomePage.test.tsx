@@ -5,7 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { AuthProvider } from "@/app/providers/AuthProvider.tsx";
 import { StripeProvider } from "@/app/providers/StripeProvider.tsx";
 import HomePage from "@/pages/home/HomePage.tsx";
-import authService from "@/services/auth.service.ts";
+import { authService } from "@/shared/auth";
 import { TEST_USERNAME } from "@/tests/constants.ts";
 
 describe("HomePage", () => {
