@@ -1,4 +1,2 @@
-export {
-  ProtectedRoute,
-  RoleBasedRoute,
-} from "@/app/routes/lib/guards/RouteGuards.tsx";
+export { ProtectedRoute } from "@/app/routes/lib/guards/ProtectedRoute.tsx";
+export { RoleBasedRoute } from "@/app/routes/lib/guards/RoleBasedRoute.tsx";
