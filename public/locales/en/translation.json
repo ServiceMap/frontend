@@ -1,5 +1,6 @@
 {
   "all_rights_reserved": "All rights reserved",
+  "error_text": "Error",
   "go_back_btn": "Go back",
   "go_back_to_home_btn": "Go back to Home",
   "hello_user_message": "Hello, <strong>{{username}}</strong>!",

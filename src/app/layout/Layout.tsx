@@ -10,7 +10,7 @@ export function Layout() {
       <Header />
 
       <main
-        className="tw:container tw:mx-0 tw:px-4 tw:py-4"
+        className="tw:container tw:mx-0 tw:p-4"
         style={{ minHeight: "calc(100dvh + 1px - var(--header-h))" }}
       >
         <Outlet />

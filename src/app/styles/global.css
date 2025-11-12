@@ -7,6 +7,7 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+  --header-h: 0;
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.129 0.042 264.695);
@@ -173,4 +174,14 @@
 body {
   background-color: var(--background);
   color: var(--foreground);
+  cursor: default;
+}
+
+@media only screen and (width > 480px) {
+  .Toastify__toast-container {
+    --toastify-toast-top: max(
+      var(--header-h) + var(--toastify-toast-offset),
+      env(safe-area-inset-top)
+    );
+  }
 }

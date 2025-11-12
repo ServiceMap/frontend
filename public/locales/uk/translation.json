@@ -1,5 +1,6 @@
 {
   "all_rights_reserved": "Всі права захищено",
+  "error_text": "Помилка",
   "go_back_btn": "Повернутися",
   "go_back_to_home_btn": "Повернутися на Головну",
   "hello_user_message": "Привіт, <strong>{{username}}</strong>!",
