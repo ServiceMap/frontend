@@ -6,11 +6,31 @@ import { ProtectedRoute, RoleBasedRoute } from "@/app/routes/lib/guards";
 import { ROLES } from "@/shared/constants/roles.constants.ts";
 import { ROUTES } from "@/shared/constants/routes.constants.ts";
 
-const DashboardPage = lazy(() => import("@/pages/dashboard/DashboardPage.tsx"));
-const ErrorPage = lazy(() => import("@/pages/error/ErrorPage.tsx"));
-const NotFoundPage = lazy(() => import("@/pages/not-found/NotFoundPage.tsx"));
-const HomePage = lazy(() => import("@/pages/home/HomePage.tsx"));
-const SettingsPage = lazy(() => import("@/pages/settings/SettingsPage.tsx"));
+const DashboardPage = lazy(() =>
+  import("@/pages/dashboard").then((module) => ({
+    default: module.DashboardPage,
+  })),
+);
+const ErrorPage = lazy(() =>
+  import("@/pages/error").then((module) => ({
+    default: module.ErrorPage,
+  })),
+);
+const NotFoundPage = lazy(() =>
+  import("@/pages/not-found").then((module) => ({
+    default: module.NotFoundPage,
+  })),
+);
+const HomePage = lazy(() =>
+  import("@/pages/home").then((module) => ({
+    default: module.HomePage,
+  })),
+);
+const UserSettingsPage = lazy(() =>
+  import("@/pages/user-settings").then((module) => ({
+    default: module.UserSettingsPage,
+  })),
+);
 const StripeTestPage = lazy(() => import("@/pages/payment/StripeTestPage.tsx"));
 
 export const AllRoutes: RouteObject[] = [
@@ -35,10 +55,10 @@ export const AllRoutes: RouteObject[] = [
     ),
   },
   {
-    path: ROUTES.SETTINGS,
+    path: ROUTES.USER_SETTINGS,
     element: (
       <ProtectedRoute>
-        <SettingsPage />
+        <UserSettingsPage />
       </ProtectedRoute>
     ),
   },

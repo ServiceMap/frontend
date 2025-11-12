@@ -7,10 +7,10 @@ interface IStripeProviderProps {
   children: React.ReactNode;
 }
 
-export const StripeProvider: React.FC<IStripeProviderProps> = ({
-  children,
-}) => {
+const StripeProvider: React.FC<IStripeProviderProps> = ({ children }) => {
   const stripePromise = getStripe();
 
   return <Elements stripe={stripePromise}>{children}</Elements>;
 };
+
+export { StripeProvider };

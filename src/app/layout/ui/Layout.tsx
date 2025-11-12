@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 
 import { Footer, Header } from "@/widgets/layout";
 
-export function Layout() {
+const Layout = () => {
   return (
     <div>
       <Header />
@@ -33,6 +33,6 @@ export function Layout() {
       />
     </div>
   );
-}
+};
 
-export default Layout;
+export { Layout };

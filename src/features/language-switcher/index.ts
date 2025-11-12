@@ -1,1 +1,1 @@
-export { LanguageSwitcher } from "@/features/language-switcher/ui/LanguageSwitcher.tsx";
+export * from "@/features/language-switcher/ui";

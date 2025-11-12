@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { ROUTES } from "@/shared/constants/routes.constants.ts";
 
-export const NotFoundPage = () => {
+const NotFoundPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -17,4 +17,4 @@ export const NotFoundPage = () => {
   );
 };
 
-export default NotFoundPage;
+export { NotFoundPage };

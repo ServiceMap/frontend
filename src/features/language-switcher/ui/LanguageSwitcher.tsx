@@ -1,4 +1,3 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 
 import {
@@ -14,7 +13,7 @@ import {
   SelectValue,
 } from "@/shared/ui";
 
-export const LanguageSwitcher: React.FC = () => {
+const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language as Locale;
 
@@ -41,3 +40,5 @@ export const LanguageSwitcher: React.FC = () => {
     </Select>
   );
 };
+
+export { LanguageSwitcher };

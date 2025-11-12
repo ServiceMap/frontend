@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 
+import { LanguageSwitcher } from "@/features/language-switcher";
 import { ThemeSwitcher } from "@/features/theme-switcher";
 import {
   Separator,
@@ -12,7 +13,6 @@ import {
 } from "@/shared/ui/shadcn";
 import { cn } from "@/shared/utils";
 import { UserMenu } from "@/widgets/navbar";
-import { LanguageSwitcher } from "@/features/language-switcher";
 
 interface MenuItem {
   name: string;

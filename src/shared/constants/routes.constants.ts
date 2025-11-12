@@ -5,7 +5,7 @@ export const ROUTES = {
   LOGIN: "/login",
   REGISTER: "/register",
   PROFILE: "/profile",
-  SETTINGS: "/settings",
+  USER_SETTINGS: "/user/settings",
   DASHBOARD: "/dashboard",
   PAYMENT: "/stripe-test",
   ERROR: "/error",

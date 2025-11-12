@@ -1,1 +1,1 @@
-export { StripeSandboxButton } from "@/features/payments/stripe/ui/StripeSandboxButton.tsx";
+export * from "@/features/payments/stripe/ui";

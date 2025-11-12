@@ -1,1 +1,1 @@
-export { Layout } from "@/app/layout/Layout.tsx";
+export { Layout } from "@/app/layout/ui";

@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/shared/ui/shadcn";
 
-function ThemeSwitcher() {
+const ThemeSwitcher = () => {
   const { t } = useTranslation();
   const { theme, changeTheme } = useTheme();
 
@@ -38,6 +38,6 @@ function ThemeSwitcher() {
       </DropdownMenu>
     </>
   );
-}
+};
 
 export { ThemeSwitcher };

@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useStripe } from "@stripe/react-stripe-js";
 
 import { Button } from "@/shared/ui";
 
-export const StripeSandboxButton: React.FC = () => {
+const StripeSandboxButton = () => {
   const stripe = useStripe();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
@@ -35,3 +35,5 @@ export const StripeSandboxButton: React.FC = () => {
     </Button>
   );
 };
+
+export { StripeSandboxButton };

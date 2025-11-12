@@ -6,7 +6,7 @@ import { StripeSandboxButton } from "@/features/payments";
 import { useAuth } from "@/shared/auth";
 import { Button } from "@/shared/ui";
 
-export const HomePage = () => {
+const HomePage = () => {
   const { t } = useTranslation();
   const { isLoggedIn, user, login, logout } = useAuth();
 
@@ -62,4 +62,4 @@ export const HomePage = () => {
   );
 };
 
-export default HomePage;
+export { HomePage };

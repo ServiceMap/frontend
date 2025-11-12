@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 
 import { ROUTES } from "@/shared/constants/routes.constants.ts";
 
-export const ErrorPage = () => {
+const ErrorPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -21,4 +21,4 @@ export const ErrorPage = () => {
   );
 };
 
-export default ErrorPage;
+export { ErrorPage };
