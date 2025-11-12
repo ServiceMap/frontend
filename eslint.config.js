@@ -25,8 +25,8 @@ export default defineConfig([
   ]),
 
   js.configs.recommended,
-  ...tseslint.configs.recommended,
-  ...tseslint.configs.recommendedTypeChecked,
+  tseslint.configs.recommended,
+  tseslint.configs.recommendedTypeChecked,
 
   {
     files: ["**/*.{ts,tsx,js,jsx}"],
@@ -35,7 +35,6 @@ export default defineConfig([
       react: { version: "detect" },
       "import/resolver": {
         typescript: {
-          alwaysTryTypes: true,
           project: "./tsconfig.json",
         },
       },

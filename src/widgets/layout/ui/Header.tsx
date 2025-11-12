@@ -1,15 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 
 import { ThemeToggle } from "@/features/theme-toggle";
+import { useElementSize } from "@/shared/hooks";
+import { CSS_VARS } from "@/shared/theme";
 import {
   Button,
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/shared/ui/shadcn";
+import { setCssVariables } from "@/shared/utils";
 import { MobileMenu, UserMenu } from "@/widgets/navbar";
+
+import useDebounce from "../../../shared/hooks/useDebounce.ts";
 
 const menu = [
   { name: "Home", to: "/" },
@@ -24,10 +29,34 @@ const menu = [
 ];
 
 export function Header() {
+  const { ref: headerRef, size: headerSize } = useElementSize();
+  const setCssVariablesDebounce = useDebounce();
+
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  useEffect(() => {
+    const height = headerSize.height;
+    const width = headerSize.width;
+
+    setCssVariablesDebounce(() => {
+      setCssVariables([
+        {
+          property: CSS_VARS.headerH,
+          value: `${height}px`,
+        },
+        {
+          property: CSS_VARS.headerW,
+          value: `${width}px`,
+        },
+      ]);
+    });
+  }, [headerSize.height, headerSize.width, setCssVariablesDebounce]);
+
   return (
-    <header className="tw:flex tw:items-stretch tw:justify-between tw:border-b tw:px-6 tw:py-3">
+    <header
+      ref={headerRef}
+      className="tw:flex tw:items-stretch tw:justify-between tw:border-b tw:px-6 tw:py-3"
+    >
       <div className="tw:flex tw:h-auto tw:items-center tw:gap-4">
         <Link to="/" className="tw:text-lg tw:font-bold tw:text-primary">
           ServiceMap

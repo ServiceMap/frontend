@@ -10,6 +10,6 @@ interface IThemeProviderProps {
 export const ThemeProvider: React.FC<IThemeProviderProps> = ({ children }) => {
   const value = useAppThemeProvider();
   return (
-    <ThemeContext.Provider value={value}> {children} </ThemeContext.Provider>
+    <ThemeContext.Provider value={value}>{children}</ThemeContext.Provider>
   );
 };

@@ -1,10 +1,10 @@
 import { createContext } from "react";
 
-import type { User } from "@/shared/types";
+import type { AuthUser } from "@/shared/auth";
 
 interface AuthContextProps {
   isLoggedIn: boolean;
-  user?: User;
+  user?: AuthUser;
   login: () => Promise<void>;
   logout: () => Promise<void>;
 }

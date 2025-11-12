@@ -1,11 +1,11 @@
 import { useNavigate } from "react-router-dom";
 import Keycloak from "keycloak-js";
 
+import type { AuthUser } from "@/shared/auth";
 import { keycloakClient } from "@/shared/configs/axios.config.ts";
 import { AppConfig } from "@/shared/configs/env.config.ts";
 import { ROLES } from "@/shared/constants/roles.constants.ts";
 import { API_ROUTES, ROUTES } from "@/shared/constants/routes.constants.ts";
-import type { User } from "@/shared/types";
 import { getRealmFromHost, isRealmValid } from "@/shared/utils";
 
 export const AUTH_EVENT_NAME = "auth_event";
@@ -117,7 +117,7 @@ class AuthService extends EventTarget {
     return this.keycloak!.token;
   }
 
-  get user(): User | undefined {
+  get user(): AuthUser | undefined {
     const tokenParsed = this.keycloak!.tokenParsed;
     if (!tokenParsed) return;
 

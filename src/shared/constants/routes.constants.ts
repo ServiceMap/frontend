@@ -1,11 +1,13 @@
 export const ROUTES = {
   ROOT: "/",
+  DEFAULT: "*",
   HOME: "/home",
   LOGIN: "/login",
   REGISTER: "/register",
   PROFILE: "/profile",
   SETTINGS: "/settings",
   DASHBOARD: "/dashboard",
+  PAYMENT: "/stripe-test",
   ERROR: "/error",
   NOT_FOUND: "/404",
 } as const;
