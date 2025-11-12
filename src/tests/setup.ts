@@ -16,6 +16,8 @@ import { i18nextHandlers } from "@/tests/mocks/i18next/i18next.handlers.ts";
 import { keycloakHandlers } from "@/tests/mocks/keycloak/keycloak.handlers.ts";
 
 import "../../public/config.js";
+import "@/shared/configs/i18n.config.ts";
+import "@/shared/configs/dayjs.config.ts";
 import "@testing-library/jest-dom";
 
 vi.mock("keycloak-js", () => import("@/tests/__mocks__/keycloak-js.ts"));
