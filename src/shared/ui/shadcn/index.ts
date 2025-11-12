@@ -5,4 +5,5 @@ export * from "@/shared/ui/shadcn/navigation-menu.tsx";
 export * from "@/shared/ui/shadcn/select.tsx";
 export * from "@/shared/ui/shadcn/separator.tsx";
 export * from "@/shared/ui/shadcn/sheet.tsx";
+export * from "@/shared/ui/shadcn/skeleton.tsx";
 export * from "@/shared/ui/shadcn/spinner.tsx";
