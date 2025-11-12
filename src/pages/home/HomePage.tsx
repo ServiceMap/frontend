@@ -2,32 +2,42 @@ import { Trans, useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import dayjs from "dayjs";
 
-import { LanguageSwitcher } from "@/features/language-switcher";
 import { StripeSandboxButton } from "@/features/payments";
 import { useAuth } from "@/shared/auth";
-import { Button } from "@/shared/ui/shadcn";
+import { Button } from "@/shared/ui";
 
 export const HomePage = () => {
   const { t } = useTranslation();
   const { isLoggedIn, user, login, logout } = useAuth();
 
   toast("dd", { type: "error" });
+
   return (
-    <>
+    <div
+      className="tw:flex tw:flex-col tw:items-center tw:gap-4"
+      data-testid="home-page"
+    >
       <h1>{t("welcome_message")}</h1>
 
-      <p>{import.meta.env.MODE}</p>
-
-      <p>
-        <LanguageSwitcher />
-      </p>
-
-      <p>
-        <Button>Click</Button>
-      </p>
+      <p>Mode: {import.meta.env.MODE}</p>
 
       <p>{dayjs().format()}</p>
       <p>{dayjs().format("LLLL")}</p>
+
+      <p>
+        <Button
+          className="tw:cursor-pointer"
+          onClick={() => {
+            throw new Error("Test SENTRY button clicked!");
+          }}
+        >
+          TEST SENTRY
+        </Button>
+      </p>
+
+      <p>
+        <StripeSandboxButton />
+      </p>
 
       {!isLoggedIn ? (
         <button data-testid="login-btn" onClick={() => void login()}>
@@ -48,17 +58,7 @@ export const HomePage = () => {
           </button>
         </>
       )}
-
-      <button
-        onClick={() => {
-          throw new Error("Test SENTRY button clicked!");
-        }}
-      >
-        TEST SENTRY
-      </button>
-
-      <StripeSandboxButton />
-    </>
+    </div>
   );
 };
 
