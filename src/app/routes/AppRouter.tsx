@@ -2,7 +2,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Layout } from "@/app/layout";
-import { AllRoutes } from "@/app/routes/lib";
+import { AllRoutes } from "@/app/routes/configs";
 import { FallbackElement } from "@/app/routes/ui";
 import { ROUTES } from "@/shared/constants/routes.constants.ts";
 import { historyBackOrDefault } from "@/shared/utils";

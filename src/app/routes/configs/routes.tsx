@@ -2,7 +2,7 @@ import { lazy } from "react";
 import type { RouteObject } from "react-router";
 import { Navigate } from "react-router-dom";
 
-import { ProtectedRoute, RoleBasedRoute } from "@/app/routes/lib/guards";
+import { ProtectedRoute, RoleBasedRoute } from "@/app/routes/ui";
 import { ROLES } from "@/shared/constants/roles.constants.ts";
 import { ROUTES } from "@/shared/constants/routes.constants.ts";
 
