@@ -1,7 +1,8 @@
 import { Trans, useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
 import dayjs from "dayjs";
 
-import { LanguageSelector } from "@/features/language-switcher";
+import { LanguageSwitcher } from "@/features/language-switcher";
 import { StripeSandboxButton } from "@/features/payments";
 import { useAuth } from "@/shared/auth";
 import { Button } from "@/shared/ui/shadcn";
@@ -10,6 +11,7 @@ export const HomePage = () => {
   const { t } = useTranslation();
   const { isLoggedIn, user, login, logout } = useAuth();
 
+  toast("dd", { type: "error" });
   return (
     <>
       <h1>{t("welcome_message")}</h1>
@@ -17,7 +19,7 @@ export const HomePage = () => {
       <p>{import.meta.env.MODE}</p>
 
       <p>
-        <LanguageSelector />
+        <LanguageSwitcher />
       </p>
 
       <p>

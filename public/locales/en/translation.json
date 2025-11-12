@@ -1,6 +1,5 @@
 {
   "all_rights_reserved": "All rights reserved",
-  "error_text": "Error",
   "go_back_btn": "Go back",
   "go_back_to_home_btn": "Go back to Home",
   "hello_user_message": "Hello, <strong>{{username}}</strong>!",
@@ -10,5 +9,8 @@
   "logout_btn": "Logout",
   "not_found_message": "NOT FOUND",
   "something_went_wrong": "Something went wrong!",
-  "welcome_message": "Welcome to ServiceMap"
+  "welcome_message": "Welcome to ServiceMap",
+  "light_theme_name": "Light",
+  "dark_theme_name": "Dark",
+  "orange_theme_name": "Orange"
 }

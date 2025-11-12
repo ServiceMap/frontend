@@ -1,6 +1,5 @@
 {
   "all_rights_reserved": "Всі права захищено",
-  "error_text": "Помилка",
   "go_back_btn": "Повернутися",
   "go_back_to_home_btn": "Повернутися на Головну",
   "hello_user_message": "Привіт, <strong>{{username}}</strong>!",
@@ -10,5 +9,8 @@
   "logout_btn": "Вийти",
   "not_found_message": "Не знайдено",
   "something_went_wrong": "Щось пішло не так!",
-  "welcome_message": "Ласкаво просимо до ServiceMap"
+  "welcome_message": "Ласкаво просимо до ServiceMap",
+  "light_theme_name": "Світла",
+  "dark_theme_name": "Темна",
+  "orange_theme_name": "Помаранчева"
 }

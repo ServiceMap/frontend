@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 
-import { ThemeToggle } from "@/features/theme-toggle";
+import { ThemeSwitcher } from "@/features/theme-switcher";
 import {
   Separator,
   Sheet,
@@ -12,6 +12,7 @@ import {
 } from "@/shared/ui/shadcn";
 import { cn } from "@/shared/utils";
 import { UserMenu } from "@/widgets/navbar";
+import { LanguageSwitcher } from "@/features/language-switcher";
 
 interface MenuItem {
   name: string;
@@ -87,8 +88,11 @@ export function MobileMenu({ open, onOpenChange, menu }: MobileMenuProps) {
 
         <Separator className="tw:my-4" />
 
-        <div className="tw:flex tw:items-center tw:justify-between">
-          <ThemeToggle />
+        <div className="tw:flex tw:justify-between">
+          <span className="tw:flex tw:gap-3">
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+          </span>
           <UserMenu />
         </div>
       </SheetContent>
