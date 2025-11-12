@@ -1,13 +1,13 @@
 {
-  "loading_message": "Завантаження...",
   "all_rights_reserved": "Всі права захищено",
-  "invalid_realm_or_access_denied": "Недійсний домен або доступ заборонено",
+  "go_back_btn": "Повернутися",
   "go_back_to_home_btn": "Повернутися на Головну",
-  "not_found_message": "Не знайдено",
-  "welcome_message": "Ласкаво просимо до ServiceMap",
-  "login_btn": "Увійти",
   "hello_user_message": "Привіт, <strong>{{username}}</strong>!",
+  "invalid_realm_or_access_denied": "Недійсний домен або доступ заборонено",
+  "loading_message": "Завантаження...",
+  "login_btn": "Увійти",
   "logout_btn": "Вийти",
+  "not_found_message": "Не знайдено",
   "something_went_wrong": "Щось пішло не так!",
-  "go_back_btn": "Повернутися"
+  "welcome_message": "Ласкаво просимо до ServiceMap"
 }

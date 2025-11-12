@@ -8,7 +8,7 @@ export default {
   defaultValue: "",
   keepRemoved: false,
   createOldCatalogs: false,
-  sort: false,
+  sort: true,
   verbose: false,
   failOnWarnings: false,
   failOnUpdate: false,
