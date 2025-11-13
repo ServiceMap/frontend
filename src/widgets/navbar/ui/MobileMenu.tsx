@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 
-import { LanguageSwitcher } from "@/features/language-switcher";
-import { ThemeSwitcher } from "@/features/theme-switcher";
+import { LanguageSelector } from "@/features/language-selector";
+import { ThemeSelector } from "@/features/theme-selector";
 import {
   Separator,
   Sheet,
@@ -90,8 +90,8 @@ export function MobileMenu({ open, onOpenChange, menu }: MobileMenuProps) {
 
         <div className="tw:flex tw:justify-between">
           <span className="tw:flex tw:gap-3">
-            <LanguageSwitcher />
-            <ThemeSwitcher />
+            <LanguageSelector />
+            <ThemeSelector />
           </span>
           <UserMenu />
         </div>

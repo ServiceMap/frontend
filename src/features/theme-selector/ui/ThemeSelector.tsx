@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Palette } from "lucide-react";
 
-import { ThemeItems } from "@/features/theme-switcher/lib";
+import { ThemeItems } from "@/features/theme-selector/lib";
 import { useTheme } from "@/shared/theme";
 import {
   Button,
@@ -11,7 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/shared/ui/shadcn";
 
-const ThemeSwitcher = () => {
+const ThemeSelector = () => {
   const { t } = useTranslation();
   const { theme, changeTheme } = useTheme();
 
@@ -40,4 +40,4 @@ const ThemeSwitcher = () => {
   );
 };
 
-export { ThemeSwitcher };
+export { ThemeSelector };

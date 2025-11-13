@@ -1,9 +1,7 @@
+import { UserAvatar } from "@/entities/user";
+import { LoginButton } from "@/features/login-button";
 import { authService } from "@/shared/auth";
 import {
-  Avatar,
-  AvatarFallback,
-  AvatarImage,
-  Button,
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
@@ -12,20 +10,13 @@ import {
 
 export function UserMenu() {
   if (!authService.isLoggedIn) {
-    return (
-      <Button variant="outline" onClick={() => void authService.login()}>
-        Login
-      </Button>
-    );
+    return <LoginButton />;
   }
 
   return (
     <DropdownMenu>
       <DropdownMenuTrigger>
-        <Avatar className="tw:cursor-pointer">
-          <AvatarImage src="https://i.pravatar.cc/40" />
-          <AvatarFallback>{authService.user?.username}</AvatarFallback>
-        </Avatar>
+        <UserAvatar />
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end">
         <DropdownMenuItem

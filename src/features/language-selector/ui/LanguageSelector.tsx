@@ -13,7 +13,7 @@ import {
   SelectValue,
 } from "@/shared/ui";
 
-const LanguageSwitcher = () => {
+const LanguageSelector = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language as Locale;
 
@@ -41,4 +41,4 @@ const LanguageSwitcher = () => {
   );
 };
 
-export { LanguageSwitcher };
+export { LanguageSelector };

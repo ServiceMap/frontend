@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 
-import { LanguageSwitcher } from "@/features/language-switcher";
-import { ThemeSwitcher } from "@/features/theme-switcher";
+import { LanguageSelector } from "@/features/language-selector";
+import { ThemeSelector } from "@/features/theme-selector";
 import { useElementSize } from "@/shared/hooks";
 import { CSS_VARS } from "@/shared/theme";
 import {
@@ -101,8 +101,8 @@ export function Header() {
 
       <div className="tw:flex tw:items-center">
         <div className="tw:flex tw:items-center tw:gap-3 tw:max-md:hidden">
-          <LanguageSwitcher />
-          <ThemeSwitcher />
+          <LanguageSelector />
+          <ThemeSelector />
           <UserMenu />
         </div>
 
