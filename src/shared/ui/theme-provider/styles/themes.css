@@ -1,4 +1,7 @@
 @import "tailwindcss" prefix(tw);
+@import "tw-animate-css";
+
+@plugin "tailwindcss-animate";
 
 @custom-variant dark (&:is(.dark *));
 @custom-variant orange (&:is(.orange *));
