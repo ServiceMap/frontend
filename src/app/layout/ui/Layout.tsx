@@ -2,7 +2,8 @@ import { ScrollRestoration } from "react-router";
 import { Outlet } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 
-import { Footer, Header } from "@/widgets/layout";
+import { Footer } from "@/widgets/footer";
+import { Header } from "@/widgets/header";
 
 const Layout = () => {
   return (
