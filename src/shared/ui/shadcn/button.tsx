@@ -5,18 +5,18 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/lib";
 
 const buttonVariants = cva(
-  "tw:focus-visible:ring-ring tw:inline-flex tw:items-center tw:justify-center tw:gap-2 tw:rounded-md tw:text-sm tw:font-medium tw:whitespace-nowrap tw:transition-colors tw:focus-visible:ring-1 tw:focus-visible:outline-none tw:disabled:pointer-events-none tw:disabled:opacity-50 tw:[&_svg]:pointer-events-none tw:[&_svg]:size-4 tw:[&_svg]:shrink-0",
+  "tw:inline-flex tw:items-center tw:justify-center tw:gap-2 tw:rounded-md tw:text-sm tw:font-medium tw:whitespace-nowrap tw:transition-colors tw:focus-visible:ring-1 tw:focus-visible:ring-ring tw:focus-visible:outline-none tw:disabled:pointer-events-none tw:disabled:opacity-50 tw:[&_svg]:pointer-events-none tw:[&_svg]:size-4 tw:[&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "tw:bg-primary tw:text-primary-foreground tw:hover:bg-primary/90 tw:shadow",
+          "tw:bg-primary tw:text-primary-foreground tw:shadow tw:hover:bg-primary/90",
         destructive:
-          "tw:text-destructive-foreground tw:bg-destructive tw:hover:bg-destructive/90 tw:shadow-sm",
+          "tw:text-destructive-foreground tw:bg-destructive tw:shadow-sm tw:hover:bg-destructive/90",
         outline:
-          "tw:border-input tw:bg-background tw:hover:bg-accent tw:hover:text-accent-foreground tw:border tw:shadow-sm",
+          "tw:border tw:border-input tw:bg-background tw:shadow-sm tw:hover:bg-accent tw:hover:text-accent-foreground",
         secondary:
-          "tw:bg-secondary tw:text-secondary-foreground tw:hover:bg-secondary/80 tw:shadow-sm",
+          "tw:bg-secondary tw:text-secondary-foreground tw:shadow-sm tw:hover:bg-secondary/80",
         ghost: "tw:hover:bg-accent tw:hover:text-accent-foreground",
         link: "tw:text-primary tw:underline-offset-4 tw:hover:underline",
       },

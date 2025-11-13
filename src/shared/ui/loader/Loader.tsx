@@ -24,7 +24,7 @@ export const Loader = ({
           },
         )}
       >
-        <Spinner className="tw:text-primary tw:size-8" />
+        <Spinner className="tw:size-8 tw:text-primary" />
         <span className="tw:font-semibold">{t("loading_message")}</span>
       </div>
     )

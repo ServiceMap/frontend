@@ -29,7 +29,7 @@ const SheetOverlay = React.forwardRef<
 SheetOverlay.displayName = SheetPrimitive.Overlay.displayName;
 
 const sheetVariants = cva(
-  "tw:bg-background tw:fixed tw:z-50 tw:gap-4 tw:p-6 tw:shadow-lg tw:transition tw:ease-in-out tw:data-[state=closed]:animate-out tw:data-[state=closed]:duration-300 tw:data-[state=open]:animate-in tw:data-[state=open]:duration-500",
+  "tw:fixed tw:z-50 tw:gap-4 tw:bg-background tw:p-6 tw:shadow-lg tw:transition tw:ease-in-out tw:data-[state=closed]:animate-out tw:data-[state=closed]:duration-300 tw:data-[state=open]:animate-in tw:data-[state=open]:duration-500",
   {
     variants: {
       side: {
@@ -62,7 +62,7 @@ const SheetContent = React.forwardRef<
       className={cn(sheetVariants({ side }), className)}
       {...props}
     >
-      <SheetPrimitive.Close className="tw:ring-offset-background tw:focus:ring-ring tw:data-[state=open]:bg-secondary tw:absolute tw:top-4 tw:right-4 tw:rounded-sm tw:opacity-70 tw:transition-opacity tw:hover:opacity-100 tw:focus:ring-2 tw:focus:ring-offset-2 tw:focus:outline-none tw:disabled:pointer-events-none">
+      <SheetPrimitive.Close className="tw:absolute tw:top-4 tw:right-4 tw:rounded-sm tw:opacity-70 tw:ring-offset-background tw:transition-opacity tw:hover:opacity-100 tw:focus:ring-2 tw:focus:ring-ring tw:focus:ring-offset-2 tw:focus:outline-none tw:disabled:pointer-events-none tw:data-[state=open]:bg-secondary">
         <X className="tw:h-4 tw:w-4" />
         <span className="tw:sr-only">Close</span>
       </SheetPrimitive.Close>
@@ -106,7 +106,7 @@ const SheetTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Title
     ref={ref}
-    className={cn("tw:text-foreground tw:text-lg tw:font-semibold", className)}
+    className={cn("tw:text-lg tw:font-semibold tw:text-foreground", className)}
     {...props}
   />
 ));
@@ -118,7 +118,7 @@ const SheetDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <SheetPrimitive.Description
     ref={ref}
-    className={cn("tw:text-muted-foreground tw:text-sm", className)}
+    className={cn("tw:text-sm tw:text-muted-foreground", className)}
     {...props}
   />
 ));

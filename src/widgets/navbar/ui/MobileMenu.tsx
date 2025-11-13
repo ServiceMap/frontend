@@ -33,7 +33,7 @@ export function MobileMenu({ open, onOpenChange, menu }: MobileMenuProps) {
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right">
         <SheetHeader>
-          <SheetTitle className="tw:text-primary tw:mb-2 tw:text-lg tw:font-bold">
+          <SheetTitle className="tw:mb-2 tw:text-lg tw:font-bold tw:text-primary">
             ServiceMap
           </SheetTitle>
         </SheetHeader>
@@ -64,7 +64,7 @@ export function MobileMenu({ open, onOpenChange, menu }: MobileMenuProps) {
                         <Link
                           key={sub.to}
                           to={sub.to}
-                          className="tw:hover:bg-secondary tw:block tw:rounded tw:px-2 tw:py-1"
+                          className="tw:block tw:rounded tw:px-2 tw:py-1 tw:hover:bg-secondary"
                           onClick={() => onOpenChange(false)}
                         >
                           {sub.name}
@@ -76,7 +76,7 @@ export function MobileMenu({ open, onOpenChange, menu }: MobileMenuProps) {
               ) : (
                 <Link
                   to={item.to || "#"}
-                  className="tw:hover:text-primary tw:block tw:rounded tw:px-2 tw:py-2"
+                  className="tw:block tw:rounded tw:px-2 tw:py-2 tw:hover:text-primary"
                   onClick={() => onOpenChange(false)}
                 >
                   {item.name}
