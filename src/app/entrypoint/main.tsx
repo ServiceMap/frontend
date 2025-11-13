@@ -6,8 +6,8 @@ import { App } from "@/app/entrypoint/App.tsx";
 import "@/app/config/i18n.ts";
 import "@/app/config/dayjs.ts";
 
-import "@/app/styles/global.css";
 import "@/shared/ui/theme-provider/styles/styles.css";
+import "@/app/styles/global.css";
 
 initSentry();
 

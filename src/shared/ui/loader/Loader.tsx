@@ -17,12 +17,15 @@ export const Loader = ({
   return (
     isLoading && (
       <div
-        className={cn("tw:flex tw:items-center tw:justify-center tw:gap-2", {
-          "tw:h-dvh tw:w-dvw": fullscreen,
-        })}
+        className={cn(
+          "tw:flex tw:grow tw:items-center tw:justify-center tw:gap-2",
+          {
+            "tw:fixed tw:inset-0": fullscreen,
+          },
+        )}
       >
-        <Spinner className="tw:size-8" />
-        <span>{t("loading_message")}</span>
+        <Spinner className="tw:text-primary tw:size-8" />
+        <span className="tw:font-semibold">{t("loading_message")}</span>
       </div>
     )
   );
