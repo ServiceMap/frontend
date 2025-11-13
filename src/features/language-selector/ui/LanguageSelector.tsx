@@ -1,10 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import {
-  i18Config,
-  type Locale,
-  LocaleNames,
-} from "@/shared/configs/i18n.config.ts";
+import { i18Config, type Locale, LocaleNames } from "@/shared/configs";
 import {
   Select,
   SelectContent,

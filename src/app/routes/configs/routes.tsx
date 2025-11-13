@@ -3,8 +3,8 @@ import type { RouteObject } from "react-router";
 import { Navigate } from "react-router-dom";
 
 import { ProtectedRoute, RoleBasedRoute } from "@/app/routes/ui";
+import { PAGES_ROUTES } from "@/shared/configs";
 import { ROLES } from "@/shared/constants/roles.constants.ts";
-import { ROUTES } from "@/shared/constants/routes.constants.ts";
 
 const DashboardPage = lazy(() =>
   import("@/pages/dashboard").then((module) => ({
@@ -36,14 +36,14 @@ const StripeTestPage = lazy(() => import("@/pages/payment/StripeTestPage.tsx"));
 export const AllRoutes: RouteObject[] = [
   {
     index: true,
-    element: <Navigate to={ROUTES.HOME} replace />,
+    element: <Navigate to={PAGES_ROUTES.HOME} replace />,
   },
   {
-    path: ROUTES.HOME,
+    path: PAGES_ROUTES.HOME,
     element: <HomePage />,
   },
   {
-    path: ROUTES.DASHBOARD,
+    path: PAGES_ROUTES.DASHBOARD,
     element: (
       <ProtectedRoute>
         <RoleBasedRoute
@@ -55,7 +55,7 @@ export const AllRoutes: RouteObject[] = [
     ),
   },
   {
-    path: ROUTES.USER_SETTINGS,
+    path: PAGES_ROUTES.USER_SETTINGS,
     element: (
       <ProtectedRoute>
         <UserSettingsPage />
@@ -63,15 +63,15 @@ export const AllRoutes: RouteObject[] = [
     ),
   },
   {
-    path: ROUTES.PAYMENT,
+    path: PAGES_ROUTES.PAYMENT,
     element: <StripeTestPage />,
   },
   {
-    path: ROUTES.ERROR,
+    path: PAGES_ROUTES.ERROR,
     element: <ErrorPage />,
   },
   {
-    path: ROUTES.DEFAULT,
+    path: PAGES_ROUTES.DEFAULT,
     element: <NotFoundPage />,
   },
 ];

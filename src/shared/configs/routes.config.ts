@@ -1,4 +1,4 @@
-export const ROUTES = {
+export const PAGES_ROUTES = {
   ROOT: "/",
   DEFAULT: "*",
   HOME: "/home",

@@ -4,16 +4,16 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { Layout } from "@/app/layout";
 import { AllRoutes } from "@/app/routes/configs";
 import { FallbackElement } from "@/app/routes/ui";
-import { ROUTES } from "@/shared/constants/routes.constants.ts";
+import { PAGES_ROUTES } from "@/shared/configs";
 import { historyBackOrDefault } from "@/shared/utils";
 
 const appRouter = createBrowserRouter([
   {
-    path: ROUTES.ROOT,
+    path: PAGES_ROUTES.ROOT,
     element: (
       <ErrorBoundary
         fallbackRender={FallbackElement}
-        onReset={() => historyBackOrDefault(ROUTES.ROOT)}
+        onReset={() => historyBackOrDefault(PAGES_ROUTES.ROOT)}
         onError={(error, info) => {
           console.error(error, info);
         }}

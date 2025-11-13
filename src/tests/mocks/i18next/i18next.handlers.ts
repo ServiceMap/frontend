@@ -1,5 +1,5 @@
 import translationEN from "@/../public/locales/en/translation.json";
-import { HTTP_METHODS } from "@/shared/constants/api.constants.ts";
+import { HTTP_METHODS } from "@/shared/api/consts";
 import { TEST_UI_URL } from "@/tests/constants.ts";
 import { mockRequest } from "@/tests/mocks/mock.utils.ts";
 

@@ -4,20 +4,20 @@ import i18n from "i18next";
 import detector from "i18next-browser-languagedetector";
 import backend from "i18next-http-backend";
 
-import { AppConfig } from "@/shared/configs/env.config.ts";
+import { AppConfig } from "@/shared/configs";
 
 export const i18Config = {
   defaultLocale: "en",
   locales: ["en", "uk"] as const,
   localeDetection: true,
-};
+} as const;
 
 export type Locale = (typeof i18Config.locales)[number];
 
 export const LocaleNames: Record<Locale, string> = {
   en: "English",
   uk: "Українська",
-};
+} as const;
 
 i18n
   .use(detector)

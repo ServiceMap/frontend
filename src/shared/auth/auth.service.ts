@@ -1,11 +1,10 @@
 import { useNavigate } from "react-router-dom";
 import Keycloak from "keycloak-js";
 
+import { keycloakClient } from "@/shared/api/instances/keycloak.ts";
 import type { AuthUser } from "@/shared/auth";
-import { keycloakClient } from "@/shared/configs/axios.config.ts";
-import { AppConfig } from "@/shared/configs/env.config.ts";
+import { API_ROUTES, AppConfig, PAGES_ROUTES } from "@/shared/configs";
 import { ROLES } from "@/shared/constants/roles.constants.ts";
-import { API_ROUTES, ROUTES } from "@/shared/constants/routes.constants.ts";
 import { getRealmFromHost, isRealmValid } from "@/shared/utils";
 
 export const AUTH_EVENT_NAME = "auth_event";
@@ -85,7 +84,7 @@ class AuthService extends EventTarget {
     }).catch((err) => {
       console.error("Keycloak init error", err);
       const navigate = useNavigate();
-      void navigate(ROUTES.ERROR);
+      void navigate(PAGES_ROUTES.ERROR);
     });
   }
 
