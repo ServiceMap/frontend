@@ -27,6 +27,7 @@ export default defineConfig([
   js.configs.recommended,
   tseslint.configs.recommended,
   tseslint.configs.recommendedTypeChecked,
+  jsxA11yPlugin.flatConfigs.recommended,
 
   {
     files: ["**/*.{ts,tsx,js,jsx}"],
@@ -70,7 +71,6 @@ export default defineConfig([
       boundaries: boundariesPlugin,
       import: importPlugin,
       "simple-import-sort": simpleImportSortPlugin,
-      "jsx-a11y": jsxA11yPlugin,
       prettier: prettierPlugin,
     },
 
@@ -81,7 +81,6 @@ export default defineConfig([
       ...tseslint.plugin.configs.recommended.rules,
       ...boundariesPlugin.configs.recommended.rules,
       ...importPlugin.flatConfigs.recommended.rules,
-      ...jsxA11yPlugin.flatConfigs.recommended.rules,
       ...prettierPlugin.configs.recommended.rules,
 
       // Formatting & style
