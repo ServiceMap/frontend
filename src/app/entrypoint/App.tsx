@@ -2,8 +2,7 @@ import { StrictMode } from "react";
 
 import { StripeProvider } from "@/app/providers";
 import { AppRouter } from "@/app/routes";
-import { ThemeProvider } from "@/shared/ui";
-import { AuthProvider } from "@/shared/ui/auth-provider";
+import { AuthProvider, ThemeProvider } from "@/shared/ui";
 
 export const App = () => {
   return (

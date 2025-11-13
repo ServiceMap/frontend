@@ -4,11 +4,11 @@ import { AuthContext } from "@/shared/ui/auth-provider/lib/AuthContext.ts";
 import { useAuthProvider } from "@/shared/ui/auth-provider/lib/useAuthProvider.ts";
 import { Loader } from "@/shared/ui/loader";
 
-interface IAuthProviderProps {
+interface AuthProviderProps {
   children: React.ReactNode;
 }
 
-export const AuthProvider: React.FC<IAuthProviderProps> = ({ children }) => {
+export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
   const { isInitiated, ...value } = useAuthProvider();
 
   if (!isInitiated) return <Loader fullscreen />;
