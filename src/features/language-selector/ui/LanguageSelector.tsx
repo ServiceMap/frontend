@@ -23,7 +23,10 @@ export const LanguageSelector = () => {
       value={currentLang}
       defaultValue={i18Config.defaultLocale}
     >
-      <SelectTrigger className="tw:w-16 tw:cursor-pointer">
+      <SelectTrigger
+        aria-label="Language selector"
+        className="tw:w-16 tw:cursor-pointer"
+      >
         <SelectValue />
       </SelectTrigger>
       <SelectContent>

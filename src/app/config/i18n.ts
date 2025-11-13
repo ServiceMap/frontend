@@ -11,6 +11,7 @@ i18n
   .use(backend)
   .use(initReactI18next)
   .init({
+    lng: i18Config.defaultLocale,
     fallbackLng: i18Config.defaultLocale,
     keySeparator: false,
     debug: AppConfig.IS_DEVELOPMENT && !AppConfig.IS_TEST,

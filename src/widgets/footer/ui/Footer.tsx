@@ -22,7 +22,7 @@ export function Footer() {
         </div>
 
         <div>
-          <h3 className="tw:mb-3 tw:font-semibold">Quick Links</h3>
+          <h1 className="tw:mb-3 tw:font-semibold">Quick Links</h1>
           <ul className="tw:space-y-2 tw:text-sm">
             <li>
               <Link
@@ -61,7 +61,7 @@ export function Footer() {
 
         <div className="tw:flex tw:flex-col tw:justify-between">
           <div>
-            <h3 className="tw:mb-3 tw:font-semibold">Follow Us</h3>
+            <h1 className="tw:mb-3 tw:font-semibold">Follow Us</h1>
             <div className="tw:flex tw:gap-3">
               <a
                 href="https://facebook.com"

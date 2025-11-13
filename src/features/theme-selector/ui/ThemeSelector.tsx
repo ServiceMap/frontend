@@ -19,7 +19,12 @@ export const ThemeSelector = () => {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button className="tw:cursor-pointer" variant="ghost" size="icon">
+          <Button
+            aria-label="Theme selector"
+            className="tw:cursor-pointer"
+            variant="ghost"
+            size="icon"
+          >
             <Palette size={18} />
           </Button>
         </DropdownMenuTrigger>
