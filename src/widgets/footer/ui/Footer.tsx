@@ -11,7 +11,7 @@ export function Footer() {
         <div>
           <Link
             to="/"
-            className="tw:text-xl tw:font-bold tw:text-primary tw:hover:opacity-80"
+            className="tw:text-primary tw:text-xl tw:font-bold tw:hover:opacity-80"
           >
             ServiceMap
           </Link>
@@ -27,7 +27,7 @@ export function Footer() {
             <li>
               <Link
                 to="/about"
-                className="tw:transition-colors tw:hover:text-primary"
+                className="tw:hover:text-primary tw:transition-colors"
               >
                 About Us
               </Link>
@@ -35,7 +35,7 @@ export function Footer() {
             <li>
               <Link
                 to="/contact"
-                className="tw:transition-colors tw:hover:text-primary"
+                className="tw:hover:text-primary tw:transition-colors"
               >
                 Contact
               </Link>
@@ -43,7 +43,7 @@ export function Footer() {
             <li>
               <Link
                 to="/privacy"
-                className="tw:transition-colors tw:hover:text-primary"
+                className="tw:hover:text-primary tw:transition-colors"
               >
                 Privacy Policy
               </Link>
@@ -51,7 +51,7 @@ export function Footer() {
             <li>
               <Link
                 to="/terms"
-                className="tw:transition-colors tw:hover:text-primary"
+                className="tw:hover:text-primary tw:transition-colors"
               >
                 Terms of Service
               </Link>
@@ -65,7 +65,7 @@ export function Footer() {
             <div className="tw:flex tw:gap-3">
               <a
                 href="https://facebook.com"
-                className="tw:transition-colors tw:hover:text-primary"
+                className="tw:hover:text-primary tw:transition-colors"
                 aria-label="Facebook"
                 target="_blank"
                 rel="noreferrer"
@@ -74,7 +74,7 @@ export function Footer() {
               </a>
               <a
                 href="https://twitter.com"
-                className="tw:transition-colors tw:hover:text-primary"
+                className="tw:hover:text-primary tw:transition-colors"
                 aria-label="Twitter"
                 target="_blank"
                 rel="noreferrer"
@@ -83,7 +83,7 @@ export function Footer() {
               </a>
               <a
                 href="https://instagram.com"
-                className="tw:transition-colors tw:hover:text-primary"
+                className="tw:hover:text-primary tw:transition-colors"
                 aria-label="Instagram"
                 target="_blank"
                 rel="noreferrer"
@@ -92,7 +92,7 @@ export function Footer() {
               </a>
               <a
                 href="https://linkedin.com"
-                className="tw:transition-colors tw:hover:text-primary"
+                className="tw:hover:text-primary tw:transition-colors"
                 aria-label="LinkedIn"
                 target="_blank"
                 rel="noreferrer"

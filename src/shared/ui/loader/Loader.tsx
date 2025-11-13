@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 
+import { cn } from "@/shared/lib";
 import { Spinner } from "@/shared/ui/shadcn";
-import { cn } from "@/shared/utils";
 
 interface LoadingComponentProps {
   fullscreen?: boolean;
@@ -27,5 +27,3 @@ export const Loader = ({
     )
   );
 };
-
-export default Loader;

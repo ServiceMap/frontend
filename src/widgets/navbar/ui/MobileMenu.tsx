@@ -4,6 +4,7 @@ import { ChevronDown } from "lucide-react";
 
 import { LanguageSelector } from "@/features/language-selector";
 import { ThemeSelector } from "@/features/theme-selector";
+import { cn } from "@/shared/lib";
 import {
   Separator,
   Sheet,
@@ -11,7 +12,6 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/shared/ui/shadcn";
-import { cn } from "@/shared/utils";
 import { UserMenu } from "@/widgets/navbar";
 
 interface MenuItem {
@@ -33,7 +33,7 @@ export function MobileMenu({ open, onOpenChange, menu }: MobileMenuProps) {
     <Sheet open={open} onOpenChange={onOpenChange}>
       <SheetContent side="right">
         <SheetHeader>
-          <SheetTitle className="tw:mb-2 tw:text-lg tw:font-bold tw:text-primary">
+          <SheetTitle className="tw:text-primary tw:mb-2 tw:text-lg tw:font-bold">
             ServiceMap
           </SheetTitle>
         </SheetHeader>
@@ -64,7 +64,7 @@ export function MobileMenu({ open, onOpenChange, menu }: MobileMenuProps) {
                         <Link
                           key={sub.to}
                           to={sub.to}
-                          className="tw:block tw:rounded tw:px-2 tw:py-1 tw:hover:bg-secondary"
+                          className="tw:hover:bg-secondary tw:block tw:rounded tw:px-2 tw:py-1"
                           onClick={() => onOpenChange(false)}
                         >
                           {sub.name}
@@ -76,7 +76,7 @@ export function MobileMenu({ open, onOpenChange, menu }: MobileMenuProps) {
               ) : (
                 <Link
                   to={item.to || "#"}
-                  className="tw:block tw:rounded tw:px-2 tw:py-2 tw:hover:text-primary"
+                  className="tw:hover:text-primary tw:block tw:rounded tw:px-2 tw:py-2"
                   onClick={() => onOpenChange(false)}
                 >
                   {item.name}

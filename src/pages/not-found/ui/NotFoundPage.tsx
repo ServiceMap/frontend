@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 
-import { PAGES_ROUTES } from "@/shared/configs";
+import { PAGES_ROUTES } from "@/shared/consts";
 
-const NotFoundPage = () => {
+export const NotFoundPage = () => {
   const { t } = useTranslation();
   const navigate = useNavigate();
 
@@ -16,5 +16,3 @@ const NotFoundPage = () => {
     </>
   );
 };
-
-export { NotFoundPage };

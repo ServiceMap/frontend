@@ -4,7 +4,7 @@ import {
   type InternalAxiosRequestConfig,
 } from "axios";
 
-import { authService } from "@/shared/auth";
+import { authService } from "@/shared/api/auth";
 
 export const attachAuthInterceptor = (instance: AxiosInstance) => {
   instance.interceptors.request.use(

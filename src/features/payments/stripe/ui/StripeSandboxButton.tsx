@@ -3,7 +3,7 @@ import { useStripe } from "@stripe/react-stripe-js";
 
 import { Button } from "@/shared/ui";
 
-const StripeSandboxButton = () => {
+export const StripeSandboxButton = () => {
   const stripe = useStripe();
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
@@ -35,5 +35,3 @@ const StripeSandboxButton = () => {
     </Button>
   );
 };
-
-export { StripeSandboxButton };

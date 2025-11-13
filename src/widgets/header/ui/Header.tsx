@@ -4,18 +4,17 @@ import { Menu } from "lucide-react";
 
 import { LanguageSelector } from "@/features/language-selector";
 import { ThemeSelector } from "@/features/theme-selector";
-import { useElementSize } from "@/shared/hooks";
-import { CSS_VARS } from "@/shared/theme";
+import { CSS_VARS } from "@/shared/consts";
+import { setCssVariables, useElementSize } from "@/shared/lib";
 import {
   Button,
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/shared/ui/shadcn";
-import { setCssVariables } from "@/shared/utils";
 import { MobileMenu, UserMenu } from "@/widgets/navbar";
 
-import useDebounce from "../../../shared/hooks/useDebounce.ts";
+import useDebounce from "../../../shared/lib/useDebounce.ts";
 
 const menu = [
   { name: "Home", to: "/" },
@@ -59,7 +58,7 @@ export function Header() {
       className="tw:flex tw:items-stretch tw:justify-between tw:border-b tw:px-6 tw:py-3"
     >
       <div className="tw:flex tw:h-auto tw:items-center tw:gap-4">
-        <Link to="/" className="tw:text-lg tw:font-bold tw:text-primary">
+        <Link to="/" className="tw:text-primary tw:text-lg tw:font-bold">
           ServiceMap
         </Link>
 
@@ -74,12 +73,12 @@ export function Header() {
                   >
                     <span className="tw:cursor-pointer">{item.name}</span>
 
-                    <div className="tw:absolute tw:mt-0 tw:hidden tw:min-w-[150px] tw:rounded tw:border tw:bg-popover tw:p-2 tw:group-hover/submenu:block">
+                    <div className="tw:bg-popover tw:absolute tw:mt-0 tw:hidden tw:min-w-[150px] tw:rounded tw:border tw:p-2 tw:group-hover/submenu:block">
                       {item.submenu.map((sub) => (
                         <Link
                           key={sub.to}
                           to={sub.to}
-                          className="tw:block tw:px-3 tw:py-1 tw:text-popover-foreground tw:hover:bg-secondary"
+                          className="tw:text-popover-foreground tw:hover:bg-secondary tw:block tw:px-3 tw:py-1"
                         >
                           {sub.name}
                         </Link>

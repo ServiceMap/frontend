@@ -40,11 +40,11 @@ export default defineConfig([
       },
       "boundaries/elements": [
         { type: "app", pattern: "src/app" },
-        { type: "pages", pattern: "src/pages" },
-        { type: "widgets", pattern: "src/widgets" },
-        { type: "features", pattern: "src/features" },
-        { type: "entities", pattern: "src/entities" },
-        { type: "shared", pattern: "src/shared" },
+        { type: "pages", pattern: "src/pages/*" },
+        { type: "widgets", pattern: "src/widgets/*" },
+        { type: "features", pattern: "src/features/*" },
+        { type: "entities", pattern: "src/entities/*" },
+        { type: "shared", pattern: "src/shared/*" },
       ],
     },
 
@@ -130,11 +130,11 @@ export default defineConfig([
           rules: [
             {
               from: "app",
-              allow: ["pages", "widgets", "features", "entities", "shared"],
+              allow: ["pages", "widgets", "shared"],
             },
             {
               from: "pages",
-              allow: ["widgets", "features", "entities", "shared"],
+              allow: ["widgets", "features"],
             },
             { from: "widgets", allow: ["features", "entities", "shared"] },
             { from: "features", allow: ["entities", "shared"] },

@@ -1,16 +1,23 @@
+import { useEffect } from "react";
 import { Trans, useTranslation } from "react-i18next";
 import { toast } from "react-toastify";
 import dayjs from "dayjs";
 
 import { StripeSandboxButton } from "@/features/payments";
-import { useAuth } from "@/shared/auth";
 import { Button } from "@/shared/ui";
+import { useAuthContext } from "@/shared/ui/auth-provider";
+import { useThemeContext } from "@/shared/ui/theme-provider";
 
-const HomePage = () => {
+export const HomePage = () => {
   const { t } = useTranslation();
-  const { isLoggedIn, user, login, logout } = useAuth();
+  const { isLoggedIn, user, login, logout } = useAuthContext();
+  const { theme } = useThemeContext();
 
-  toast("dd", { type: "error" });
+  console.log("HomePage", theme);
+
+  useEffect(() => {
+    toast("dd", { type: "error" });
+  }, []);
 
   return (
     <div
@@ -61,5 +68,3 @@ const HomePage = () => {
     </div>
   );
 };
-
-export { HomePage };

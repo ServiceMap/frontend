@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { i18Config, type Locale, LocaleNames } from "@/shared/configs";
+import { i18Config, type Locale, LocaleNames } from "@/shared/config";
 import {
   Select,
   SelectContent,
@@ -9,7 +9,7 @@ import {
   SelectValue,
 } from "@/shared/ui";
 
-const LanguageSelector = () => {
+export const LanguageSelector = () => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language as Locale;
 
@@ -36,5 +36,3 @@ const LanguageSelector = () => {
     </Select>
   );
 };
-
-export { LanguageSelector };

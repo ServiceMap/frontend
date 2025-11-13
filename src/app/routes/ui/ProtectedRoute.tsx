@@ -1,4 +1,4 @@
-import { authService } from "@/shared/auth";
+import { authService } from "@/shared/api/auth";
 
 export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({
   children,

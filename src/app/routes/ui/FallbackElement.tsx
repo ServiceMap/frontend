@@ -15,7 +15,7 @@ export const FallbackElement = ({
     >
       <h1 className="tw:flex tw:items-center tw:gap-2 tw:text-3xl tw:font-semibold">
         {t("something_went_wrong")}
-        <Frown className="tw:shrink-0 tw:text-primary/90" size={40} />
+        <Frown className="tw:text-primary/90 tw:shrink-0" size={40} />
       </h1>
 
       <span className="tw:[display:-webkit-box] tw:overflow-hidden tw:text-center tw:text-red-600 tw:[-webkit-box-orient:vertical] tw:[-webkit-line-clamp:10]">
@@ -28,5 +28,3 @@ export const FallbackElement = ({
     </div>
   );
 };
-
-export default FallbackElement;

@@ -1,6 +1,6 @@
 import { UserAvatar } from "@/entities/user";
 import { LoginButton } from "@/features/login-button";
-import { authService } from "@/shared/auth";
+import { authService } from "@/shared/api/auth";
 import {
   DropdownMenu,
   DropdownMenuContent,

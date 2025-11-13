@@ -1,7 +1,7 @@
 import { Apple, Moon, Sun } from "lucide-react";
 
-import { ThemeMode } from "@/shared/theme";
-import { cn } from "@/shared/utils";
+import { cn } from "@/shared/lib";
+import { ThemeMode } from "@/shared/ui/theme-provider";
 
 const themeIcons = {
   [ThemeMode.Light]: Sun,

@@ -11,21 +11,21 @@ import {
   TEST_NOT_EXISTED_URL,
   TEST_SHOW_UNIMPLEMENTED_FEATURES,
   TEST_TIMEOUT,
-} from "@/tests/constants.ts";
+} from "@/tests/consts.ts";
 import { i18nextHandlers } from "@/tests/mocks/i18next/i18next.handlers.ts";
 import { keycloakHandlers } from "@/tests/mocks/keycloak/keycloak.handlers.ts";
 
 import "../../public/config.js";
-import "@/shared/configs/i18n.config.ts";
-import "@/shared/configs/dayjs.config.ts";
+import "@/app/config/i18n.ts";
+import "@/app/config/dayjs.ts";
 import "@testing-library/jest-dom";
 
 vi.mock("keycloak-js", () => import("@/tests/__mocks__/keycloak-js.ts"));
 
-vi.mock("@/shared/configs/env.config.ts", async () => {
-  const actual = await vi.importActual<
-    typeof import("@/shared/configs/env.config.ts")
-  >("@/shared/configs/env.config.ts");
+vi.mock("@/shared/config/env.ts", async () => {
+  const actual = await vi.importActual<typeof import("@/shared/config/env.ts")>(
+    "@/shared/config/env.ts",
+  );
 
   return {
     ...actual,

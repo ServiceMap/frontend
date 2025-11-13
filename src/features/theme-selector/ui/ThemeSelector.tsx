@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import { Palette } from "lucide-react";
 
 import { ThemeItems } from "@/features/theme-selector/lib";
-import { useTheme } from "@/shared/theme";
 import {
   Button,
   DropdownMenu,
@@ -10,10 +9,11 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/shared/ui/shadcn";
+import { useThemeContext } from "@/shared/ui/theme-provider";
 
-const ThemeSelector = () => {
+export const ThemeSelector = () => {
   const { t } = useTranslation();
-  const { theme, changeTheme } = useTheme();
+  const { theme, changeTheme } = useThemeContext();
 
   return (
     <>
@@ -39,5 +39,3 @@ const ThemeSelector = () => {
     </>
   );
 };
-
-export { ThemeSelector };

@@ -2,10 +2,10 @@ import { ErrorBoundary } from "react-error-boundary";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Layout } from "@/app/layout";
-import { AllRoutes } from "@/app/routes/configs";
+import { AllRoutes } from "@/app/routes/config";
 import { FallbackElement } from "@/app/routes/ui";
-import { PAGES_ROUTES } from "@/shared/configs";
-import { historyBackOrDefault } from "@/shared/utils";
+import { PAGES_ROUTES } from "@/shared/consts";
+import { historyBackOrDefault } from "@/shared/lib";
 
 const appRouter = createBrowserRouter([
   {

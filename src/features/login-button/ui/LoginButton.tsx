@@ -1,9 +1,9 @@
 import { useTranslation } from "react-i18next";
 
-import { authService } from "@/shared/auth";
+import { authService } from "@/shared/api/auth";
 import { Button } from "@/shared/ui";
 
-const LoginButton = () => {
+export const LoginButton = () => {
   const { t } = useTranslation();
 
   return (
@@ -12,5 +12,3 @@ const LoginButton = () => {
     </Button>
   );
 };
-
-export { LoginButton };

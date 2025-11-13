@@ -2,10 +2,11 @@ import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
-import { AuthProvider, StripeProvider } from "@/app/providers";
+import { StripeProvider } from "@/app/providers";
 import { HomePage } from "@/pages/home";
-import { authService } from "@/shared/auth";
-import { TEST_USERNAME } from "@/tests/constants.ts";
+import { authService } from "@/shared/api/auth";
+import { AuthProvider } from "@/shared/ui/auth-provider";
+import { TEST_USERNAME } from "@/tests/consts.ts";
 
 describe("HomePage", () => {
   beforeEach(() => {

@@ -1,9 +1,9 @@
 import React from "react";
 import { Navigate } from "react-router-dom";
 
-import { authService } from "@/shared/auth";
-import { PAGES_ROUTES } from "@/shared/configs";
-import { ROLES } from "@/shared/constants/roles.constants.ts";
+import { ROLES } from "@/entities/user";
+import { authService } from "@/shared/api/auth";
+import { PAGES_ROUTES } from "@/shared/consts";
 
 export const RoleBasedRoute: React.FC<{
   children: React.ReactNode;

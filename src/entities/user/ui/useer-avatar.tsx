@@ -1,7 +1,7 @@
-import { authService } from "@/shared/auth";
+import { authService } from "@/shared/api/auth";
 import { Avatar, AvatarFallback, AvatarImage } from "@/shared/ui";
 
-const UserAvatar = () => {
+export const UserAvatar = () => {
   return (
     <Avatar className="tw:cursor-pointer">
       <AvatarImage src="https://i.pravatar.cc/40" />
@@ -9,5 +9,3 @@ const UserAvatar = () => {
     </Avatar>
   );
 };
-
-export { UserAvatar };

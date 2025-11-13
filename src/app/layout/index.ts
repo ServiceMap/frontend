@@ -1,1 +1,1 @@
-export { Layout } from "@/app/layout/ui";
+export * from "@/app/layout/ui";

@@ -1,4 +1,4 @@
-import type { ValueOf } from "@/shared/utils";
+import type { ValueOf } from "@/shared/types";
 
 export const HTTP_METHODS = {
   GET: "GET",
