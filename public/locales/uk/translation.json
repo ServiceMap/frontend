@@ -2,16 +2,16 @@
   "access_denied": "Доступ заборонено",
   "access_denied_message": "Схоже, у вас немає доступу до цієї сторінки.\n Зверніться по допомогу до адміністратора або служби підтримки.",
   "all_rights_reserved": "Всі права захищено",
+  "dark_theme_name": "Темна",
   "go_back_btn": "Повернутися",
   "go_home_btn": "На Головну",
   "hello_user_message": "Привіт, <strong>{{username}}</strong>!",
+  "light_theme_name": "Світла",
   "loading_message": "Завантаження...",
   "login_btn": "Увійти",
   "logout_btn": "Вийти",
+  "orange_theme_name": "Помаранчева",
   "page_not_found_message": "Сторінку не знайдено",
   "something_went_wrong": "Щось пішло не так!",
-  "welcome_message": "Ласкаво просимо до ServiceMap",
-  "light_theme_name": "Світла",
-  "dark_theme_name": "Темна",
-  "orange_theme_name": "Помаранчева"
+  "welcome_message": "Ласкаво просимо до ServiceMap"
 }

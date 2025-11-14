@@ -2,16 +2,16 @@
   "access_denied": "Access denied",
   "access_denied_message": "It appears that you do not have access to this page.\n Please contact your administrator or support for assistance.",
   "all_rights_reserved": "All rights reserved",
+  "dark_theme_name": "Dark",
   "go_back_btn": "Go back",
   "go_home_btn": "Go Home",
   "hello_user_message": "Hello, <strong>{{username}}</strong>!",
+  "light_theme_name": "Light",
   "loading_message": "Loading...",
   "login_btn": "Login",
   "logout_btn": "Logout",
+  "orange_theme_name": "Orange",
   "page_not_found_message": "Page not found",
   "something_went_wrong": "Something went wrong!",
-  "welcome_message": "Welcome to ServiceMap",
-  "light_theme_name": "Light",
-  "dark_theme_name": "Dark",
-  "orange_theme_name": "Orange"
+  "welcome_message": "Welcome to ServiceMap"
 }
