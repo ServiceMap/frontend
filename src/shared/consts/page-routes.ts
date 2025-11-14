@@ -10,6 +10,6 @@ export const PAGES_ROUTES = {
   USER_SETTINGS: "/user/settings",
   DASHBOARD: "/dashboard",
   PAYMENT: "/stripe-test",
-  ERROR: "/error",
-  NOT_FOUND: "/404",
+  ACCESS_DENIED: "/access-denied",
+  NOT_FOUND: "/not-found",
 } as const;

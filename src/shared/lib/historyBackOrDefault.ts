@@ -1,8 +1,13 @@
-export const historyBackOrDefault = (defaultUrl: string) => {
-  if (window.history.length > 2) {
-    window.history.back();
+import { navigateToLocation } from "@/shared/lib/navigateToLocation.ts";
+
+export const historyBackOrDefault = (
+  defaultUrl: string,
+  stepsBack: number = 1,
+) => {
+  if (window.history.length > 1 + stepsBack) {
+    window.history.go(-stepsBack);
     return;
   }
 
-  window.location.replace(defaultUrl);
+  navigateToLocation(defaultUrl);
 };

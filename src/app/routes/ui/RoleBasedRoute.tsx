@@ -10,5 +10,9 @@ export const RoleBasedRoute: React.FC<{
   roles: ROLES[];
 }> = ({ children, roles }) => {
   const hasAccess = authService.hasRole(roles);
-  return hasAccess ? <>{children}</> : <Navigate to={PAGES_ROUTES.ERROR} />;
+  return hasAccess ? (
+    <>{children}</>
+  ) : (
+    <Navigate to={PAGES_ROUTES.ACCESS_DENIED} />
+  );
 };

@@ -6,10 +6,14 @@ import { Loader } from "@/shared/ui/loader";
 
 interface AuthProviderProps {
   children: React.ReactNode;
+  initErrorCallback?: () => void;
 }
 
-export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
-  const { isInitiated, ...value } = useAuthProvider();
+export const AuthProvider: React.FC<AuthProviderProps> = ({
+  children,
+  initErrorCallback,
+}) => {
+  const { isInitiated, ...value } = useAuthProvider(initErrorCallback);
 
   if (!isInitiated) return <Loader fullscreen />;
 

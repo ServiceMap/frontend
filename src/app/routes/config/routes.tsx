@@ -11,9 +11,9 @@ const DashboardPage = lazy(() =>
     default: module.DashboardPage,
   })),
 );
-const ErrorPage = lazy(() =>
-  import("@/pages/error").then((module) => ({
-    default: module.ErrorPage,
+const AccessDeniedPage = lazy(() =>
+  import("@/pages/access-denied").then((module) => ({
+    default: module.AccessDeniedPage,
   })),
 );
 const NotFoundPage = lazy(() =>
@@ -71,8 +71,8 @@ export const AllRoutes: RouteObject[] = [
     element: <StripeTestPage />,
   },
   {
-    path: PAGES_ROUTES.ERROR,
-    element: <ErrorPage />,
+    path: PAGES_ROUTES.ACCESS_DENIED,
+    element: <AccessDeniedPage />,
   },
   {
     path: PAGES_ROUTES.DEFAULT,

@@ -1,10 +1,10 @@
-import { useNavigate } from "react-router-dom";
 import Keycloak from "keycloak-js";
 
 import { keycloakClient } from "@/shared/api";
 import {
   AUTH_ERROR_EVENT_NAME,
   AUTH_EVENT_NAME,
+  AUTH_INIT_ERROR_EVENT_NAME,
   AUTH_READY_EVENT_NAME,
   AUTH_REFRESH_TOKEN_ERROR_EVENT_NAME,
   AUTH_REFRESH_TOKEN_SUCCESS_EVENT_NAME,
@@ -18,7 +18,7 @@ import {
 } from "@/shared/api/auth/config/config.ts";
 import { type KeycloakUser } from "@/shared/api/auth/model";
 import { AppConfig } from "@/shared/config";
-import { API_ROUTES, PAGES_ROUTES } from "@/shared/consts";
+import { API_ROUTES } from "@/shared/consts";
 import { getRealmFromHost, isRealmValid } from "@/shared/lib";
 
 class AuthService extends EventTarget {
@@ -109,11 +109,14 @@ class AuthService extends EventTarget {
       pkceMethod: "S256",
       checkLoginIframe: true,
       silentCheckSsoRedirectUri: `${window.location.origin}/auth/silent-check-sso.html`,
-    }).catch((err) => {
-      console.error("Keycloak init error", err);
-      const navigate = useNavigate();
-      void navigate(PAGES_ROUTES.ERROR);
-    });
+    })
+      .then(() => {
+        this.emit(AUTH_INIT_ERROR_EVENT_NAME);
+      })
+      .catch((err) => {
+        this.emit(AUTH_INIT_ERROR_EVENT_NAME);
+        console.error("Keycloak init error", err);
+      });
   }
 
   async validateRealm(realm?: string) {
