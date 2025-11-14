@@ -1,8 +1,7 @@
 import { useTranslation } from "react-i18next";
 
 import { PAGE_ROUTES } from "@/shared/consts";
-import { ErrorLayout } from "@/shared/ui";
-import { GoBackButton } from "@/shared/ui/go-back-button/ui";
+import { ErrorLayout, GoBackButton } from "@/shared/ui";
 
 export const NotFoundPage = () => {
   const { t } = useTranslation();

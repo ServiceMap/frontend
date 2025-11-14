@@ -2,8 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Frown } from "lucide-react";
 
 import { PAGE_ROUTES } from "@/shared/consts";
-import { ErrorLayout } from "@/shared/ui";
-import { GoBackButton } from "@/shared/ui/go-back-button";
+import { ErrorLayout, GoBackButton } from "@/shared/ui";
 
 export const AccessDeniedPage = () => {
   const { t } = useTranslation();
