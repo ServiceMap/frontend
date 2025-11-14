@@ -11,7 +11,7 @@ export const Layout = () => {
       <Header />
 
       <main
-        className="tw:container tw:mx-0 tw:flex tw:max-w-none tw:flex-col tw:p-4"
+        className="tw:mx-0 tw:flex tw:flex-col tw:p-4"
         style={{ minHeight: "calc(100dvh + 1px - var(--header-h))" }}
       >
         <Outlet />
