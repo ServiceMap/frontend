@@ -12,7 +12,7 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/shared/ui/shadcn";
-import { UserMenu } from "@/widgets/navbar";
+import { UserMenu } from "@/widgets/header/navbar";
 
 interface MenuItem {
   name: string;

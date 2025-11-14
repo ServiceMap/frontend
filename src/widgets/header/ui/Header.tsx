@@ -12,7 +12,7 @@ import {
   NavigationMenuItem,
   NavigationMenuList,
 } from "@/shared/ui/shadcn";
-import { MobileMenu, UserMenu } from "@/widgets/navbar";
+import { MobileMenu, UserMenu } from "@/widgets/header/navbar";
 
 import useDebounce from "../../../shared/lib/useDebounce.ts";
 
