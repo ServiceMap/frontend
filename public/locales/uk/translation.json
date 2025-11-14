@@ -10,5 +10,8 @@
   "logout_btn": "Вийти",
   "page_not_found_message": "Сторінку не знайдено",
   "something_went_wrong": "Щось пішло не так!",
-  "welcome_message": "Ласкаво просимо до ServiceMap"
+  "welcome_message": "Ласкаво просимо до ServiceMap",
+  "light_theme_name": "Світла",
+  "dark_theme_name": "Темна",
+  "orange_theme_name": "Помаранчева"
 }

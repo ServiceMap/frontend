@@ -6,7 +6,7 @@ export default {
   output: "public/locales/$LOCALE/$NAMESPACE.json",
   defaultNamespace: "translation",
   defaultValue: "",
-  keepRemoved: false,
+  keepRemoved: true,
   createOldCatalogs: false,
   sort: true,
   verbose: false,

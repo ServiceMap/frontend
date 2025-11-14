@@ -10,5 +10,8 @@
   "logout_btn": "Logout",
   "page_not_found_message": "Page not found",
   "something_went_wrong": "Something went wrong!",
-  "welcome_message": "Welcome to ServiceMap"
+  "welcome_message": "Welcome to ServiceMap",
+  "light_theme_name": "Light",
+  "dark_theme_name": "Dark",
+  "orange_theme_name": "Orange"
 }
