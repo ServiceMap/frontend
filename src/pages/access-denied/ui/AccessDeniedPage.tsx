@@ -3,12 +3,11 @@ import { Frown } from "lucide-react";
 
 import { PAGES_ROUTES } from "@/shared/consts";
 import { historyBackOrDefault } from "@/shared/lib";
-import { Button, Loader } from "@/shared/ui";
+import { Button } from "@/shared/ui";
 
 export const AccessDeniedPage = () => {
   const { t } = useTranslation();
-  const f = true;
-  if (!f) return <Loader fullscreen />;
+
   return (
     <div
       role="alert"

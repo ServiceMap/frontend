@@ -18,7 +18,7 @@ export const Loader = ({
     isLoading && (
       <div
         className={cn(
-          "tw:flex tw:grow tw:items-center tw:justify-center tw:gap-2",
+          "tw:flex tw:grow tw:items-center tw:justify-center tw:gap-2 tw:bg-popover/50",
           {
             "tw:fixed tw:inset-0": fullscreen,
           },
