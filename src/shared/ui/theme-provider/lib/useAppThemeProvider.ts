@@ -1,11 +1,11 @@
 import { useEffect, useEffectEvent, useState } from "react";
 
 import { addCssClasses, removeCssClasses } from "@/shared/lib";
-import { ThemeMode } from "@/shared/ui/theme-provider/lib";
 import {
   getStoredTheme,
   setStoredTheme,
-} from "@/shared/ui/theme-provider/lib/actions.ts";
+  ThemeMode,
+} from "@/shared/ui/theme-provider/lib";
 
 export const useAppThemeProvider = () => {
   const [theme, setTheme] = useState<ThemeMode>(ThemeMode.Light);
