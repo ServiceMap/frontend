@@ -20,6 +20,10 @@ body {
   cursor: default;
 }
 
+.root {
+  white-space: pre-line;
+}
+
 @media only screen and (width > 480px) {
   .Toastify__toast-container {
     --toastify-toast-top: max(

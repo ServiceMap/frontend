@@ -12,12 +12,12 @@ const DashboardPage = lazy(() =>
   })),
 );
 const AccessDeniedPage = lazy(() =>
-  import("@/pages/access-denied").then((module) => ({
+  import("@/pages/error").then((module) => ({
     default: module.AccessDeniedPage,
   })),
 );
 const NotFoundPage = lazy(() =>
-  import("@/pages/not-found").then((module) => ({
+  import("@/pages/error").then((module) => ({
     default: module.NotFoundPage,
   })),
 );
