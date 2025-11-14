@@ -18,7 +18,7 @@ export const NotFoundPage = () => {
       <ErrorPageMessageTemplate className="tw:text-3xl tw:font-semibold">
         {t("page_not_found_message").toUpperCase()}
       </ErrorPageMessageTemplate>
-      <GoBackButton stepsBack={0} i18nTextKey={"go_home_btn"} />
+      <GoBackButton stepsBack={0} text={t("go_home_btn")} />
     </ErrorPageTemplate>
   );
 };
