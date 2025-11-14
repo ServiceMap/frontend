@@ -5,7 +5,7 @@ import { Menu } from "lucide-react";
 import { LanguageSelector } from "@/features/select-language";
 import { ThemeSelector } from "@/features/select-theme";
 import { CSS_VARS } from "@/shared/consts";
-import { setCssVariablesToDocument, useElementSize } from "@/shared/lib";
+import { setCssVariables, useElementSize } from "@/shared/lib";
 import {
   Button,
   NavigationMenu,
@@ -38,8 +38,8 @@ export function Header() {
     const height = headerSize.height;
     const width = headerSize.width;
 
-    setCssVariablesDebounce(() => {
-      setCssVariablesToDocument([
+    const setCssVariablesToDocument = () => {
+      setCssVariables(document.documentElement, [
         {
           property: CSS_VARS.headerH,
           value: `${height}px`,
@@ -49,7 +49,9 @@ export function Header() {
           value: `${width}px`,
         },
       ]);
-    });
+    };
+
+    setCssVariablesDebounce(setCssVariablesToDocument);
   }, [headerSize.height, headerSize.width, setCssVariablesDebounce]);
 
   return (
