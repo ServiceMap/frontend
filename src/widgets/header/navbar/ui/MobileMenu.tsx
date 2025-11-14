@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/shared/lib";
-import { LanguageSelector } from "@/shared/ui/language-selector";
+import { LanguageSelector, ThemeSelector } from "@/shared/ui";
 import {
   Separator,
   Sheet,
@@ -11,7 +11,6 @@ import {
   SheetHeader,
   SheetTitle,
 } from "@/shared/ui/shadcn";
-import { ThemeSelector } from "@/shared/ui/theme-selector";
 import { UserMenu } from "@/widgets/header/navbar";
 
 interface MenuItem {

@@ -2,10 +2,9 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 
-import { LanguageSelector } from "@/shared/ui/language-selector";
-import { ThemeSelector } from "@/shared/ui/theme-selector";
 import { CSS_VARS } from "@/shared/consts";
 import { setCssVariables, useElementSize } from "@/shared/lib";
+import { LanguageSelector, ThemeSelector } from "@/shared/ui";
 import {
   Button,
   NavigationMenu,
