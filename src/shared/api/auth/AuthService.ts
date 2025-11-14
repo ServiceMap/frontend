@@ -15,7 +15,7 @@ import {
   AUTH_LOGOUT_EVENT_NAME,
   KEYCLOAK_TOKEN_MIN_VALIDITY_SECONDS,
   KEYCLOAK_UPDATE_TOKEN_INTERVAL_SECONDS,
-} from "@/shared/api/auth/config/config.ts";
+} from "@/shared/api/auth/config/auth.ts";
 import { type KeycloakUser } from "@/shared/api/auth/model";
 import { AppConfig } from "@/shared/config";
 import { API_ROUTES } from "@/shared/consts";

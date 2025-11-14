@@ -8,4 +8,4 @@ export {
   AUTH_REFRESH_TOKEN_SUCCESS_EVENT_NAME,
   AUTH_SUCCESS_EVENT_NAME,
   AUTH_TOKEN_EXPIRED_EVENT_NAME,
-} from "@/shared/api/auth/config/config.ts";
+} from "@/shared/api/auth/config/auth.ts";
