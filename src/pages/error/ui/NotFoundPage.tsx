@@ -1,7 +1,8 @@
 import { useTranslation } from "react-i18next";
 
-import { GoBackButton } from "@/features/go-back-button/ui/GoBackButton.tsx";
+import { PAGE_ROUTES } from "@/shared/consts";
 import { ErrorLayout } from "@/shared/ui";
+import { GoBackButton } from "@/shared/ui/go-back-button/ui";
 
 export const NotFoundPage = () => {
   const { t } = useTranslation();
@@ -15,7 +16,11 @@ export const NotFoundPage = () => {
         {t("page_not_found_message").toUpperCase()}
       </ErrorLayout.DescriptionContainer>
       <ErrorLayout.ActionContainer>
-        <GoBackButton stepsBack={0} text={t("go_home_btn")} />
+        <GoBackButton
+          fallbackUrl={PAGE_ROUTES.ROOT}
+          stepsBack={0}
+          text={t("go_home_btn")}
+        />
       </ErrorLayout.ActionContainer>
     </ErrorLayout>
   );

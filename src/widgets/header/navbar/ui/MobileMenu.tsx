@@ -2,8 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 
-import { LanguageSelector } from "@/features/language-selector";
-import { ThemeSelector } from "@/features/theme-selector";
+import { LanguageSelector } from "@/features/select-language";
+import { ThemeSelector } from "@/features/select-theme";
 import { cn } from "@/shared/lib";
 import {
   Separator,

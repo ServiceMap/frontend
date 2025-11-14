@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Menu } from "lucide-react";
 
-import { LanguageSelector } from "@/features/language-selector";
-import { ThemeSelector } from "@/features/theme-selector";
+import { LanguageSelector } from "@/features/select-language";
+import { ThemeSelector } from "@/features/select-theme";
 import { CSS_VARS } from "@/shared/consts";
 import { setCssVariables, useElementSize } from "@/shared/lib";
 import {

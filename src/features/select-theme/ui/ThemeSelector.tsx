@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Palette } from "lucide-react";
 
-import { ThemeItems } from "@/features/theme-selector/lib";
+import { ThemeItems } from "@/features/select-theme/lib";
 import {
   Button,
   DropdownMenu,

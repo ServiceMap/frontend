@@ -1,4 +1,4 @@
-import { navigateToLocation } from "@/shared/lib/navigateToLocation.ts";
+import { navigateToLocation } from "@/shared/lib/navigation/navigateToLocation.ts";
 
 export const historyBackOrDefault = (
   defaultUrl: string,

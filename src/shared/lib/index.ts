@@ -1,9 +1,9 @@
 export { cn } from "@/shared/lib/cn.ts";
-export { getRealmFromHost } from "@/shared/lib/getRealmFromHost.ts";
-export { historyBackOrDefault } from "@/shared/lib/historyBackOrDefault.ts";
-export { isRealmValid } from "@/shared/lib/isRealmValid.ts";
-export { navigateToLocation } from "@/shared/lib/navigateToLocation.ts";
-export { setCssVariables } from "@/shared/lib/setCssVariables.ts";
-export { stringToBoolean } from "@/shared/lib/stringToBoolean.ts";
+export { setCssVariables } from "@/shared/lib/css/setCssVariables.ts";
+export { historyBackOrDefault } from "@/shared/lib/navigation/historyBackOrDefault.ts";
+export { navigateToLocation } from "@/shared/lib/navigation/navigateToLocation.ts";
+export { getRealmFromHost } from "@/shared/lib/realm/getRealmFromHost.ts";
+export { isRealmValid } from "@/shared/lib/realm/isRealmValid.ts";
+export { stringToBoolean } from "@/shared/lib/types/stringToBoolean.ts";
+export { useElementSize } from "@/shared/lib/ui/useElementSize.ts";
 export { useDebounce } from "@/shared/lib/useDebounce.ts";
-export { useElementSize } from "@/shared/lib/useElementSize.ts";

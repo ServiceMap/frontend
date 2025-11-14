@@ -1,8 +1,9 @@
 import { useTranslation } from "react-i18next";
 import { Frown } from "lucide-react";
 
-import { GoBackButton } from "@/features/go-back-button/ui/GoBackButton.tsx";
+import { PAGE_ROUTES } from "@/shared/consts";
 import { ErrorLayout } from "@/shared/ui";
+import { GoBackButton } from "@/shared/ui/go-back-button";
 
 export const AccessDeniedPage = () => {
   const { t } = useTranslation();
@@ -17,7 +18,7 @@ export const AccessDeniedPage = () => {
         {t("access_denied_message")}
       </ErrorLayout.DescriptionContainer>
       <ErrorLayout.ActionContainer>
-        <GoBackButton />
+        <GoBackButton fallbackUrl={PAGE_ROUTES.ROOT} text={t("go_back_btn")} />
       </ErrorLayout.ActionContainer>
     </ErrorLayout>
   );
