@@ -6,4 +6,4 @@ export {
   DEFAULT_TIME_FORMAT,
   DEFAULT_TIMEZONE,
 } from "@/shared/consts/date-time.ts";
-export { PAGES_ROUTES } from "@/shared/consts/page-routes.ts";
+export { PAGE_ROUTES } from "@/shared/consts/page-routes.ts";

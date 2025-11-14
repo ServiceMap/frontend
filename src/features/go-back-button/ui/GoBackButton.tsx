@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 
-import { PAGES_ROUTES } from "@/shared/consts";
+import { PAGE_ROUTES } from "@/shared/consts";
 import { historyBackOrDefault } from "@/shared/lib";
 import { Button } from "@/shared/ui";
 
@@ -11,7 +11,7 @@ interface GoBackButtonProps {
 }
 
 export const GoBackButton: React.FC<GoBackButtonProps> = ({
-  fallbackUrl = PAGES_ROUTES.ROOT,
+  fallbackUrl = PAGE_ROUTES.ROOT,
   stepsBack = 1,
   text,
 }) => {

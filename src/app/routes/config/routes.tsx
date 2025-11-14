@@ -4,7 +4,7 @@ import { Navigate } from "react-router-dom";
 
 import { ProtectedRoute, RoleBasedRoute } from "@/app/routes/ui";
 import { ROLES } from "@/entities/user";
-import { PAGES_ROUTES } from "@/shared/consts";
+import { PAGE_ROUTES } from "@/shared/consts";
 
 const DashboardPage = lazy(() =>
   import("@/pages/dashboard").then((module) => ({
@@ -40,14 +40,14 @@ const UserSettingsPage = lazy(() =>
 export const AllRoutes: RouteObject[] = [
   {
     index: true,
-    element: <Navigate to={PAGES_ROUTES.HOME} replace />,
+    element: <Navigate to={PAGE_ROUTES.HOME} replace />,
   },
   {
-    path: PAGES_ROUTES.HOME,
+    path: PAGE_ROUTES.HOME,
     element: <HomePage />,
   },
   {
-    path: PAGES_ROUTES.DASHBOARD,
+    path: PAGE_ROUTES.DASHBOARD,
     element: (
       <ProtectedRoute>
         <RoleBasedRoute
@@ -59,7 +59,7 @@ export const AllRoutes: RouteObject[] = [
     ),
   },
   {
-    path: PAGES_ROUTES.USER_SETTINGS,
+    path: PAGE_ROUTES.USER_SETTINGS,
     element: (
       <ProtectedRoute>
         <UserSettingsPage />
@@ -67,15 +67,15 @@ export const AllRoutes: RouteObject[] = [
     ),
   },
   {
-    path: PAGES_ROUTES.PAYMENT,
+    path: PAGE_ROUTES.PAYMENT,
     element: <StripeTestPage />,
   },
   {
-    path: PAGES_ROUTES.ACCESS_DENIED,
+    path: PAGE_ROUTES.ACCESS_DENIED,
     element: <AccessDeniedPage />,
   },
   {
-    path: PAGES_ROUTES.DEFAULT,
+    path: PAGE_ROUTES.DEFAULT,
     element: <NotFoundPage />,
   },
 ];

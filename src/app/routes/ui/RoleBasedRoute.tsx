@@ -3,7 +3,7 @@ import { Navigate } from "react-router-dom";
 
 import { ROLES } from "@/entities/user";
 import { authService } from "@/shared/api/auth";
-import { PAGES_ROUTES } from "@/shared/consts";
+import { PAGE_ROUTES } from "@/shared/consts";
 
 export const RoleBasedRoute: React.FC<{
   children: React.ReactNode;
@@ -13,6 +13,6 @@ export const RoleBasedRoute: React.FC<{
   return hasAccess ? (
     <>{children}</>
   ) : (
-    <Navigate to={PAGES_ROUTES.ACCESS_DENIED} replace />
+    <Navigate to={PAGE_ROUTES.ACCESS_DENIED} replace />
   );
 };

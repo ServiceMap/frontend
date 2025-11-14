@@ -1,6 +1,6 @@
 // TODO add page configs (routes) as a classes instead of constants because it's more flexible
 
-export const PAGES_ROUTES = {
+export const PAGE_ROUTES = {
   ROOT: "/",
   DEFAULT: "*",
   HOME: "/home",
