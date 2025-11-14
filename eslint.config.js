@@ -129,11 +129,11 @@ export default defineConfig([
           rules: [
             {
               from: "app",
-              allow: ["pages", "widgets", "shared"],
+              allow: ["pages", "widgets", "features", "entities", "shared"],
             },
             {
               from: "pages",
-              allow: ["widgets", "features"],
+              allow: ["widgets", "features", "shared"],
             },
             { from: "widgets", allow: ["features", "entities", "shared"] },
             { from: "features", allow: ["entities", "shared"] },

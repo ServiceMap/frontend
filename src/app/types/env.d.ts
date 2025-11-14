@@ -1,4 +1,4 @@
-import type { WindowEnvType } from "@/shared/types/index.ts";
+import type { WindowEnvType } from "@/shared/types";
 
 declare global {
   interface Window {
