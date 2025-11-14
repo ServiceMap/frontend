@@ -109,14 +109,10 @@ class AuthService extends EventTarget {
       pkceMethod: "S256",
       checkLoginIframe: true,
       silentCheckSsoRedirectUri: `${window.location.origin}/auth/silent-check-sso.html`,
-    })
-      .then(() => {
-        this.emit(AUTH_INIT_ERROR_EVENT_NAME);
-      })
-      .catch((err) => {
-        this.emit(AUTH_INIT_ERROR_EVENT_NAME);
-        console.error("Keycloak init error", err);
-      });
+    }).catch((err) => {
+      this.emit(AUTH_INIT_ERROR_EVENT_NAME);
+      console.error("Keycloak init error", err);
+    });
   }
 
   async validateRealm(realm?: string) {

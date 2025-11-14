@@ -1,5 +1,6 @@
 import { useEffect, useEffectEvent, useState } from "react";
 
+import { addCssClasses, removeCssClasses } from "@/shared/lib";
 import { ThemeMode } from "@/shared/ui/theme-provider/lib";
 import {
   getStoredTheme,
@@ -10,10 +11,8 @@ export const useAppThemeProvider = () => {
   const [theme, setTheme] = useState<ThemeMode>(ThemeMode.Light);
 
   const applyTheme = (newTheme: ThemeMode) => {
-    Object.values(ThemeMode).forEach((mode) => {
-      document.documentElement.classList.remove(mode);
-    });
-    document.documentElement.classList.add(newTheme);
+    removeCssClasses(document.documentElement, Object.values(ThemeMode));
+    addCssClasses(document.documentElement, [newTheme]);
 
     setTheme(newTheme);
   };
