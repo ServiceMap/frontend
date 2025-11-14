@@ -11,7 +11,6 @@ i18n
   .use(backend)
   .use(initReactI18next)
   .init({
-    lng: i18Config.defaultLocale,
     fallbackLng: i18Config.defaultLocale,
     keySeparator: false,
     debug: AppConfig.IS_DEVELOPMENT && !AppConfig.IS_TEST,
@@ -24,6 +23,11 @@ i18n.on("languageChanged", (lng) => {
   const locale = i18Config.locales.includes(lng as Locale)
     ? lng
     : i18Config.defaultLocale;
+
+  if (lng !== locale) {
+    i18n.changeLanguage(locale);
+    return;
+  }
 
   dayjs.locale(locale);
 });
