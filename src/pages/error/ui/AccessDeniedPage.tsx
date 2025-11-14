@@ -20,7 +20,7 @@ export const AccessDeniedPage = () => {
       <ErrorPageMessageTemplate>
         {t("access_denied_message")}
       </ErrorPageMessageTemplate>
-      <GoBackButton stepsBack={2} />
+      <GoBackButton />
     </ErrorPageTemplate>
   );
 };

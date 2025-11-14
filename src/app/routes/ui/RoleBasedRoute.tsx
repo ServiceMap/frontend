@@ -13,6 +13,6 @@ export const RoleBasedRoute: React.FC<{
   return hasAccess ? (
     <>{children}</>
   ) : (
-    <Navigate to={PAGES_ROUTES.ACCESS_DENIED} />
+    <Navigate to={PAGES_ROUTES.ACCESS_DENIED} replace />
   );
 };
