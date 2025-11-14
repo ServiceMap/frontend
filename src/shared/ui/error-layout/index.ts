@@ -1,1 +1,1 @@
-export * from "@/shared/ui/error-layout/ui";
+export { ErrorLayout } from "@/shared/ui/error-layout/ErrorLayout.tsx";

@@ -1,1 +1,1 @@
-export * from "@/shared/ui/language-selector/ui";
+export { LanguageSelector } from "@/shared/ui/language-selector/LanguageSelector.tsx";

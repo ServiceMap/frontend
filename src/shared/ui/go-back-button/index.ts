@@ -1,1 +1,1 @@
-export * from "@/shared/ui/go-back-button/ui";
+export { GoBackButton } from "@/shared/ui/go-back-button/GoBackButton.tsx";
