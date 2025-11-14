@@ -6,7 +6,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/shared/ui/shadcn";
+} from "@/shared/ui";
 
 export function UserMenu() {
   if (!authService.isLoggedIn) {

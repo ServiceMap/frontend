@@ -4,13 +4,14 @@ import { Menu } from "lucide-react";
 
 import { CSS_VARS } from "@/shared/consts";
 import { setCssVariables, useElementSize } from "@/shared/lib";
-import { LanguageSelector, ThemeSelector } from "@/shared/ui";
 import {
   Button,
+  LanguageSelector,
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuList,
-} from "@/shared/ui/shadcn";
+  ThemeSelector,
+} from "@/shared/ui";
 import { MobileMenu, UserMenu } from "@/widgets/header/navbar";
 
 import useDebounce from "../../../shared/lib/useDebounce.ts";

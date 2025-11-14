@@ -7,7 +7,7 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/shared/ui/shadcn";
+} from "@/shared/ui";
 import { useThemeContext } from "@/shared/ui/theme-provider";
 import { ThemeItems } from "@/shared/ui/theme-selector/lib";
 

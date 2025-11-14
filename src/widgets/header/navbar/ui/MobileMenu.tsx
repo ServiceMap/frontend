@@ -3,14 +3,15 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 
 import { cn } from "@/shared/lib";
-import { LanguageSelector, ThemeSelector } from "@/shared/ui";
 import {
+  LanguageSelector,
   Separator,
   Sheet,
   SheetContent,
   SheetHeader,
   SheetTitle,
-} from "@/shared/ui/shadcn";
+  ThemeSelector,
+} from "@/shared/ui";
 import { UserMenu } from "@/widgets/header/navbar";
 
 interface MenuItem {

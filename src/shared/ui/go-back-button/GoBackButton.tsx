@@ -1,5 +1,5 @@
 import { cn, historyBackOrDefault } from "@/shared/lib";
-import { Button } from "@/shared/ui/shadcn";
+import { Button } from "@/shared/ui";
 
 interface GoBackButtonProps {
   fallbackUrl: string;
