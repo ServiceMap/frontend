@@ -1,11 +1,11 @@
 import { cn } from "@/shared/lib";
 
-interface ErrorPageTemplateProps {
+interface ErrorLayoutProps {
   children: React.ReactNode;
   className?: string;
 }
 
-export const ErrorPageTitleTemplate: React.FC<ErrorPageTemplateProps> = ({
+export const TitleContainer: React.FC<ErrorLayoutProps> = ({
   children,
   className,
 }) => (
@@ -19,15 +19,17 @@ export const ErrorPageTitleTemplate: React.FC<ErrorPageTemplateProps> = ({
   </div>
 );
 
-export const ErrorPageMessageTemplate: React.FC<ErrorPageTemplateProps> = ({
+export const DescriptionContainer: React.FC<ErrorLayoutProps> = ({
   children,
   className,
 }) => <div className={cn("tw:text-center", className)}>{children}</div>;
 
-export const ErrorPageTemplate: React.FC<ErrorPageTemplateProps> = ({
+const ActionContainer: React.FC<ErrorLayoutProps> = ({
   children,
   className,
-}) => {
+}) => <div className={className}>{children}</div>;
+
+const ErrorLayout = ({ children, className }: ErrorLayoutProps) => {
   return (
     <div
       role="alert"
@@ -40,3 +42,9 @@ export const ErrorPageTemplate: React.FC<ErrorPageTemplateProps> = ({
     </div>
   );
 };
+
+ErrorLayout.TitleContainer = TitleContainer;
+ErrorLayout.DescriptionContainer = DescriptionContainer;
+ErrorLayout.ActionContainer = ActionContainer;
+
+export { ErrorLayout };
