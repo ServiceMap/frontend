@@ -1,5 +1,5 @@
+import { isRealmValid } from "@/shared/api/auth/lib/isRealmValid.ts";
 import { AppConfig } from "@/shared/config";
-import { isRealmValid } from "@/shared/lib/realm/isRealmValid.ts";
 
 export const getRealmFromHost = (
   host: string = window.location.hostname,

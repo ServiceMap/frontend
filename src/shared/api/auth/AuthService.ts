@@ -16,10 +16,10 @@ import {
   KEYCLOAK_TOKEN_MIN_VALIDITY_SECONDS,
   KEYCLOAK_UPDATE_TOKEN_INTERVAL_SECONDS,
 } from "@/shared/api/auth/config/auth.ts";
+import { getRealmFromHost, isRealmValid } from "@/shared/api/auth/lib";
 import { type KeycloakUser } from "@/shared/api/auth/model";
 import { AppConfig } from "@/shared/config";
 import { API_ROUTES } from "@/shared/consts";
-import { getRealmFromHost, isRealmValid } from "@/shared/lib";
 
 class AuthService extends EventTarget {
   private static _instance: AuthService;
