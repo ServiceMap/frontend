@@ -7,7 +7,7 @@ import {
   SelectItem,
   SelectTrigger,
   SelectValue,
-} from "@/shared/ui";
+} from "@/shared/ui/shadcn";
 
 export const LanguageSelector = () => {
   const { i18n } = useTranslation();
