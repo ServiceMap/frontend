@@ -5,8 +5,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { StripeProvider } from "@/app/providers";
 import { HomePage } from "@/pages/home";
 import { authService } from "@/shared/api/auth";
-import { ThemeProvider } from "@/shared/ui";
-import { AuthProvider } from "@/shared/ui/auth-provider";
+import { AuthProvider, ThemeProvider } from "@/shared/ui";
 import { TEST_USERNAME } from "@/tests/consts.ts";
 
 describe("HomePage", () => {
