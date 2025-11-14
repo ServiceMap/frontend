@@ -6,4 +6,4 @@ export {
   MULTIPART_FORM_DATA_CONTENT_TYPE,
   OCTET_STREAM_CONTENT_TYPE,
   PLAIN_TEXT_CONTENT_TYPE,
-} from "@/shared/api/consts/api.consts.ts";
+} from "@/shared/api/consts/api.ts";
