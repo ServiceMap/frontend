@@ -16,7 +16,7 @@ export const GoBackButton: React.FC<GoBackButtonProps> = ({
 }) => {
   return (
     <Button
-      className={cn("tw:cursor-pointer", className)}
+      className={cn("", className)}
       onClick={() => historyBackOrDefault(fallbackUrl, stepsBack)}
     >
       {text}

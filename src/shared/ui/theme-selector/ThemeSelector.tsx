@@ -11,7 +11,11 @@ import {
 import { useThemeContext } from "@/shared/ui/theme-provider";
 import { ThemeItems } from "@/shared/ui/theme-selector/lib";
 
-export const ThemeSelector = () => {
+interface ThemeSelectorProps {
+  menuAlign?: "center" | "end" | "start";
+}
+
+export const ThemeSelector = ({ menuAlign = "end" }: ThemeSelectorProps) => {
   const { t } = useTranslation();
   const { theme, changeTheme } = useThemeContext();
 
@@ -19,19 +23,13 @@ export const ThemeSelector = () => {
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <Button
-            aria-label="Theme selector"
-            className="tw:cursor-pointer"
-            variant="ghost"
-            size="icon"
-          >
+          <Button aria-label="Theme selector" variant="ghost" size="icon">
             <Palette size={18} />
           </Button>
         </DropdownMenuTrigger>
-        <DropdownMenuContent align="end">
+        <DropdownMenuContent align={menuAlign} className="tw:min-w-fit">
           {ThemeItems.map((item) => (
             <DropdownMenuItem
-              className="tw:cursor-pointer"
               key={item.value}
               onClick={() => changeTheme(item.value)}
             >

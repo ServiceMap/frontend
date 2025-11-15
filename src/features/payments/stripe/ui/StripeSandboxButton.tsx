@@ -26,11 +26,7 @@ export const StripeSandboxButton = () => {
   if (status) return <p className="tw:text-red-600">{status}</p>;
 
   return (
-    <Button
-      className="tw:cursor-pointer"
-      onClick={handleClick}
-      disabled={loading || !stripe}
-    >
+    <Button onClick={handleClick} disabled={loading || !stripe}>
       {loading ? "Redirecting..." : "💳 Pay $5 with Stripe"}
     </Button>
   );

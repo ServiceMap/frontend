@@ -164,20 +164,31 @@ class AuthService extends EventTarget {
     };
   }
 
-  login = (): Promise<void> =>
-    this.keycloak!.login().catch((error) => {
+  login = async (): Promise<void> => {
+    await this.keycloak!.login().catch((error) => {
       console.error("Keycloak login error", error);
     });
+  };
 
-  logout = (): Promise<void> =>
-    this.keycloak!.logout({ redirectUri: window.location.origin }).catch(
+  register = async (): Promise<void> => {
+    await this.keycloak!.register().catch((error) => {
+      console.error("Keycloak register error", error);
+    });
+  };
+
+  logout = async (): Promise<void> => {
+    await this.keycloak!.logout({ redirectUri: window.location.origin }).catch(
       (error) => {
         console.error("Keycloak logout error", error);
       },
     );
+  };
 
-  hasRole = (roles: string[]): boolean =>
-    !roles.length || roles.some((role) => this.keycloak!.hasRealmRole(role));
+  hasRole = (roles: string[]): boolean => {
+    return (
+      !roles.length || roles.some((role) => this.keycloak!.hasRealmRole(role))
+    );
+  };
 }
 
 const authService = new AuthService();

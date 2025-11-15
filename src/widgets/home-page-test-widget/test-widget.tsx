@@ -32,7 +32,6 @@ export const TestWidget = () => {
 
       <p>
         <Button
-          className="tw:cursor-pointer"
           onClick={() => {
             throw new Error("Test SENTRY button clicked!");
           }}

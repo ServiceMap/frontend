@@ -4,14 +4,13 @@ interface ErrorLayoutProps {
   children: React.ReactNode;
   className?: string;
 }
-
 export const TitleContainer: React.FC<ErrorLayoutProps> = ({
   children,
   className,
 }) => (
   <div
     className={cn(
-      "tw:flex tw:flex-wrap tw:items-center tw:justify-center tw:gap-2 tw:text-center tw:text-3xl tw:font-semibold",
+      "tw:flex tw:items-center tw:justify-center tw:gap-2 tw:text-center tw:text-3xl tw:font-semibold",
       className,
     )}
   >

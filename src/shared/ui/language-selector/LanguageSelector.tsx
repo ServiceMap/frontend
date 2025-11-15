@@ -1,41 +1,49 @@
 import { useTranslation } from "react-i18next";
+import { GlobeIcon } from "lucide-react";
 
-import { i18Config, type Locale, LocaleNames } from "@/shared/config";
+import { type Locale, LocaleNames } from "@/shared/config";
 import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
+  Button,
+  DropdownMenu,
+  DropdownMenuCheckboxItem,
+  DropdownMenuContent,
+  DropdownMenuTrigger,
 } from "@/shared/ui";
 
-export const LanguageSelector = () => {
+interface LanguageSelectorProps {
+  menuAlign?: "center" | "end" | "start";
+}
+
+export const LanguageSelector = ({
+  menuAlign = "end",
+}: LanguageSelectorProps) => {
   const { i18n } = useTranslation();
   const currentLang = i18n.language as Locale;
 
-  const handleValueChange = (value: string) => {
+  const handleLanguageChange = (value: string) => {
     i18n.changeLanguage(value);
   };
 
   return (
-    <Select
-      onValueChange={handleValueChange}
-      value={currentLang}
-      defaultValue={i18Config.defaultLocale}
-    >
-      <SelectTrigger
-        aria-label="Language selector"
-        className="tw:w-16 tw:cursor-pointer"
-      >
-        <SelectValue />
-      </SelectTrigger>
-      <SelectContent>
-        {Object.entries(LocaleNames).map(([code]) => (
-          <SelectItem key={code} value={code} className="tw:cursor-pointer">
-            {code.toUpperCase()}
-          </SelectItem>
-        ))}
-      </SelectContent>
-    </Select>
+    <>
+      <DropdownMenu>
+        <DropdownMenuTrigger asChild>
+          <Button aria-label="Language selector" variant="ghost" size="icon">
+            <GlobeIcon size={18} />
+          </Button>
+        </DropdownMenuTrigger>
+        <DropdownMenuContent align={menuAlign} className="tw:min-w-fit">
+          {Object.entries(LocaleNames).map(([code]) => (
+            <DropdownMenuCheckboxItem
+              key={code}
+              checked={code === currentLang}
+              onClick={() => handleLanguageChange(code)}
+            >
+              <span>{code.toUpperCase()}</span>
+            </DropdownMenuCheckboxItem>
+          ))}
+        </DropdownMenuContent>
+      </DropdownMenu>
+    </>
   );
 };

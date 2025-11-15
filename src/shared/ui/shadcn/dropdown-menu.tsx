@@ -82,7 +82,7 @@ const DropdownMenuItem = React.forwardRef<
   <DropdownMenuPrimitive.Item
     ref={ref}
     className={cn(
-      "tw:relative tw:flex tw:cursor-default tw:items-center tw:gap-2 tw:rounded-sm tw:px-2 tw:py-1.5 tw:text-sm tw:transition-colors tw:outline-none tw:select-none tw:focus:bg-accent tw:focus:text-accent-foreground tw:data-[disabled]:pointer-events-none tw:data-[disabled]:opacity-50 tw:[&>svg]:size-4 tw:[&>svg]:shrink-0",
+      "tw:relative tw:flex tw:cursor-pointer tw:items-center tw:gap-2 tw:rounded-sm tw:px-2 tw:py-1.5 tw:text-sm tw:transition-colors tw:outline-none tw:select-none tw:focus:bg-accent tw:focus:text-accent-foreground tw:data-[disabled]:pointer-events-none tw:data-[disabled]:opacity-50 tw:[&>svg]:size-4 tw:[&>svg]:shrink-0",
       inset && "tw:pl-8",
       className,
     )}
@@ -98,7 +98,7 @@ const DropdownMenuCheckboxItem = React.forwardRef<
   <DropdownMenuPrimitive.CheckboxItem
     ref={ref}
     className={cn(
-      "tw:relative tw:flex tw:cursor-default tw:items-center tw:rounded-sm tw:py-1.5 tw:pr-2 tw:pl-8 tw:text-sm tw:transition-colors tw:outline-none tw:select-none tw:focus:bg-accent tw:focus:text-accent-foreground tw:data-[disabled]:pointer-events-none tw:data-[disabled]:opacity-50",
+      "tw:relative tw:flex tw:cursor-pointer tw:items-center tw:rounded-sm tw:py-1.5 tw:pr-2 tw:pl-8 tw:text-sm tw:transition-colors tw:outline-none tw:select-none tw:focus:bg-accent tw:focus:text-accent-foreground tw:data-[disabled]:pointer-events-none tw:data-[disabled]:opacity-50",
       className,
     )}
     checked={checked}
@@ -122,7 +122,7 @@ const DropdownMenuRadioItem = React.forwardRef<
   <DropdownMenuPrimitive.RadioItem
     ref={ref}
     className={cn(
-      "tw:relative tw:flex tw:cursor-default tw:items-center tw:rounded-sm tw:py-1.5 tw:pr-2 tw:pl-8 tw:text-sm tw:transition-colors tw:outline-none tw:select-none tw:focus:bg-accent tw:focus:text-accent-foreground tw:data-[disabled]:pointer-events-none tw:data-[disabled]:opacity-50",
+      "tw:relative tw:flex tw:cursor-pointer tw:items-center tw:rounded-sm tw:py-1.5 tw:pr-2 tw:pl-8 tw:text-sm tw:transition-colors tw:outline-none tw:select-none tw:focus:bg-accent tw:focus:text-accent-foreground tw:data-[disabled]:pointer-events-none tw:data-[disabled]:opacity-50",
       className,
     )}
     {...props}

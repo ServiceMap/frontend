@@ -3,9 +3,9 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import { Layout } from "@/app/layout";
 import { AllRoutes } from "@/app/routes/config";
-import { FallbackElement } from "@/app/routes/ui";
 import { PAGE_ROUTES } from "@/shared/consts";
 import { historyBackOrDefault } from "@/shared/lib";
+import { FallbackElement } from "@/shared/ui";
 
 const appRouter = createBrowserRouter([
   {
