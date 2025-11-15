@@ -3,20 +3,20 @@ import { useTranslation } from "react-i18next";
 import { authService } from "@/shared/api/auth";
 import { Button } from "@/shared/ui";
 
-interface LoginButtonProps {
+interface LogoutButtonProps {
   className?: string;
 }
 
-export const LoginButton = ({ className }: LoginButtonProps) => {
+export const LogoutButton = ({ className }: LogoutButtonProps) => {
   const { t } = useTranslation();
 
   return (
     <Button
       className={className}
       variant="outline"
-      onClick={() => void authService.login()}
+      onClick={() => void authService.logout()}
     >
-      {t("login_btn")}
+      {t("logout_btn")}
     </Button>
   );
 };
