@@ -34,7 +34,7 @@ export const ThemeSelector = ({ menuAlign = "end" }: ThemeSelectorProps) => {
               onClick={() => changeTheme(item.value)}
             >
               {item.getIcon(theme === item.value)}
-              <span className="tw:ml-2">{t(item.tKey)}</span>
+              {t(item.tKey)}
             </DropdownMenuItem>
           ))}
         </DropdownMenuContent>

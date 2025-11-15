@@ -39,7 +39,7 @@ export const LanguageSelector = ({
               checked={code === currentLang}
               onClick={() => handleLanguageChange(code)}
             >
-              <span>{code.toUpperCase()}</span>
+              {code.toUpperCase()}
             </DropdownMenuCheckboxItem>
           ))}
         </DropdownMenuContent>
