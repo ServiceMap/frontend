@@ -6,5 +6,6 @@ export * from "@/shared/ui/language-selector";
 export * from "@/shared/ui/line-clamp-box";
 export * from "@/shared/ui/loader";
 export * from "@/shared/ui/shadcn";
+export * from "@/shared/ui/site-logo";
 export * from "@/shared/ui/theme-provider";
 export * from "@/shared/ui/theme-selector";
