@@ -1,16 +1,24 @@
-import { LoginButton, LogoutButton } from "@/features/auth/ui";
+import { LoginButton, LogoutButton, RegisterButton } from "@/features/auth/ui";
 import { useAuthContext } from "@/shared/ui";
 
 interface AuthSwitchButtonProps {
   className?: string;
+  showRegisterInsteadOfLogin?: boolean;
 }
 
-export const AuthSwitchButton = ({ className }: AuthSwitchButtonProps) => {
+export const AuthSwitchButton = ({
+  className,
+  showRegisterInsteadOfLogin,
+}: AuthSwitchButtonProps) => {
   const { isLoggedIn } = useAuthContext();
 
-  return isLoggedIn ? (
-    <LogoutButton className={className} />
-  ) : (
-    <LoginButton className={className} />
-  );
+  if (!isLoggedIn) {
+    return showRegisterInsteadOfLogin ? (
+      <RegisterButton className={className} />
+    ) : (
+      <LoginButton className={className} />
+    );
+  }
+
+  return <LogoutButton className={className} />;
 };
