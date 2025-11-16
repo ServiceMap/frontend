@@ -10,6 +10,8 @@ interface RegisterButtonProps {
 export const RegisterButton = ({ className }: RegisterButtonProps) => {
   const { t } = useTranslation();
 
+  if (authService.isLoggedIn) return null;
+
   return (
     <Button
       className={className}

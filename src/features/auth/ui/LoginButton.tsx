@@ -10,6 +10,8 @@ interface LoginButtonProps {
 export const LoginButton = ({ className }: LoginButtonProps) => {
   const { t } = useTranslation();
 
+  if (authService.isLoggedIn) return null;
+
   return (
     <Button
       className={className}

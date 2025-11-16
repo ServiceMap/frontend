@@ -10,6 +10,8 @@ interface LogoutButtonProps {
 export const LogoutButton = ({ className }: LogoutButtonProps) => {
   const { t } = useTranslation();
 
+  if (!authService.isLoggedIn) return null;
+
   return (
     <Button
       className={className}
