@@ -16,12 +16,14 @@ export default defineConfig({
       output: {
         manualChunks: {
           reactAvatar: ["@radix-ui/react-avatar"],
+          reactCollapsible: ["@radix-ui/react-collapsible"],
           reactDialog: ["@radix-ui/react-dialog"],
           reactDropdownMenu: ["@radix-ui/react-dropdown-menu"],
           reactNavigationMenu: ["@radix-ui/react-navigation-menu"],
           reactSelect: ["@radix-ui/react-select"],
           reactSeparator: ["@radix-ui/react-separator"],
           reactSlot: ["@radix-ui/react-slot"],
+          reactTooltip: ["@radix-ui/react-tooltip"],
 
           sentry: ["@sentry/react"],
           stripe: ["@stripe/react-stripe-js", "@stripe/stripe-js"],

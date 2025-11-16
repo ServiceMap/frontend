@@ -5,7 +5,7 @@
   "tsx": true,
   "tailwind": {
     "config": "tailwind.config.mock.tss",
-    "css": "@/app/styles/global.css",
+    "css": "src/shared/ui/theme-provider/styles/themes.css",
     "baseColor": "slate",
     "cssVariables": true,
     "prefix": "tw"
@@ -15,7 +15,7 @@
     "components": "@/components",
     "utils": "@/shared/lib",
     "ui": "@/shared/ui/shadcn",
-    "lib": "@/shared/ui/shadcn/lib",
+    "lib": "@/shared/lib",
     "hooks": "@/shared/ui/shadcn/hooks"
   },
   "registries": {}

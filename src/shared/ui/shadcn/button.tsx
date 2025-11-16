@@ -5,26 +5,29 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/shared/lib";
 
 const buttonVariants = cva(
-  "tw:inline-flex tw:cursor-pointer tw:items-center tw:justify-center tw:gap-2 tw:rounded-md tw:text-sm tw:font-medium tw:whitespace-nowrap tw:transition-colors tw:focus-visible:ring-1 tw:focus-visible:ring-ring tw:focus-visible:outline-none tw:disabled:pointer-events-none tw:disabled:opacity-50 tw:[&_svg]:pointer-events-none tw:[&_svg]:size-4 tw:[&_svg]:shrink-0",
+  "tw:inline-flex tw:shrink-0 tw:cursor-pointer tw:items-center tw:justify-center tw:gap-2 tw:rounded-md tw:text-sm tw:font-medium tw:whitespace-nowrap tw:transition-all tw:outline-none tw:focus-visible:border-ring tw:focus-visible:ring-[3px] tw:focus-visible:ring-ring/50 tw:disabled:pointer-events-none tw:disabled:opacity-50 tw:aria-invalid:border-destructive tw:aria-invalid:ring-destructive/20 tw:dark:aria-invalid:ring-destructive/40 tw:[&_svg]:pointer-events-none tw:[&_svg]:shrink-0 tw:[&_svg:not([class*=size-])]:size-4",
   {
     variants: {
       variant: {
         default:
-          "tw:bg-primary tw:text-primary-foreground tw:shadow tw:hover:bg-primary/90",
+          "tw:bg-primary tw:text-primary-foreground tw:hover:bg-primary/90",
         destructive:
-          "tw:text-destructive-foreground tw:bg-destructive tw:shadow-sm tw:hover:bg-destructive/90",
+          "tw:bg-destructive tw:text-white tw:hover:bg-destructive/90 tw:focus-visible:ring-destructive/20 tw:dark:bg-destructive/60 tw:dark:focus-visible:ring-destructive/40",
         outline:
-          "tw:border tw:border-input tw:bg-background tw:shadow-sm tw:hover:bg-accent tw:hover:text-accent-foreground",
+          "tw:border tw:bg-background tw:shadow-xs tw:hover:bg-accent tw:hover:text-accent-foreground tw:dark:border-input tw:dark:bg-input/30 tw:dark:hover:bg-input/50",
         secondary:
-          "tw:bg-secondary tw:text-secondary-foreground tw:shadow-sm tw:hover:bg-secondary/80",
-        ghost: "tw:hover:bg-accent tw:hover:text-accent-foreground",
+          "tw:bg-secondary tw:text-secondary-foreground tw:hover:bg-secondary/80",
+        ghost:
+          "tw:hover:bg-accent tw:hover:text-accent-foreground tw:dark:hover:bg-accent/50",
         link: "tw:text-primary tw:underline-offset-4 tw:hover:underline",
       },
       size: {
-        default: "tw:h-9 tw:px-4 tw:py-2",
-        sm: "tw:h-8 tw:rounded-md tw:px-3 tw:text-xs",
-        lg: "tw:h-10 tw:rounded-md tw:px-8",
-        icon: "tw:h-9 tw:w-9",
+        default: "tw:h-9 tw:px-4 tw:py-2 tw:has-[>svg]:px-3",
+        sm: "tw:h-8 tw:gap-1.5 tw:rounded-md tw:px-3 tw:has-[>svg]:px-2.5",
+        lg: "tw:h-10 tw:rounded-md tw:px-6 tw:has-[>svg]:px-4",
+        icon: "tw:size-9",
+        "icon-sm": "tw:size-8",
+        "icon-lg": "tw:size-10",
       },
     },
     defaultVariants: {
@@ -34,24 +37,25 @@ const buttonVariants = cva(
   },
 );
 
-export interface ButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
-    VariantProps<typeof buttonVariants> {
-  asChild?: boolean;
-}
+function Button({
+  className,
+  variant,
+  size,
+  asChild = false,
+  ...props
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof buttonVariants> & {
+    asChild?: boolean;
+  }) {
+  const Comp = asChild ? Slot : "button";
 
-const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
-    const Comp = asChild ? Slot : "button";
-    return (
-      <Comp
-        className={cn(buttonVariants({ variant, size, className }))}
-        ref={ref}
-        {...props}
-      />
-    );
-  },
-);
-Button.displayName = "Button";
+  return (
+    <Comp
+      data-slot="button"
+      className={cn(buttonVariants({ variant, size, className }))}
+      {...props}
+    />
+  );
+}
 
 export { Button, buttonVariants };
