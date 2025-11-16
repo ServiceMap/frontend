@@ -4,6 +4,7 @@ export * from "@/shared/ui/shadcn/collapsible.tsx";
 export * from "@/shared/ui/shadcn/dropdown-menu.tsx";
 export * from "@/shared/ui/shadcn/input.tsx";
 export * from "@/shared/ui/shadcn/navigation-menu.tsx";
+export * from "@/shared/ui/shadcn/scroll-area.tsx";
 export * from "@/shared/ui/shadcn/select.tsx";
 export * from "@/shared/ui/shadcn/separator.tsx";
 export * from "@/shared/ui/shadcn/sheet.tsx";

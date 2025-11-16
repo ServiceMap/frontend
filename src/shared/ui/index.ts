@@ -1,4 +1,5 @@
 export * from "@/shared/ui/auth-provider";
+export * from "@/shared/ui/collapsible-menu";
 export * from "@/shared/ui/error-layout";
 export * from "@/shared/ui/fallback-element";
 export * from "@/shared/ui/go-back-button";

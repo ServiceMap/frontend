@@ -24,6 +24,7 @@ export default defineConfig({
           reactSeparator: ["@radix-ui/react-separator"],
           reactSlot: ["@radix-ui/react-slot"],
           reactTooltip: ["@radix-ui/react-tooltip"],
+          reactScrollArea: ["@radix-ui/react-scroll-area"],
 
           sentry: ["@sentry/react"],
           stripe: ["@stripe/react-stripe-js", "@stripe/stripe-js"],
